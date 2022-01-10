@@ -1,0 +1,47 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Fri Mar 03 10:32:11 2017
+# Process ID: 4428
+# Current directory: C:/Users/HEHE/Desktop/top2048
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4472 C:\Users\HEHE\Desktop\top2048\top2048.xpr
+# Log file: C:/Users/HEHE/Desktop/top2048/vivado.log
+# Journal file: C:/Users/HEHE/Desktop/top2048\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/HEHE/Desktop/top2048/top2048.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2016.2/data/ip'.
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:32 . Memory (MB): peak = 726.422 ; gain = 110.840
+update_compile_order -fileset sources_1
+import_files -norecurse {C:/Users/HEHE/Desktop/数字系统_贪吃蛇实验/vgaright/vga.v C:/Users/HEHE/Desktop/数字系统_贪吃蛇实验/vgaright/tab.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+remove_files C:/Users/HEHE/Desktop/top2048/top2048.srcs/sources_1/imports/vgaright/tab.v
+file delete -force C:/Users/HEHE/Desktop/top2048/top2048.srcs/sources_1/imports/vgaright/tab.v
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+INFO: [HDL 9-2216] Analyzing Verilog file "C:/Users/HEHE/Desktop/top2048/top2048.srcs/sources_1/new/game.v" into library work [C:/Users/HEHE/Desktop/top2048/top2048.srcs/sources_1/new/game.v:1]
+[Fri Mar 03 10:59:04 2017] Launched synth_1...
+Run output will be captured here: C:/Users/HEHE/Desktop/top2048/top2048.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+INFO: [HDL 9-2216] Analyzing Verilog file "C:/Users/HEHE/Desktop/top2048/top2048.srcs/sources_1/new/game.v" into library work [C:/Users/HEHE/Desktop/top2048/top2048.srcs/sources_1/new/game.v:1]
+[Fri Mar 03 11:13:13 2017] Launched synth_1...
+Run output will be captured here: C:/Users/HEHE/Desktop/top2048/top2048.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+[Fri Mar 03 11:15:43 2017] Launched impl_1...
+Run output will be captured here: C:/Users/HEHE/Desktop/top2048/top2048.runs/impl_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Mar 03 11:18:40 2017...

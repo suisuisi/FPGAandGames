@@ -1,0 +1,16 @@
+Fitter Status : Successful - Tue Feb 28 01:18:25 2017
+Quartus II Version : 9.0 Build 132 02/25/2009 SJ Full Version
+Revision Name : top2048
+Top-level Entity Name : game
+Family : Cyclone II
+Device : EP2C70F896C6
+Timing Models : Final
+Total logic elements : 2,908 / 68,416 ( 4 % )
+    Total combinational functions : 2,908 / 68,416 ( 4 % )
+    Dedicated logic registers : 92 / 68,416 ( < 1 % )
+Total registers : 92
+Total pins : 86 / 622 ( 14 % )
+Total virtual pins : 0
+Total memory bits : 0 / 1,152,000 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 300 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

@@ -1,0 +1,103 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\HEHE\Desktop\2048
+T_opt
+V8baHafKfPzIdn?Q7S1oE73
+04 2 4 work tb fast 0
+=1-48d224f7e60d-5896d838-2c1-24a8
+o-quiet -auto_acc_if_foreign -work work
+n@_opt
+OE;O;10.1a;51
+Z1 dC:\Users\HEHE\Desktop\2048
+vgen
+V3JRT5=lF@mY`k2fOGNTQ`2
+r1
+31
+I4AS5CQMSz<ZkZnSCe2eLS3
+R1
+Z2 w1486287502
+Z3 8C:/Users/HEHE/Desktop/2048/top2048.v
+Z4 FC:/Users/HEHE/Desktop/2048/top2048.v
+L0 136
+Z5 OE;L;10.1a;51
+Z6 !s108 1486287846.256000
+Z7 !s107 C:/Users/HEHE/Desktop/2048/top2048.v|
+Z8 !s90 -reportprogress|300|-work|work|C:/Users/HEHE/Desktop/2048/top2048.v|
+Z9 o-work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!s100 RDm4FjM0R>l_9FK:??G`Z3
+!i10b 1
+!s85 0
+vmove
+Vfi98@NL]N7fPi7;f]lgkP1
+r1
+31
+Iz[;eSm3UR[5II0=2M_[LU1
+R1
+R2
+R3
+R4
+L0 85
+R5
+R6
+R7
+R8
+R9
+!s100 :[2mHI_Cio<X?VSWRE48:3
+!i10b 1
+!s85 0
+vrandom
+VJo2;WaS^hPiTK[6_6ncV^2
+r1
+31
+IV[BCVgK:D6HG<510nG7a[0
+R1
+R2
+R3
+R4
+L0 176
+R5
+R6
+R7
+R8
+R9
+!s100 3><aj0;ac>`6VkUW^a:Z>0
+!i10b 1
+!s85 0
+vtb
+!i10b 1
+VV@Xn<HnSRM[I5c1?BH]3a3
+r1
+!s85 0
+31
+IDDPRn99bKPQADWJN`@T2G2
+R1
+w1486288051
+8C:/Users/HEHE/Desktop/2048/tb.v
+FC:/Users/HEHE/Desktop/2048/tb.v
+L0 3
+R5
+!s90 -reportprogress|300|-work|work|C:/Users/HEHE/Desktop/2048/tb.v|
+R9
+!s100 nCW10R7gEY?^8dcW>[NiQ0
+!s108 1486288054.886000
+!s107 C:/Users/HEHE/Desktop/2048/tb.v|
+vtop2048
+VP?D=GQdYQLQE8>Q1]m:aP2
+r1
+31
+IUM]Bld1]1P:5znC=j65:C3
+R1
+R2
+R3
+R4
+L0 1
+R5
+R6
+R7
+R8
+R9
+!s100 49R_c4LRi?HX_hcYF:^QE3
+!i10b 1
+!s85 0

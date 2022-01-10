@@ -1,0 +1,106 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Mon Jan 10 19:56:30 2022
+| Host         : DESKTOP-1TCF4DO running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file game_control_sets_placed.rpt
+| Design       : game
+| Device       : xc7z020
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    33 |
+| Unused register locations in slices containing registers |   113 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      1 |            7 |
+|      4 |            5 |
+|      5 |            2 |
+|      6 |            1 |
+|      8 |            6 |
+|      9 |            1 |
+|     11 |            2 |
+|     13 |            1 |
+|     14 |            1 |
+|    16+ |            7 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               1 |            1 |
+| No           | No                    | Yes                    |             350 |          105 |
+| No           | Yes                   | No                     |              15 |            7 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |             159 |           86 |
+| Yes          | Yes                   | No                     |              50 |           21 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------------------+------------------------------------+----------------------------------------+------------------+----------------+
+|         Clock Signal         |            Enable Signal           |            Set/Reset Signal            | Slice Load Count | Bel Load Count |
++------------------------------+------------------------------------+----------------------------------------+------------------+----------------+
+|  shake_2/dout_reg_i_1__1_n_0 |                                    | shake_2/dout_reg_i_2__1_n_0            |                1 |              1 |
+|  shake_1/dout_reg_i_1__0_n_0 |                                    | shake_1/dout_reg_i_2__0_n_0            |                1 |              1 |
+|  shake_0/dout_reg_i_1_n_0    |                                    | shake_0/dout_reg_i_2_n_0               |                1 |              1 |
+|  shake_3/dout_reg_i_1__2_n_0 |                                    | shake_3/dout_reg_i_2__2_n_0            |                1 |              1 |
+|  clk_vga_BUFG                |                                    |                                        |                1 |              1 |
+|  clk_vga_BUFG                | vga_0/vs_i_1_n_0                   | draw_0/spi_0/AR[0]                     |                1 |              1 |
+|  clk_vga_BUFG                | vga_0/hs_i_1_n_0                   | draw_0/spi_0/AR[0]                     |                1 |              1 |
+|  counter_reg__0_BUFG[10]     | shake_1/E[0]                       | draw_0/spi_0/AR[0]                     |                4 |              4 |
+|  counter_reg__0_BUFG[10]     | shake_1/state_reg[0]_3[0]          | draw_0/spi_0/AR[0]                     |                3 |              4 |
+|  counter_reg__0_BUFG[10]     | shake_1/state_reg[1]_2[0]          | draw_0/spi_0/AR[0]                     |                3 |              4 |
+|  counter_reg__0_BUFG[10]     | shake_0/state_reg[0]_2[0]          | draw_0/spi_0/AR[0]                     |                3 |              4 |
+| ~clk_div                     | draw_0/spi_0/Q[0]                  | draw_0/FSM_sequential_state[2]_i_2_n_0 |                2 |              4 |
+|  clk_div                     | draw_0/spi_0/counter[3]_i_1__0_n_0 | draw_0/spi_0/AR[0]                     |                2 |              5 |
+|  clk_div                     |                                    | draw_0/spi_0/AR[0]                     |                2 |              5 |
+| ~clk_div                     | draw_0/spi_0/Q[0]                  | draw_0/spi_0/AR[0]                     |                1 |              6 |
+|  clk_div                     | draw_0/spi_0/data_buffer_0         | draw_0/spi_0/AR[0]                     |                2 |              8 |
+|  counter_reg__0_BUFG[10]     | shake_1/state_reg[0]_4[0]          | draw_0/spi_0/AR[0]                     |                7 |              8 |
+|  counter_reg__0_BUFG[10]     | shake_1/state_reg[1]_1[0]          | draw_0/spi_0/AR[0]                     |                8 |              8 |
+|  counter_reg__0_BUFG[10]     | shake_1/state_reg[1]_3[0]          | draw_0/spi_0/AR[0]                     |                8 |              8 |
+|  counter_reg__0_BUFG[10]     | shake_0/E[0]                       | draw_0/spi_0/AR[0]                     |                8 |              8 |
+| ~clk_div                     | draw_0/spi_0/E[0]                  | draw_0/FSM_sequential_state[2]_i_2_n_0 |                5 |              8 |
+| ~clk_div                     |                                    | draw_0/spi_0/AR[0]                     |                3 |              9 |
+|  clk_vga_BUFG                |                                    | draw_0/spi_0/AR[0]                     |                3 |             11 |
+|  clk_vga_BUFG                | vga_0/count_v[10]_i_1_n_0          | draw_0/spi_0/AR[0]                     |                6 |             11 |
+| ~clk_div                     |                                    | draw_0/FSM_sequential_state[2]_i_2_n_0 |                4 |             13 |
+|  clk_vga_BUFG                | vga_0/x0                           | vga_0/x[9]_i_1_n_0                     |                5 |             14 |
+|  counter_reg__0_BUFG[10]     | shake_1/state_reg[1]_0             | draw_0/spi_0/AR[0]                     |               12 |             16 |
+|  clk_IBUF_BUFG               |                                    | draw_0/spi_0/AR[0]                     |                5 |             22 |
+|  clk_vga_BUFG                | vga_0/y[9]_i_2_n_0                 | vga_0/y[9]_i_1_n_0                     |                8 |             23 |
+|  draw_0/ready                |                                    | draw_0/spi_0/AR[0]                     |               15 |             25 |
+|  counter_reg__0_BUFG[10]     | p15                                | draw_0/spi_0/AR[0]                     |               18 |             64 |
+|  counter_reg__0_BUFG[10]     |                                    | draw_0/spi_0/AR[0]                     |               40 |            132 |
+|  clk_rand_BUFG               |                                    | draw_0/spi_0/AR[0]                     |               36 |            144 |
++------------------------------+------------------------------------+----------------------------------------+------------------+----------------+
+
+

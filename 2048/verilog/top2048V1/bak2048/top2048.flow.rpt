@@ -1,0 +1,121 @@
+Flow report for top2048
+Tue Feb 28 01:18:32 2017
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Flow Summary                                                                  ;
++------------------------------------+------------------------------------------+
+; Flow Status                        ; Successful - Tue Feb 28 01:18:32 2017    ;
+; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
+; Revision Name                      ; top2048                                  ;
+; Top-level Entity Name              ; game                                     ;
+; Family                             ; Cyclone II                               ;
+; Device                             ; EP2C70F896C6                             ;
+; Timing Models                      ; Final                                    ;
+; Met timing requirements            ; Yes                                      ;
+; Total logic elements               ; 2,908 / 68,416 ( 4 % )                   ;
+;     Total combinational functions  ; 2,908 / 68,416 ( 4 % )                   ;
+;     Dedicated logic registers      ; 92 / 68,416 ( < 1 % )                    ;
+; Total registers                    ; 92                                       ;
+; Total pins                         ; 86 / 622 ( 14 % )                        ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 0 / 1,152,000 ( 0 % )                    ;
+; Embedded Multiplier 9-bit elements ; 0 / 300 ( 0 % )                          ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                            ;
++------------------------------------+------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 02/28/2017 01:17:14 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; top2048             ;
++-------------------+---------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                   ;
++------------------------------------+--------------------------------+---------------+-------------+----------------+
+; Assignment Name                    ; Value                          ; Default Value ; Entity Name ; Section Id     ;
++------------------------------------+--------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID              ; 80067400558093.148821583411036 ; --            ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP             ; 85                             ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP             ; 0                              ; --            ; --          ; --             ;
+; PARTITION_COLOR                    ; 16764057                       ; --            ; game        ; Top            ;
+; PARTITION_NETLIST_TYPE             ; SOURCE                         ; --            ; game        ; Top            ;
+; TOP_LEVEL_ENTITY                   ; game                           ; top2048       ; --          ; --             ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                            ; --            ; --          ; eda_blast_fpga ;
++------------------------------------+--------------------------------+---------------+-------------+----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                           ;
++-------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++-------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis    ; 00:00:27     ; 1.0                     ; 233 MB              ; 00:00:27                           ;
+; Fitter                  ; 00:00:11     ; 1.0                     ; 373 MB              ; 00:00:12                           ;
+; Assembler               ; 00:00:04     ; 1.0                     ; 339 MB              ; 00:00:04                           ;
+; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 186 MB              ; 00:00:00                           ;
+; Total                   ; 00:00:42     ; --                      ; --                  ; 00:00:43                           ;
++-------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                          ;
++-------------------------+------------------+---------------+------------+----------------+
+; Module Name             ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
++-------------------------+------------------+---------------+------------+----------------+
+; Analysis & Synthesis    ; HEHE-PC          ; Windows Vista ; 6.1        ; x86_64         ;
+; Fitter                  ; HEHE-PC          ; Windows Vista ; 6.1        ; x86_64         ;
+; Assembler               ; HEHE-PC          ; Windows Vista ; 6.1        ; x86_64         ;
+; Classic Timing Analyzer ; HEHE-PC          ; Windows Vista ; 6.1        ; x86_64         ;
++-------------------------+------------------+---------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off top2048 -c top2048
+quartus_fit --read_settings_files=off --write_settings_files=off top2048 -c top2048
+quartus_asm --read_settings_files=off --write_settings_files=off top2048 -c top2048
+quartus_tan --read_settings_files=off --write_settings_files=off top2048 -c top2048 --timing_analysis_only
+
+
+

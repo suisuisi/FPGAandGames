@@ -1,0 +1,44 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Thu Mar 02 16:05:54 2017
+# Process ID: 11164
+# Current directory: C:/Users/HEHE/Desktop/top2048
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11924 C:\Users\HEHE\Desktop\top2048\top2048.xpr
+# Log file: C:/Users/HEHE/Desktop/top2048/vivado.log
+# Journal file: C:/Users/HEHE/Desktop/top2048\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/HEHE/Desktop/top2048/top2048.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_hw
+connect_hw_server
+open_hw_target
+current_hw_device [lindex [get_hw_devices] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {C:/Users/HEHE/Desktop/top2048/top2048.runs/impl_1/game.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {C:/Users/HEHE/Desktop/top2048/top2048.runs/impl_1/game.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
