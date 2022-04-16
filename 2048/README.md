@@ -41,6 +41,7 @@ Vivado 2018.3及更高版本
 
 ## 连接
 
+![](https://github.com/suisuisi/FPGAandGames/blob/main/2048/images/%E5%AE%9E%E7%89%A9%E8%BF%9E%E6%8E%A5.JPG?raw=true)
 
 # 源码简介
 
@@ -56,10 +57,14 @@ Vivado 2018.3及更高版本
 
 > https://github.com/suisuisi/FPGAandGames/tree/main/2048
 
-下载后可以直接进行综合，使用JTAG下载到FPGA中，就能看到OLED及VGA显示画面如下：
+下载后可以直接进行综合（综合结果见下），使用JTAG下载到FPGA中，就能看到OLED及VGA显示画面如下：
 
+![](https://github.com/suisuisi/FPGAandGames/blob/main/2048/images/%E7%BB%BC%E5%90%88%E7%BB%93%E6%9E%9C.png?raw=true)
 
+![](https://github.com/suisuisi/FPGAandGames/blob/main/2048/images/VGA.JPG?raw=true)
+
+![](https://github.com/suisuisi/FPGAandGames/blob/main/2048/images/OLED.JPG?raw=true)
 # 视频演示
 
-
+[![陪你度过深夜的2048小游戏，我们用FPGA实现它](https://github.com/suisuisi/FPGAandGames/blob/main/2048/images/%E5%B0%81%E9%9D%A2.png?raw=true)](https://www.bilibili.com/video/BV12q4y1w7Xo/)
 
