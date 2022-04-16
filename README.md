@@ -13,7 +13,7 @@ FPGA实现各种小游戏，学习并快乐着
 
 # snake
 
-2022-01-10
+2022-04-17
 
 - ![snake](https://github.com/suisuisi/FPGAandGames/blob/main/SNAKE/DOC/%E6%9E%B6%E6%9E%84%E5%9B%BE.png?raw=true "snake")
 
