@@ -1,0 +1,807 @@
+
+*** Running vivado
+    with args -log top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source top.tcl -notrace
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source top.tcl -notrace
+Command: link_design -top top -part xc7z020clg484-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Project 1-454] Reading design checkpoint 'e:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/ip/font_romv1/font_romv1.dcp' for cell 'snake_text/font_unit'
+INFO: [Netlist 29-17] Analyzing 1009 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.3
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc]
+WARNING: [Vivado 12-584] No ports matched 'AC_ADR0'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:69]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:69]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AC_ADR1'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:70]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:70]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AC_GPIO0'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:71]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:71]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AC_GPIO1'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:72]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:72]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AC_GPIO2'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:73]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:73]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AC_GPIO3'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:74]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:74]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AC_MCLK'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:75]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:75]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AC_SCK'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:76]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:76]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AC_SDA'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:77]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:77]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JA1'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:87]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:87]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JA10'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:88]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:88]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JA2'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:89]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:89]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JA3'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:90]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:90]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JA4'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:91]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:91]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JA7'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:92]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:92]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JA8'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:93]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:93]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JA9'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:94]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:94]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JB1'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:115]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:115]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JB10'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:116]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:116]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JB2'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:117]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:117]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JB3'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:118]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:118]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JB4'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:119]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:119]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JB7'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:120]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:120]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JB8'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:121]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:121]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JB9'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:122]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:122]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JC1_N'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:127]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:127]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JC1_P'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:128]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:128]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JC2_N'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:129]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:129]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JC2_P'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:130]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:130]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JC3_N'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:131]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:131]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JC3_P'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:132]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:132]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JC4_N'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:133]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:133]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JC4_P'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:134]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:134]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JD1_N'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:139]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:139]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JD1_P'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:140]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:140]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JD2_N'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:141]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:141]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JD2_P'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:142]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:142]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JD3_N'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:143]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:143]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JD3_P'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:144]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:144]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JD4_N'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:145]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:145]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JD4_P'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:146]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:146]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'OLED_DC'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:151]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:151]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'OLED_RES'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:152]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:152]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'OLED_SCLK'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:153]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:153]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'OLED_SDIN'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:154]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:154]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'OLED_VBAT'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:155]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:155]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'OLED_VDD'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:156]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:156]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_CLK'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:161]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:161]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D0'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:162]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:162]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D1'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:163]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:163]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D10'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:164]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:164]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D11'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:165]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:165]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D12'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:166]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:166]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D13'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:167]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:167]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D14'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:168]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:168]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HS_D15'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:169]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:169]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D2'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:170]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:170]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D3'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:171]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:171]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D4'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:172]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:172]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D5'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:173]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:173]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D6'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:174]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:174]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D7'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:175]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:175]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D8'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:176]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:176]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D9'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:177]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:177]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_DE'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:178]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:178]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_HSYNC'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:179]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:179]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_INT'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:180]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:180]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_SCL'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:181]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:181]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_SDA'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:182]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:182]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_SPDIF'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:183]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:183]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_SPDIFO'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:184]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:184]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_VSYNC'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:185]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:185]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LD3'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:193]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:193]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LD4'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:194]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:194]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LD5'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:195]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:195]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LD6'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:196]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:196]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LD7'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:197]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:197]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'OTG_VBUSOC'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:225]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:225]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'XADC_GIO0'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:230]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:230]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'XADC_GIO1'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:231]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:231]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'XADC_GIO2'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:232]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:232]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'XADC_GIO3'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:233]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:233]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PUDC_B'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:238]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:238]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'OTG_RESETN'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:243]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:243]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW3'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:251]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:251]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW4'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:252]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:252]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW5'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:253]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:253]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW6'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:254]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:254]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW7'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:255]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:255]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AD0N_R'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:260]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:260]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AD0P_R'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:261]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:261]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AD8N_N'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:262]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:262]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AD8P_R'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:263]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:263]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'FMC_SCL'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:268]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:268]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'FMC_SDA'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:269]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:269]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'FMC_PRSNT'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:274]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:274]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'FMC_CLK0_N'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:279]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:279]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'FMC_CLK0_P'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:280]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:280]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'FMC_LA00_CC_N'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:281]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:281]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'FMC_LA00_CC_P'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:282]
+INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:282]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:282]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+INFO: [Common 17-14] Message 'Common 17-55' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:282]
+Finished Parsing XDC File [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 730.949 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+10 Infos, 100 Warnings, 100 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 730.949 ; gain = 361.781
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.958 . Memory (MB): peak = 740.277 ; gain = 9.328
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 19c802d1f
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1298.371 ; gain = 558.094
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 19c802d1f
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.408 . Memory (MB): peak = 1394.242 ; gain = 0.000
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 1c9e1be1b
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.569 . Memory (MB): peak = 1394.242 ; gain = 0.000
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 144e7967e
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.934 . Memory (MB): peak = 1394.242 ; gain = 0.000
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: 144e7967e
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1394.242 ; gain = 0.000
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+Phase 5 Shift Register Optimization | Checksum: 2205b79e7
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1394.242 ; gain = 0.000
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: 2205b79e7
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1394.242 ; gain = 0.000
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               0  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1394.242 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 2205b79e7
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1394.242 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=0.000 | TNS=0.000 |
+WARNING: [Power 33-232] No user defined clocks were found in the design!
+Resolution: Please specify clocks using create_clock/create_generated_clock for sequential elements. For pure combinatorial circuits, please specify a virtual clock, otherwise the vectorless estimation might be inaccurate
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 1 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 0 newly gated: 0 Total Ports: 2
+Ending PowerOpt Patch Enables Task | Checksum: 2205b79e7
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1528.203 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 2205b79e7
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 1528.203 ; gain = 133.961
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 2205b79e7
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1528.203 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1528.203 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 2205b79e7
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1528.203 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+32 Infos, 101 Warnings, 100 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:23 . Memory (MB): peak = 1528.203 ; gain = 797.254
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1528.203 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.075 . Memory (MB): peak = 1528.203 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1528.203 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.runs/impl_1/top_opt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file top_drc_opted.rpt -pb top_drc_opted.pb -rpx top_drc_opted.rpx
+Command: report_drc -file top_drc_opted.rpt -pb top_drc_opted.pb -rpx top_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.runs/impl_1/top_drc_opted.rpt.
+report_drc completed successfully
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1528.203 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 1a699179b
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1528.203 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1528.203 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1117f57e8
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1528.203 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 1758ae2be
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1528.203 ; gain = 0.000
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1758ae2be
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1528.203 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 1758ae2be
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1528.203 ; gain = 0.000
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 1758ae2be
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1528.203 ; gain = 0.000
+WARNING: [Place 46-29] place_design is not in timing mode. Skip physical synthesis in placer
+Phase 2 Global Placement | Checksum: dd4f5314
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 1528.203 ; gain = 0.000
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: dd4f5314
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 1528.203 ; gain = 0.000
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1890ed45e
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 1528.203 ; gain = 0.000
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 1c265aec1
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 1528.203 ; gain = 0.000
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 1c265aec1
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 1528.203 ; gain = 0.000
+
+Phase 3.5 Small Shape Detail Placement
+Phase 3.5 Small Shape Detail Placement | Checksum: b0bd7020
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 1528.203 ; gain = 0.000
+
+Phase 3.6 Re-assign LUT pins
+Phase 3.6 Re-assign LUT pins | Checksum: b0bd7020
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 1528.203 ; gain = 0.000
+
+Phase 3.7 Pipeline Register Optimization
+Phase 3.7 Pipeline Register Optimization | Checksum: b0bd7020
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 1528.203 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: b0bd7020
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 1528.203 ; gain = 0.000
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+Phase 4.1 Post Commit Optimization | Checksum: b0bd7020
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 1528.203 ; gain = 0.000
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: b0bd7020
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 1528.203 ; gain = 0.000
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: b0bd7020
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 1528.203 ; gain = 0.000
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1528.203 ; gain = 0.000
+Phase 4.4 Final Placement Cleanup | Checksum: 1674f6317
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 1528.203 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1674f6317
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 1528.203 ; gain = 0.000
+Ending Placer Task | Checksum: d0f86ec2
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 1528.203 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+48 Infos, 102 Warnings, 100 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 1528.203 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1528.203 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1528.203 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1528.203 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.runs/impl_1/top_placed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_io -file top_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.096 . Memory (MB): peak = 1528.203 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_placed.rpt -pb top_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file top_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1528.203 ; gain = 0.000
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+Checksum: PlaceDB: 3cb2f95 ConstDB: 0 ShapeSum: cd2d3f2d RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: c432ed61
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:41 . Memory (MB): peak = 1560.168 ; gain = 31.965
+Post Restoration Checksum: NetGraph: c1d5644a NumContArr: 25d8917 Constraints: 0 Timing: 0
+
+Phase 2 Router Initialization
+INFO: [Route 35-64] No timing constraints were detected. The router will operate in resource-optimization mode.
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: c432ed61
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:42 . Memory (MB): peak = 1566.320 ; gain = 38.117
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: c432ed61
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:42 . Memory (MB): peak = 1566.320 ; gain = 38.117
+ Number of Nodes with overlaps = 0
+Phase 2 Router Initialization | Checksum: 144c4f2f1
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:42 . Memory (MB): peak = 1581.336 ; gain = 53.133
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 39e42158
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:43 . Memory (MB): peak = 1581.336 ; gain = 53.133
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 528
+ Number of Nodes with overlaps = 12
+ Number of Nodes with overlaps = 0
+Phase 4.1 Global Iteration 0 | Checksum: 1811746e2
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:44 . Memory (MB): peak = 1581.336 ; gain = 53.133
+Phase 4 Rip-up And Reroute | Checksum: 1811746e2
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:44 . Memory (MB): peak = 1581.336 ; gain = 53.133
+
+Phase 5 Delay and Skew Optimization
+Phase 5 Delay and Skew Optimization | Checksum: 1811746e2
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:44 . Memory (MB): peak = 1581.336 ; gain = 53.133
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+Phase 6.1 Hold Fix Iter | Checksum: 1811746e2
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:44 . Memory (MB): peak = 1581.336 ; gain = 53.133
+Phase 6 Post Hold Fix | Checksum: 1811746e2
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:44 . Memory (MB): peak = 1581.336 ; gain = 53.133
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.874185 %
+  Global Horizontal Routing Utilization  = 1.18763 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Congestion Report
+North Dir 1x1 Area, Max Cong = 47.7477%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 46.8468%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 50%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 39.7059%, No Congested Regions.
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 7 Route finalize | Checksum: 1811746e2
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:45 . Memory (MB): peak = 1581.336 ; gain = 53.133
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 1811746e2
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:45 . Memory (MB): peak = 1581.336 ; gain = 53.133
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: bf7b5f02
+
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:46 . Memory (MB): peak = 1581.336 ; gain = 53.133
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:46 . Memory (MB): peak = 1581.336 ; gain = 53.133
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+61 Infos, 102 Warnings, 100 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:55 ; elapsed = 00:00:47 . Memory (MB): peak = 1581.336 ; gain = 53.133
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1581.336 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1581.336 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 1581.336 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.runs/impl_1/top_routed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file top_drc_routed.rpt -pb top_drc_routed.pb -rpx top_drc_routed.rpx
+Command: report_drc -file top_drc_routed.rpt -pb top_drc_routed.pb -rpx top_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.runs/impl_1/top_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file top_methodology_drc_routed.rpt -pb top_methodology_drc_routed.pb -rpx top_methodology_drc_routed.rpx
+Command: report_methodology -file top_methodology_drc_routed.rpt -pb top_methodology_drc_routed.pb -rpx top_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 2 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.runs/impl_1/top_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
+Command: report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
+WARNING: [Power 33-232] No user defined clocks were found in the design!
+Resolution: Please specify clocks using create_clock/create_generated_clock for sequential elements. For pure combinatorial circuits, please specify a virtual clock, otherwise the vectorless estimation might be inaccurate
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+73 Infos, 103 Warnings, 100 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file top_route_status.rpt -pb top_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file top_timing_summary_routed.rpt -pb top_timing_summary_routed.pb -rpx top_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+WARNING: [Timing 38-313] There are no user specified timing constraints. Timing constraints are needed for proper timing analysis.
+INFO: [runtcl-4] Executing : report_incremental_reuse -file top_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file top_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file top_bus_skew_routed.rpt -pb top_bus_skew_routed.pb -rpx top_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+Command: write_bitstream -force top.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC PDRC-153] Gated clock check: Net snake_graph/snake_y_reg[0][4]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin snake_graph/snake_y_reg[0][4]_LDC_i_1/O, cell snake_graph/snake_y_reg[0][4]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net snake_graph/snake_y_reg[0][4]_LDC_i_2_n_0 is a gated clock net sourced by a combinational pin snake_graph/snake_y_reg[0][4]_LDC_i_2/O, cell snake_graph/snake_y_reg[0][4]_LDC_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net sync/game_over_reg[0] is a gated clock net sourced by a combinational pin sync/bit_addr_reg[2]_i_2/O, cell sync/bit_addr_reg[2]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC ZPS7-1] PS7 block required: The PS7 cell must be used in this Zynq design in order to enable correct default configuration.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 4 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./top.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK part without a full Vivado license. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-83] Releasing license: Implementation
+92 Infos, 108 Warnings, 100 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 2082.152 ; gain = 432.656
+INFO: [Common 17-206] Exiting Vivado at Sat Apr 16 23:27:18 2022...

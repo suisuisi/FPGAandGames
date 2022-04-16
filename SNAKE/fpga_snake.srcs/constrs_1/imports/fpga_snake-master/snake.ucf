@@ -1,0 +1,39 @@
+## VGA Connector
+NET "rgb<5>" LOC = U7 | IOSTANDARD = LVCMOS33; # Bank = 2, pin name = IO_L43P, Sch name = RED0
+NET "rgb<6>" LOC = V7 | IOSTANDARD = LVCMOS33; # Bank = 2, pin name = IO_L43N, Sch name = RED1
+NET "rgb<7>" LOC = N7 | IOSTANDARD = LVCMOS33; # Bank = 2, pin name = IO_L44P, Sch name = RED2
+NET "rgb<2>" LOC = P8 | IOSTANDARD = LVCMOS33; # Bank = 2, pin name = IO_L44N, Sch name = GRN0
+NET "rgb<3>" LOC = T6 | IOSTANDARD = LVCMOS33; # Bank = 2, pin name = IO_L45P, Sch name = GRN1
+NET "rgb<4>" LOC = V6 | IOSTANDARD = LVCMOS33; # Bank = 2, pin name = IO_L45N, Sch name = GRN2
+NET "rgb<0>" LOC = R7 | IOSTANDARD = LVCMOS33; # Bank = 2, pin name = IO_L46P, Sch name = BLU1
+NET "rgb<1>" LOC = T7 | IOSTANDARD = LVCMOS33; # Bank = 2, pin name = IO_L46N, Sch name = BLU2
+
+NET "hsync" LOC = N6 | IOSTANDARD = LVCMOS33; # Bank = 2, pin name = IO_L47P, Sch name = HSYNC
+NET "vsync" LOC = P7 | IOSTANDARD = LVCMOS33; # Bank = 2, pin name = IO_L47N, Sch name = VSYNC
+
+##Clock signal
+Net "clk" LOC=V10 | IOSTANDARD=LVCMOS33;
+Net "clk" TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 100000 kHz;
+
+## Buttons
+Net "reset" LOC = B8 | IOSTANDARD = LVCMOS33; #Bank = 0, pin name = IO_L33P, Sch name = BTNS
+Net "reset_high" LOC = A8 | IOSTANDARD = LVCMOS33; #Bank = 0, pin name = IO_L33N, Sch name = BTNU
+#Net "btn<1>" LOC = A8 | IOSTANDARD = LVCMOS33; #Bank = 0, pin name = IO_L33N, Sch name = BTNU
+#Net "btn<3>" LOC = C4 | IOSTANDARD = LVCMOS33; #Bank = 0, pin name = IO_L1N_VREF, Sch name = BTNL
+#Net "btn<0>" LOC = C9 | IOSTANDARD = LVCMOS33; #Bank = 0, pin name = IO_L34N_GCLK18, Sch name = BTND
+#Net "btn<2>" LOC = D9 | IOSTANDARD = LVCMOS33; # Bank = 0, pin name = IO_L34P_GCLK19, Sch name = BTNR
+
+Net "sw" LOC = T10 | IOSTANDARD = LVCMOS33; #Bank = 2, pin name = IO_L29N_GCLK2, Sch name = SW0
+
+##JA
+Net "btn<3>" LOC = T12 | IOSTANDARD = LVCMOS33; #Bank = 2, pin name = IO_L19P, Sch name = JA1
+Net "btn<2>" LOC = V12 | IOSTANDARD = LVCMOS33; #Bank = 2, pin name = IO_L19N, Sch name = JA2  
+Net "btn<1>" LOC = N10 | IOSTANDARD = LVCMOS33; #Bank = 2, pin name = IO_L20P, Sch name = JA3
+Net "btn<0>" LOC = P11 | IOSTANDARD = LVCMOS33; #Bank = 2, pin name = IO_L20N, Sch name = JA4
+#Net "reset" LOC = M10 | IOSTANDARD = LVCMOS33; #Bank = 2, pin name = IO_L22P, Sch name = JA7
+
+##JD
+Net "led_red" LOC = F10 | IOSTANDARD = LVCMOS33; #Bank = 3, pin name = IO_L40N, Sch name = JD2
+Net "led_green" LOC = F11 | IOSTANDARD = LVCMOS33; #Bank = 3, pin name = IO_L42P, Sch name = JD3
+Net "led_blue" LOC = E11 | IOSTANDARD = LVCMOS33; #Bank = 3, pin name = IO_L42N, Sch name = JD4

@@ -1,0 +1,564 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sat Apr 16 23:23:28 2022
+# Process ID: 13764
+# Current directory: E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.runs/synth_1
+# Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.runs/synth_1/top.vds
+# Journal file: E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source top.tcl -notrace
+Command: synth_design -top top -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 15272 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 474.660 ; gain = 96.090
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/top.v:21]
+INFO: [Synth 8-6157] synthesizing module 'direction_gen' [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/directon_gen.v:21]
+INFO: [Synth 8-6157] synthesizing module 'button_jitter' [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/button_jitter.v:21]
+	Parameter interval bound to: 1000000 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'button_jitter' (1#1) [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/button_jitter.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'direction_gen' (2#1) [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/directon_gen.v:21]
+INFO: [Synth 8-6157] synthesizing module 'vga_sync' [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/vga_sync.v:21]
+	Parameter HD bound to: 640 - type: integer 
+	Parameter HF bound to: 48 - type: integer 
+	Parameter HB bound to: 16 - type: integer 
+	Parameter HR bound to: 96 - type: integer 
+	Parameter VD bound to: 480 - type: integer 
+	Parameter VF bound to: 10 - type: integer 
+	Parameter VB bound to: 33 - type: integer 
+	Parameter VR bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'vga_sync' (3#1) [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/vga_sync.v:21]
+INFO: [Synth 8-6157] synthesizing module 'graph' [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/graph.v:21]
+	Parameter apple_rgb bound to: 8'b11100000 
+	Parameter death_rgb bound to: 8'b11100000 
+	Parameter snake_rgb bound to: 8'b00011100 
+	Parameter border_rgb bound to: 8'b00000011 
+	Parameter blank_rgb bound to: 8'b00000000 
+INFO: [Synth 8-6157] synthesizing module 'clk_divide' [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/clk_divide.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'clk_divide' (4#1) [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/clk_divide.v:21]
+INFO: [Synth 8-6157] synthesizing module 'random_gen' [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/random_gen.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'random_gen' (5#1) [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/random_gen.v:21]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/graph.v:135]
+WARNING: [Synth 8-5788] Register snake_x_reg[0] in module graph is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/graph.v:112]
+WARNING: [Synth 8-5788] Register snake_y_reg[0] in module graph is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/graph.v:113]
+INFO: [Synth 8-6155] done synthesizing module 'graph' (6#1) [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/graph.v:21]
+INFO: [Synth 8-6157] synthesizing module 'text' [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/text.v:21]
+INFO: [Synth 8-6157] synthesizing module 'font_romv1' [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.runs/synth_1/.Xil/Vivado-13764-DESKTOP-1TCF4DO/realtime/font_romv1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'font_romv1' (7#1) [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.runs/synth_1/.Xil/Vivado-13764-DESKTOP-1TCF4DO/realtime/font_romv1_stub.v:6]
+INFO: [Synth 8-226] default block is never used [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/text.v:51]
+INFO: [Synth 8-6155] done synthesizing module 'text' (8#1) [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/text.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'top' (9#1) [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/top.v:21]
+WARNING: [Synth 8-3331] design text has unconnected port video_on
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 531.000 ; gain = 152.430
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 531.000 ; gain = 152.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 531.000 ; gain = 152.430
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [e:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/ip/font_romv1/font_romv1/font_romv1_in_context.xdc] for cell 'snake_text/font_unit'
+Finished Parsing XDC File [e:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/ip/font_romv1/font_romv1/font_romv1_in_context.xdc] for cell 'snake_text/font_unit'
+Parsing XDC File [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc]
+WARNING: [Vivado 12-584] No ports matched 'AC_ADR0'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:69]
+WARNING: [Vivado 12-584] No ports matched 'AC_ADR1'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:70]
+WARNING: [Vivado 12-584] No ports matched 'AC_GPIO0'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:71]
+WARNING: [Vivado 12-584] No ports matched 'AC_GPIO1'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:72]
+WARNING: [Vivado 12-584] No ports matched 'AC_GPIO2'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:73]
+WARNING: [Vivado 12-584] No ports matched 'AC_GPIO3'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:74]
+WARNING: [Vivado 12-584] No ports matched 'AC_MCLK'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:75]
+WARNING: [Vivado 12-584] No ports matched 'AC_SCK'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:76]
+WARNING: [Vivado 12-584] No ports matched 'AC_SDA'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:77]
+WARNING: [Vivado 12-584] No ports matched 'JA1'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:87]
+WARNING: [Vivado 12-584] No ports matched 'JA10'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:88]
+WARNING: [Vivado 12-584] No ports matched 'JA2'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:89]
+WARNING: [Vivado 12-584] No ports matched 'JA3'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:90]
+WARNING: [Vivado 12-584] No ports matched 'JA4'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:91]
+WARNING: [Vivado 12-584] No ports matched 'JA7'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:92]
+WARNING: [Vivado 12-584] No ports matched 'JA8'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:93]
+WARNING: [Vivado 12-584] No ports matched 'JA9'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:94]
+WARNING: [Vivado 12-584] No ports matched 'JB1'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:115]
+WARNING: [Vivado 12-584] No ports matched 'JB10'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:116]
+WARNING: [Vivado 12-584] No ports matched 'JB2'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:117]
+WARNING: [Vivado 12-584] No ports matched 'JB3'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:118]
+WARNING: [Vivado 12-584] No ports matched 'JB4'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:119]
+WARNING: [Vivado 12-584] No ports matched 'JB7'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:120]
+WARNING: [Vivado 12-584] No ports matched 'JB8'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:121]
+WARNING: [Vivado 12-584] No ports matched 'JB9'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:122]
+WARNING: [Vivado 12-584] No ports matched 'JC1_N'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:127]
+WARNING: [Vivado 12-584] No ports matched 'JC1_P'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:128]
+WARNING: [Vivado 12-584] No ports matched 'JC2_N'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:129]
+WARNING: [Vivado 12-584] No ports matched 'JC2_P'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:130]
+WARNING: [Vivado 12-584] No ports matched 'JC3_N'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:131]
+WARNING: [Vivado 12-584] No ports matched 'JC3_P'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:132]
+WARNING: [Vivado 12-584] No ports matched 'JC4_N'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:133]
+WARNING: [Vivado 12-584] No ports matched 'JC4_P'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:134]
+WARNING: [Vivado 12-584] No ports matched 'JD1_N'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:139]
+WARNING: [Vivado 12-584] No ports matched 'JD1_P'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:140]
+WARNING: [Vivado 12-584] No ports matched 'JD2_N'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:141]
+WARNING: [Vivado 12-584] No ports matched 'JD2_P'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:142]
+WARNING: [Vivado 12-584] No ports matched 'JD3_N'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:143]
+WARNING: [Vivado 12-584] No ports matched 'JD3_P'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:144]
+WARNING: [Vivado 12-584] No ports matched 'JD4_N'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:145]
+WARNING: [Vivado 12-584] No ports matched 'JD4_P'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:146]
+WARNING: [Vivado 12-584] No ports matched 'OLED_DC'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:151]
+WARNING: [Vivado 12-584] No ports matched 'OLED_RES'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:152]
+WARNING: [Vivado 12-584] No ports matched 'OLED_SCLK'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:153]
+WARNING: [Vivado 12-584] No ports matched 'OLED_SDIN'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:154]
+WARNING: [Vivado 12-584] No ports matched 'OLED_VBAT'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:155]
+WARNING: [Vivado 12-584] No ports matched 'OLED_VDD'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:156]
+WARNING: [Vivado 12-584] No ports matched 'HD_CLK'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:161]
+WARNING: [Vivado 12-584] No ports matched 'HD_D0'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:162]
+WARNING: [Vivado 12-584] No ports matched 'HD_D1'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:163]
+WARNING: [Vivado 12-584] No ports matched 'HD_D10'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:164]
+WARNING: [Vivado 12-584] No ports matched 'HD_D11'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:165]
+WARNING: [Vivado 12-584] No ports matched 'HD_D12'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:166]
+WARNING: [Vivado 12-584] No ports matched 'HD_D13'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:167]
+WARNING: [Vivado 12-584] No ports matched 'HD_D14'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:168]
+WARNING: [Vivado 12-584] No ports matched 'HS_D15'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:169]
+WARNING: [Vivado 12-584] No ports matched 'HD_D2'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:170]
+WARNING: [Vivado 12-584] No ports matched 'HD_D3'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:171]
+WARNING: [Vivado 12-584] No ports matched 'HD_D4'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:172]
+WARNING: [Vivado 12-584] No ports matched 'HD_D5'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:173]
+WARNING: [Vivado 12-584] No ports matched 'HD_D6'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:174]
+WARNING: [Vivado 12-584] No ports matched 'HD_D7'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:175]
+WARNING: [Vivado 12-584] No ports matched 'HD_D8'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:176]
+WARNING: [Vivado 12-584] No ports matched 'HD_D9'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:177]
+WARNING: [Vivado 12-584] No ports matched 'HD_DE'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:178]
+WARNING: [Vivado 12-584] No ports matched 'HD_HSYNC'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:179]
+WARNING: [Vivado 12-584] No ports matched 'HD_INT'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:180]
+WARNING: [Vivado 12-584] No ports matched 'HD_SCL'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:181]
+WARNING: [Vivado 12-584] No ports matched 'HD_SDA'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:182]
+WARNING: [Vivado 12-584] No ports matched 'HD_SPDIF'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:183]
+WARNING: [Vivado 12-584] No ports matched 'HD_SPDIFO'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:184]
+WARNING: [Vivado 12-584] No ports matched 'HD_VSYNC'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:185]
+WARNING: [Vivado 12-584] No ports matched 'LD3'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:193]
+WARNING: [Vivado 12-584] No ports matched 'LD4'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:194]
+WARNING: [Vivado 12-584] No ports matched 'LD5'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:195]
+WARNING: [Vivado 12-584] No ports matched 'LD6'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:196]
+WARNING: [Vivado 12-584] No ports matched 'LD7'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:197]
+WARNING: [Vivado 12-584] No ports matched 'OTG_VBUSOC'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:225]
+WARNING: [Vivado 12-584] No ports matched 'XADC_GIO0'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:230]
+WARNING: [Vivado 12-584] No ports matched 'XADC_GIO1'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:231]
+WARNING: [Vivado 12-584] No ports matched 'XADC_GIO2'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:232]
+WARNING: [Vivado 12-584] No ports matched 'XADC_GIO3'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:233]
+WARNING: [Vivado 12-584] No ports matched 'PUDC_B'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:238]
+WARNING: [Vivado 12-584] No ports matched 'OTG_RESETN'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:243]
+WARNING: [Vivado 12-584] No ports matched 'SW3'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:251]
+WARNING: [Vivado 12-584] No ports matched 'SW4'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:252]
+WARNING: [Vivado 12-584] No ports matched 'SW5'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:253]
+WARNING: [Vivado 12-584] No ports matched 'SW6'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:254]
+WARNING: [Vivado 12-584] No ports matched 'SW7'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:255]
+WARNING: [Vivado 12-584] No ports matched 'AD0N_R'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:260]
+WARNING: [Vivado 12-584] No ports matched 'AD0P_R'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:261]
+WARNING: [Vivado 12-584] No ports matched 'AD8N_N'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:262]
+WARNING: [Vivado 12-584] No ports matched 'AD8P_R'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:263]
+WARNING: [Vivado 12-584] No ports matched 'FMC_SCL'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:268]
+WARNING: [Vivado 12-584] No ports matched 'FMC_SDA'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:269]
+WARNING: [Vivado 12-584] No ports matched 'FMC_PRSNT'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:274]
+WARNING: [Vivado 12-584] No ports matched 'FMC_CLK0_N'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:279]
+WARNING: [Vivado 12-584] No ports matched 'FMC_CLK0_P'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:280]
+WARNING: [Vivado 12-584] No ports matched 'FMC_LA00_CC_N'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:281]
+WARNING: [Vivado 12-584] No ports matched 'FMC_LA00_CC_P'. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:282]
+INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc:282]
+Finished Parsing XDC File [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/top_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/constrs_1/new/top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 900.262 ; gain = 0.000
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 900.262 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 900.262 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 900.262 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 900.262 ; gain = 521.691
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 900.262 ; gain = 521.691
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for snake_text/font_unit. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 900.262 ; gain = 521.691
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "button_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/graph.v:135]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/graph.v:135]
+INFO: [Synth 8-5544] ROM "snake_x" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "snake_y" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "snake_x" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "snake_y" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "snake_x" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "snake_y" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+WARNING: [Synth 8-327] inferring latch for variable 'bit_addr_reg' [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/text.v:97]
+WARNING: [Synth 8-327] inferring latch for variable 'row_addr_reg' [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/text.v:96]
+WARNING: [Synth 8-327] inferring latch for variable 'char_addr_reg' [E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.srcs/sources_1/imports/fpga_snake-master/text.v:95]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 900.262 ; gain = 521.691
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 3     
+	   3 Input     13 Bit       Adders := 64    
+	   3 Input     12 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 4     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               10 Bit    Registers := 6     
+	                7 Bit    Registers := 64    
+	                6 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 21    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     24 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 5     
+	   3 Input     10 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   6 Input      8 Bit        Muxes := 1     
+	   3 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 2     
+	   2 Input      7 Bit        Muxes := 4     
+	  10 Input      7 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 5     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 43    
+	   5 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module top 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+Module button_jitter 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module direction_gen 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 1     
++---Muxes : 
+	   5 Input      4 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+Module vga_sync 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 1     
+Module clk_divide 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     24 Bit        Muxes := 1     
+Module random_gen 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 2     
+	                6 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 1     
+	   3 Input     10 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+Module graph 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 3     
+	   3 Input     13 Bit       Adders := 64    
+	   3 Input     12 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 4     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                7 Bit    Registers := 64    
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     10 Bit        Muxes := 2     
+	   6 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 4     
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 4     
+	   5 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 30    
+Module text 
+Detailed RTL Component Info : 
++---Muxes : 
+	   3 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	  10 Input      7 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5544] ROM "snake_y" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "snake_x" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "new_direction/jitter3/button_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "new_direction/jitter2/button_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "new_direction/jitter1/button_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "new_direction/jitter0/button_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (snake_graph/random_apple/\rand_y_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (snake_graph/random_apple/\rand_x_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (snake_graph/\apple_y_reg[9] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 900.262 ; gain = 521.691
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:52 ; elapsed = 00:00:54 . Memory (MB): peak = 905.082 ; gain = 526.512
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 909.012 ; gain = 530.441
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 959.449 ; gain = 580.879
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:57 ; elapsed = 00:00:59 . Memory (MB): peak = 959.449 ; gain = 580.879
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:57 ; elapsed = 00:00:59 . Memory (MB): peak = 959.449 ; gain = 580.879
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:57 ; elapsed = 00:00:59 . Memory (MB): peak = 959.449 ; gain = 580.879
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:57 ; elapsed = 00:00:59 . Memory (MB): peak = 959.449 ; gain = 580.879
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:57 ; elapsed = 00:00:59 . Memory (MB): peak = 959.449 ; gain = 580.879
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:57 ; elapsed = 00:00:59 . Memory (MB): peak = 959.449 ; gain = 580.879
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |font_romv1    |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |font_romv1 |     1|
+|2     |BUFG       |     2|
+|3     |CARRY4     |  1007|
+|4     |LUT1       |   188|
+|5     |LUT2       |  1717|
+|6     |LUT3       |   581|
+|7     |LUT4       |  1144|
+|8     |LUT5       |   338|
+|9     |LUT6       |  1064|
+|10    |MUXF7      |     1|
+|11    |FDCE       |   534|
+|12    |FDPE       |   204|
+|13    |FDRE       |    24|
+|14    |FDSE       |    10|
+|15    |LD         |    14|
+|16    |LDC        |     3|
+|17    |IBUF       |     8|
+|18    |OBUF       |    13|
++------+-----------+------+
+
+Report Instance Areas: 
++------+-----------------+----------------+------+
+|      |Instance         |Module          |Cells |
++------+-----------------+----------------+------+
+|1     |top              |                |  6860|
+|2     |  new_direction  |direction_gen   |   361|
+|3     |    jitter0      |button_jitter   |    87|
+|4     |    jitter1      |button_jitter_0 |    92|
+|5     |    jitter2      |button_jitter_1 |    88|
+|6     |    jitter3      |button_jitter_2 |    86|
+|7     |  snake_graph    |graph           |  4372|
+|8     |    new_clk      |clk_divide      |    89|
+|9     |    random_apple |random_gen      |    97|
+|10    |  snake_text     |text            |    34|
+|11    |  sync           |vga_sync        |  1795|
++------+-----------------+----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:57 ; elapsed = 00:00:59 . Memory (MB): peak = 959.449 ; gain = 580.879
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:43 ; elapsed = 00:00:49 . Memory (MB): peak = 959.449 ; gain = 211.617
+Synthesis Optimization Complete : Time (s): cpu = 00:00:58 ; elapsed = 00:00:59 . Memory (MB): peak = 959.449 ; gain = 580.879
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 1025 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 959.449 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 17 instances were transformed.
+  LD => LDCE: 14 instances
+  LDC => LDCE: 3 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+51 Infos, 107 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:02 ; elapsed = 00:01:04 . Memory (MB): peak = 959.449 ; gain = 592.406
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 959.449 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'E:/FILE/GitHub/FPGAandGames/FPGAandGames/SNAKE/fpga_snake.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Apr 16 23:24:43 2022...

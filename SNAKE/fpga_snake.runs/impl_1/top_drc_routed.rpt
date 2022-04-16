@@ -1,0 +1,57 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Sat Apr 16 23:26:42 2022
+| Host         : DESKTOP-1TCF4DO running 64-bit major release  (build 9200)
+| Command      : report_drc -file top_drc_routed.rpt -pb top_drc_routed.pb -rpx top_drc_routed.rpx
+| Design       : top
+| Device       : xc7z020clg484-1
+| Speed File   : -1
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 4
++----------+----------+--------------------+------------+
+| Rule     | Severity | Description        | Violations |
++----------+----------+--------------------+------------+
+| PDRC-153 | Warning  | Gated clock check  | 3          |
+| ZPS7-1   | Warning  | PS7 block required | 1          |
++----------+----------+--------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+PDRC-153#1 Warning
+Gated clock check  
+Net snake_graph/snake_y_reg[0][4]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin snake_graph/snake_y_reg[0][4]_LDC_i_1/O, cell snake_graph/snake_y_reg[0][4]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#2 Warning
+Gated clock check  
+Net snake_graph/snake_y_reg[0][4]_LDC_i_2_n_0 is a gated clock net sourced by a combinational pin snake_graph/snake_y_reg[0][4]_LDC_i_2/O, cell snake_graph/snake_y_reg[0][4]_LDC_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#3 Warning
+Gated clock check  
+Net sync/game_over_reg[0] is a gated clock net sourced by a combinational pin sync/bit_addr_reg[2]_i_2/O, cell sync/bit_addr_reg[2]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+ZPS7-1#1 Warning
+PS7 block required  
+The PS7 cell must be used in this Zynq design in order to enable correct default configuration.
+Related violations: <none>
+
+
