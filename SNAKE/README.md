@@ -1,12 +1,18 @@
-# 陪你度过深夜的2048小游戏，我们用FPGA实现它
+# FPGA实现贪吃蛇小游戏
 
-这周末调试《车牌识别算法》遇到点问题，“无聊”中用FPGA搞个2048小游戏玩玩。
+手机游戏时代始于 1997 年，当时诺基亚在 6110 机型上发布了第一款名为〈贪吃蛇〉的手机游戏。这可能是有史以来最受欢迎的手机游戏之一，全球有超过 3.5 亿部手机提供这款游戏。
 
-![](https://files.mdnice.com/user/17442/c6413430-b9c6-48db-8f2c-61135783d5e8.gif)
 
-2048这个游戏大家应该不陌生了，该游戏是2014年Gabriele Cirulli利用周末的时间写的这个游戏的程序，仅仅只是好玩而已。他想用一种不同的视觉展现效果和更快速的动画来创造属于自己的游戏版本。
+![](https://files.mdnice.com/user/17442/963aa131-df46-48f6-8b8e-31d448d46b49.png)
+
+
+所以，对于大部分80后90后来说，该游戏不会感到陌生，该游戏是1997年Armanto 芬兰软件工程师（1995年在诺基亚任职），经过市场调研及选择，将该游戏带到了诺基亚6110手机上。
+
+![](https://files.mdnice.com/user/17442/c5a1053b-586e-4d42-9367-56aa8e900859.png)
 
 # 游戏介绍
+
+![](https://files.mdnice.com/user/17442/8c2f1276-2dfe-4e16-bb58-987472ac88d4.png)
 
 这里就不介绍了，很经典的游戏。
 
@@ -19,10 +25,9 @@ ZEDBOARD（纯逻辑设计，没使用ARM） 其他板卡也可以
 
 ![](https://files.mdnice.com/user/17442/e0991695-9fce-441f-b99e-647c1369bd9b.png)
 
-## VGA显示器或1.3寸 OLED（二选一）
+## VGA显示器
 
 
-![](https://files.mdnice.com/user/17442/b4dc5b88-708a-41f1-8b3b-8e074786c459.png)
 
 
 ## PMOD_GAMEPAD
@@ -31,8 +36,10 @@ ZEDBOARD（纯逻辑设计，没使用ARM） 其他板卡也可以
 
 为了方便使用，这里制作了一个游戏按键手柄（以前做PONG游戏做的），主要也是按键（按键比较大）。
 
+> https://gitee.com/openfpga/FPGAandGames/tree/main/2048/hardware/PMOD_GAMEPAD
 
 ![](https://files.mdnice.com/user/17442/c580010b-efbe-4cf9-a9f9-095d9cc93efe.jpg)
+
 
 
 ## Vivado
@@ -41,31 +48,39 @@ Vivado 2018.3及更高版本
 
 ## 连接
 
-![](https://github.com/suisuisi/FPGAandGames/blob/main/2048/images/%E5%AE%9E%E7%89%A9%E8%BF%9E%E6%8E%A5.JPG?raw=true)
+
+![](https://github.com/suisuisi/FPGAandGames/blob/main/SNAKE/DOC/%E6%9E%B6%E6%9E%84%E5%9B%BE.png?raw=true)
+
 
 # 源码简介
 
-整个项目框图如下所示：
+整个核心FSM如下所示：
 
 
-![](https://files.mdnice.com/user/17442/377d5386-98ec-4f13-b5d9-5167aa833893.png)
 
-每个模块的源码上都有简介，其中主模块（game.v）主要涉及将各个模块连接和主状态机控制，状态机代码也比较简单（主要控制，初始状态，胜利及失败三个状态，详见代码）。
+![](https://github.com/suisuisi/FPGAandGames/blob/main/SNAKE/DOC/FSM.jpg?raw=true)
+
+
+每个模块的源码上都有简介，状态机代码也比较简单（主要控制，初始状态，失败三个状态，详见代码）。
 
 
 # 开源链接
 
-> https://github.com/suisuisi/FPGAandGames/tree/main/2048
+> https://gitee.com/openfpga/FPGAandGames/tree/main/SNAKE
 
-下载后可以直接进行综合（综合结果见下），使用JTAG下载到FPGA中，就能看到OLED及VGA显示画面如下：
+下载后可以直接进行综合，使用JTAG下载到FPGA中，就能看到VGA显示画面如下：
 
-![](https://github.com/suisuisi/FPGAandGames/blob/main/2048/images/%E7%BB%BC%E5%90%88%E7%BB%93%E6%9E%9C.png?raw=true)
+![](https://github.com/suisuisi/FPGAandGames/blob/main/SNAKE/DOC/%E8%BF%90%E8%A1%8C%E5%9B%BE.JPG?raw=true)
 
-![](https://github.com/suisuisi/FPGAandGames/blob/main/2048/images/VGA.JPG?raw=true)
 
-![](https://github.com/suisuisi/FPGAandGames/blob/main/2048/images/OLED.JPG?raw=true)
+![](https://github.com/suisuisi/FPGAandGames/blob/main/SNAKE/DOC/gameover.JPG?raw=true)
+
+
+
 
 # 视频演示
 
-[![陪你度过深夜的2048小游戏，我们用FPGA实现它](https://github.com/suisuisi/FPGAandGames/blob/main/2048/images/%E5%B0%81%E9%9D%A2.png?raw=true)](https://www.bilibili.com/video/BV12q4y1w7Xo/)
+[![FPGA实现贪吃蛇小游戏](https://github.com/suisuisi/FPGAandGames/blob/main/SNAKE/DOC/%E6%9E%B6%E6%9E%84%E5%9B%BE.png?raw=true)](https://www.bilibili.com/video/bv1hR4y1N739)
+
+
 
