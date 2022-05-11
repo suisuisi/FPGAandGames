@@ -51,7 +51,7 @@ ZEDBOARD（纯逻辑设计，没使用ARM） 其他板卡也可以
 
 原理图+PCB地址：
 
-> https://gitee.com/openfpga/FPGAandGames/tree/main/hardware/PMOD_PS2
+> https://github.com/suisuisi/FPGAandGames/tree/main/hardware/PMOD_PS2
 
 注意：PS2不一定用5V供电，亲测3.3V也可以。
 
@@ -94,7 +94,9 @@ FSM如下：
 
 # 视频演示
 
+[![FPGA比较完美的复现俄罗斯方块](![Uploading image.png…]())](https://www.bilibili.com/video/BV1FL4y1F7Yb/)
 
+https://www.bilibili.com/video/BV1FL4y1F7Yb/
 
 
 
