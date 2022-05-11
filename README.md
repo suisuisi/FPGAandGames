@@ -19,3 +19,10 @@ FPGA实现各种小游戏，学习并快乐着
 
 snake小游戏
 
+# tetris
+
+2022-05-11
+
+- ![tetris](https://github.com/suisuisi/FPGAandGames/blob/main/TETRIS/image/%E8%BF%90%E8%A1%8C%E7%94%BB%E9%9D%A2%20(1).jpg?raw=true "tetris")
+
+俄罗斯方块~~好好玩！
