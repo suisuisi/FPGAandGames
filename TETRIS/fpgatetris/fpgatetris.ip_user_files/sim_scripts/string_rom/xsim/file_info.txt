@@ -1,2 +1,0 @@
-string_rom.v,verilog,xil_defaultlib,../../../../fpgatetris.srcs/sources_1/ip/string_rom/sim/string_rom.v,
-glbl.v,Verilog,xil_defaultlib,glbl.v

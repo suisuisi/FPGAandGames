@@ -1,0 +1,8 @@
+Some dummy python utilz to create ROM for dislaying string data.
+
+Used two variants for it:
+  1. Font ROM for status info ( level, score, etc.. ). 
+       For creating bitmap for each char used http://nafe.sourceforge.net/
+       (Little modified for my needs: it makes "X" and " ", I changed to  "1" and "0" ).
+
+  2. String ROM for "big strings" like heading "yafpgatetris" and "GAMEOVER".

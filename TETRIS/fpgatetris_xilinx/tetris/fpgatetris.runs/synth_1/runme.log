@@ -1,0 +1,1497 @@
+
+*** Running vivado
+    with args -log top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+Sourcing tcl script 'C:/Xilinx/Vivado/2018.3/scripts/Vivado_init.tcl'
+source top.tcl -notrace
+Command: synth_design -top top -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 1440 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 501.621 ; gain = 96.613
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/new/top.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.runs/synth_1/.Xil/Vivado-17008-DESKTOP-1TCF4DO/realtime/clk_wiz_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz' (1#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.runs/synth_1/.Xil/Vivado-17008-DESKTOP-1TCF4DO/realtime/clk_wiz_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'PS2_Controller' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/ps2_keyboard/PS2_Controller.v:9]
+	Parameter INITIALIZE_MOUSE bound to: 0 - type: integer 
+	Parameter PS2_STATE_0_IDLE bound to: 3'b000 
+	Parameter PS2_STATE_1_DATA_IN bound to: 3'b001 
+	Parameter PS2_STATE_2_COMMAND_OUT bound to: 3'b010 
+	Parameter PS2_STATE_3_END_TRANSFER bound to: 3'b011 
+	Parameter PS2_STATE_4_END_DELAYED bound to: 3'b100 
+INFO: [Synth 8-6157] synthesizing module 'Altera_UP_PS2_Data_In' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/ps2_keyboard/Altera_UP_PS2_Data_In.v:10]
+	Parameter PS2_STATE_0_IDLE bound to: 3'b000 
+	Parameter PS2_STATE_1_WAIT_FOR_DATA bound to: 3'b001 
+	Parameter PS2_STATE_2_DATA_IN bound to: 3'b010 
+	Parameter PS2_STATE_3_PARITY_IN bound to: 3'b011 
+	Parameter PS2_STATE_4_STOP_IN bound to: 3'b100 
+INFO: [Synth 8-6155] done synthesizing module 'Altera_UP_PS2_Data_In' (2#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/ps2_keyboard/Altera_UP_PS2_Data_In.v:10]
+INFO: [Synth 8-6157] synthesizing module 'Altera_UP_PS2_Command_Out' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/ps2_keyboard/Altera_UP_PS2_Command_Out.v:10]
+	Parameter CLOCK_CYCLES_FOR_101US bound to: 5050 - type: integer 
+	Parameter NUMBER_OF_BITS_FOR_101US bound to: 13 - type: integer 
+	Parameter COUNTER_INCREMENT_FOR_101US bound to: 13'b0000000000001 
+	Parameter CLOCK_CYCLES_FOR_15MS bound to: 750000 - type: integer 
+	Parameter NUMBER_OF_BITS_FOR_15MS bound to: 20 - type: integer 
+	Parameter COUNTER_INCREMENT_FOR_15MS bound to: 20'b00000000000000000001 
+	Parameter CLOCK_CYCLES_FOR_2MS bound to: 100000 - type: integer 
+	Parameter NUMBER_OF_BITS_FOR_2MS bound to: 17 - type: integer 
+	Parameter COUNTER_INCREMENT_FOR_2MS bound to: 17'b00000000000000001 
+	Parameter PS2_STATE_0_IDLE bound to: 3'b000 
+	Parameter PS2_STATE_1_INITIATE_COMMUNICATION bound to: 3'b001 
+	Parameter PS2_STATE_2_WAIT_FOR_CLOCK bound to: 3'b010 
+	Parameter PS2_STATE_3_TRANSMIT_DATA bound to: 3'b011 
+	Parameter PS2_STATE_4_TRANSMIT_STOP_BIT bound to: 3'b100 
+	Parameter PS2_STATE_5_RECEIVE_ACK_BIT bound to: 3'b101 
+	Parameter PS2_STATE_6_COMMAND_WAS_SENT bound to: 3'b110 
+	Parameter PS2_STATE_7_TRANSMISSION_ERROR bound to: 3'b111 
+INFO: [Synth 8-226] default block is never used [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/ps2_keyboard/Altera_UP_PS2_Command_Out.v:125]
+INFO: [Synth 8-6155] done synthesizing module 'Altera_UP_PS2_Command_Out' (3#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/ps2_keyboard/Altera_UP_PS2_Command_Out.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'PS2_Controller' (4#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/ps2_keyboard/PS2_Controller.v:9]
+WARNING: [Synth 8-350] instance 'ps2' of module 'PS2_Controller' requires 10 connections, but only 6 given [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-6157] synthesizing module 'user_input' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/user_input.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'async_fifo' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/asfifo/async_fifo.v:20]
+	Parameter DSIZE bound to: 8 - type: integer 
+	Parameter ASIZE bound to: 16 - type: integer 
+	Parameter FALLTHROUGH bound to: TRUE - type: string 
+INFO: [Synth 8-6157] synthesizing module 'sync_r2w' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/asfifo/sync_r2w.v:20]
+	Parameter ASIZE bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sync_r2w' (5#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/asfifo/sync_r2w.v:20]
+INFO: [Synth 8-6157] synthesizing module 'sync_w2r' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/asfifo/sync_w2r.v:20]
+	Parameter ASIZE bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sync_w2r' (6#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/asfifo/sync_w2r.v:20]
+INFO: [Synth 8-6157] synthesizing module 'wptr_full' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/asfifo/wptr_full.v:20]
+	Parameter ADDRSIZE bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'wptr_full' (7#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/asfifo/wptr_full.v:20]
+INFO: [Synth 8-6157] synthesizing module 'fifomem' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/asfifo/fifo_2mem.v:20]
+	Parameter DATASIZE bound to: 8 - type: integer 
+	Parameter ADDRSIZE bound to: 16 - type: integer 
+	Parameter FALLTHROUGH bound to: TRUE - type: string 
+	Parameter DEPTH bound to: 65536 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifomem' (8#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/asfifo/fifo_2mem.v:20]
+INFO: [Synth 8-6157] synthesizing module 'rptr_empty' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/asfifo/rptr_empty.v:20]
+	Parameter ADDRSIZE bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rptr_empty' (9#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/asfifo/rptr_empty.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'async_fifo' (10#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/asfifo/async_fifo.v:20]
+WARNING: [Synth 8-689] width (32) of port connection 'wdata' does not match port width (8) of module 'async_fifo' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/user_input.sv:113]
+WARNING: [Synth 8-689] width (32) of port connection 'rdata' does not match port width (8) of module 'async_fifo' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/user_input.sv:119]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/user_input.sv:139]
+INFO: [Synth 8-6157] synthesizing module 'ila_0' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.runs/synth_1/.Xil/Vivado-17008-DESKTOP-1TCF4DO/realtime/ila_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ila_0' (11#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.runs/synth_1/.Xil/Vivado-17008-DESKTOP-1TCF4DO/realtime/ila_0_stub.v:6]
+WARNING: [Synth 8-689] width (32) of port connection 'probe1' does not match port width (8) of module 'ila_0' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/user_input.sv:144]
+WARNING: [Synth 8-689] width (32) of port connection 'probe3' does not match port width (8) of module 'ila_0' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/user_input.sv:146]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'user_input_fifo'. This will prevent further optimization [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/user_input.sv:139]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'async_fifo_user_input'. This will prevent further optimization [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/user_input.sv:109]
+INFO: [Synth 8-6155] done synthesizing module 'user_input' (12#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/user_input.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'main_game_logic' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/main_game_logic.sv:3]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/main_game_logic.sv:77]
+INFO: [Synth 8-6157] synthesizing module 'check_move' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/check_move.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'check_move' (13#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/check_move.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'tetris_stat' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/tetris_stat.sv:1]
+	Parameter SCORE_DIGITS bound to: 4 - type: integer 
+	Parameter MAX_SCORE_IN_HUNDRED bound to: 9999 - type: integer 
+	Parameter SCORE_IN_HUNDRED_WIDTH bound to: 14 - type: integer 
+	Parameter LINES_DIGITS bound to: 3 - type: integer 
+	Parameter MAX_LINES_CNT bound to: 999 - type: integer 
+	Parameter LINES_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'bin_2_bcd' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/bin_2_bcd.sv:1]
+	Parameter BIN_WIDTH bound to: 14 - type: integer 
+	Parameter BCD_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'bin_2_bcd' (14#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/bin_2_bcd.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'bin_2_bcd__parameterized0' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/bin_2_bcd.sv:1]
+	Parameter BIN_WIDTH bound to: 10 - type: integer 
+	Parameter BCD_WIDTH bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'bin_2_bcd__parameterized0' (14#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/bin_2_bcd.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'tetris_stat' (15#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/tetris_stat.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'gen_next_block' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/gen_next_block.sv:3]
+	Parameter BLOCK_I bound to: 0 - type: integer 
+	Parameter BLOCK_J bound to: 1 - type: integer 
+	Parameter BLOCK_L bound to: 2 - type: integer 
+	Parameter BLOCK_O bound to: 3 - type: integer 
+	Parameter BLOCK_S bound to: 4 - type: integer 
+	Parameter BLOCK_T bound to: 5 - type: integer 
+	Parameter BLOCK_Z bound to: 6 - type: integer 
+	Parameter BLOCKS_CNT bound to: 7 - type: integer 
+INFO: [Synth 8-4471] merging register 'next_block_o_reg[data][3][3][0:3]' into 'next_block_o_reg[data][3][0][0:3]' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/gen_next_block.sv:187]
+INFO: [Synth 8-4471] merging register 'next_block_o_reg[data][1][3][0:3]' into 'next_block_o_reg[data][3][0][0:3]' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/gen_next_block.sv:187]
+WARNING: [Synth 8-6014] Unused sequential element next_block_o_reg[data][3][3] was removed.  [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/gen_next_block.sv:187]
+WARNING: [Synth 8-6014] Unused sequential element next_block_o_reg[data][1][3] was removed.  [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/gen_next_block.sv:187]
+INFO: [Synth 8-4471] merging register 'next_block_o_reg[data][0][3][0:3]' into 'next_block_o_reg[data][2][3][0:3]' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/gen_next_block.sv:187]
+WARNING: [Synth 8-6014] Unused sequential element next_block_o_reg[data][0][3] was removed.  [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/gen_next_block.sv:187]
+INFO: [Synth 8-6155] done synthesizing module 'gen_next_block' (16#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/gen_next_block.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'gen_sys_event' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/gen_sys_event.sv:1]
+	Parameter SYS_EVENT_PERIOD_MAX bound to: 67000000 - type: integer 
+	Parameter SYS_EVENT_PERIOD_MIN bound to: 10000000 - type: integer 
+	Parameter SYS_EVENT_PERIOD_STEP bound to: 4000000 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'gen_sys_event' (17#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/gen_sys_event.sv:1]
+WARNING: [Synth 8-5856] 3D RAM field_clean_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-5856] 3D RAM field_with_color_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-5856] 3D RAM field_shifted_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-5856] 3D RAM field_with_cur_block_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-6155] done synthesizing module 'main_game_logic' (18#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/main_game_logic.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'draw_tetris' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/draw_tetris.sv:3]
+	Parameter PIX_WIDTH bound to: 12 - type: integer 
+	Parameter H_DISP bound to: 1280 - type: integer 
+	Parameter H_FPORCH bound to: 48 - type: integer 
+	Parameter H_SYNC bound to: 112 - type: integer 
+	Parameter H_BPORCH bound to: 248 - type: integer 
+	Parameter V_DISP bound to: 1024 - type: integer 
+	Parameter V_FPORCH bound to: 1 - type: integer 
+	Parameter V_SYNC bound to: 3 - type: integer 
+	Parameter V_BPORCH bound to: 38 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'draw_strings' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/draw_strings.sv:3]
+	Parameter PIX_WIDTH bound to: 12 - type: integer 
+	Parameter NUMBER_LEN bound to: 6 - type: integer 
+	Parameter FONT_SYMBOL_X bound to: 16 - type: integer 
+	Parameter FONT_SYMBOL_Y bound to: 32 - type: integer 
+	Parameter SYMBOL_WIDTH bound to: 7 - type: integer 
+	Parameter STRING_LEN bound to: 16 - type: integer 
+	Parameter STRING_CNT bound to: 4 - type: integer 
+	Parameter NUMBER_STRING_CNT bound to: 3 - type: integer 
+	Parameter START_STATUS_X bound to: 12'b001010011110 
+	Parameter START_STATUS_Y bound to: 12'b000110101110 
+	Parameter END_STATUS_X bound to: 12'b001110011101 
+	Parameter END_STATUS_Y bound to: 12'b001000101101 
+	Parameter FONT_ROM_ADDR_WIDTH bound to: 13 - type: integer 
+	Parameter FONT_ROM_DATA_WIDTH bound to: 16 - type: integer 
+	Parameter GAME_OVER_BLINK_TICKS bound to: 30000000 - type: integer 
+	Parameter DRAW_STATUS bound to: 0 - type: integer 
+	Parameter DRAW_HEAD bound to: 1 - type: integer 
+	Parameter DRAW_GAME_OVER bound to: 2 - type: integer 
+	Parameter DRAW_TYPES_CNT bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'string_rom' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.runs/synth_1/.Xil/Vivado-17008-DESKTOP-1TCF4DO/realtime/string_rom_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'string_rom' (19#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.runs/synth_1/.Xil/Vivado-17008-DESKTOP-1TCF4DO/realtime/string_rom_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'draw_big_string_head' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/draw_big_string_head.sv:1]
+	Parameter PIX_WIDTH bound to: 12 - type: integer 
+	Parameter START_X bound to: 250 - type: integer 
+	Parameter START_Y bound to: 90 - type: integer 
+	Parameter MSG_X bound to: 651 - type: integer 
+	Parameter MSG_Y bound to: 90 - type: integer 
+	Parameter INIT_FILE bound to: head.mif - type: string 
+	Parameter END_X bound to: 900 - type: integer 
+	Parameter END_Y bound to: 179 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'string_rom_head' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.runs/synth_1/.Xil/Vivado-17008-DESKTOP-1TCF4DO/realtime/string_rom_head_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'string_rom_head' (20#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.runs/synth_1/.Xil/Vivado-17008-DESKTOP-1TCF4DO/realtime/string_rom_head_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'draw_big_string_head' (21#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/draw_big_string_head.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'draw_big_string_gameover' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/draw_big_string_gameover.sv:1]
+	Parameter PIX_WIDTH bound to: 12 - type: integer 
+	Parameter START_X bound to: 330 - type: integer 
+	Parameter START_Y bound to: 475 - type: integer 
+	Parameter MSG_X bound to: 259 - type: integer 
+	Parameter MSG_Y bound to: 39 - type: integer 
+	Parameter INIT_FILE bound to: game_over.mif - type: string 
+	Parameter END_X bound to: 588 - type: integer 
+	Parameter END_Y bound to: 513 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'string_rom_gameover' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.runs/synth_1/.Xil/Vivado-17008-DESKTOP-1TCF4DO/realtime/string_rom_gameover_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'string_rom_gameover' (22#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.runs/synth_1/.Xil/Vivado-17008-DESKTOP-1TCF4DO/realtime/string_rom_gameover_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'draw_big_string_gameover' (23#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/draw_big_string_gameover.sv:1]
+WARNING: [Synth 8-5856] 3D RAM strings_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-5856] 3D RAM number_strings_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-6155] done synthesizing module 'draw_strings' (24#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/draw_strings.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'draw_field' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/draw_field.sv:8]
+	Parameter PIX_WIDTH bound to: 12 - type: integer 
+	Parameter BRICK_X bound to: 30 - type: integer 
+	Parameter BRICK_Y bound to: 30 - type: integer 
+	Parameter BORDER_X bound to: 2 - type: integer 
+	Parameter BORDER_Y bound to: 2 - type: integer 
+	Parameter START_MAIN_FIELD_X bound to: 300 - type: integer 
+	Parameter START_MAIN_FIELD_Y bound to: 200 - type: integer 
+	Parameter NBP_BRICK_CNT bound to: 6 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'draw_field_helper' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/draw_field_helper.sv:1]
+	Parameter PIX_WIDTH bound to: 12 - type: integer 
+	Parameter BRICK_X bound to: 30 - type: integer 
+	Parameter BRICK_Y bound to: 30 - type: integer 
+	Parameter BRICK_X_CNT bound to: 10 - type: integer 
+	Parameter BRICK_Y_CNT bound to: 20 - type: integer 
+	Parameter BORDER_X bound to: 2 - type: integer 
+	Parameter BORDER_Y bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'draw_field_helper' (25#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/draw_field_helper.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'draw_field_helper__parameterized0' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/draw_field_helper.sv:1]
+	Parameter PIX_WIDTH bound to: 12 - type: integer 
+	Parameter BRICK_X bound to: 30 - type: integer 
+	Parameter BRICK_Y bound to: 30 - type: integer 
+	Parameter BRICK_X_CNT bound to: 6 - type: integer 
+	Parameter BRICK_Y_CNT bound to: 6 - type: integer 
+	Parameter BORDER_X bound to: 2 - type: integer 
+	Parameter BORDER_Y bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'draw_field_helper__parameterized0' (25#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/draw_field_helper.sv:1]
+WARNING: [Synth 8-5856] 3D RAM nbp_field_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-6155] done synthesizing module 'draw_field' (26#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/draw_field.sv:8]
+INFO: [Synth 8-6157] synthesizing module 'vga_time_generator' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/vga/vga_time_generator.v:108]
+WARNING: [Synth 8-5788] Register vga_hs_reg in module vga_time_generator is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/vga/vga_time_generator.v:199]
+WARNING: [Synth 8-5788] Register h_total_reg in module vga_time_generator is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/vga/vga_time_generator.v:185]
+WARNING: [Synth 8-5788] Register h_total_half_reg in module vga_time_generator is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/vga/vga_time_generator.v:209]
+WARNING: [Synth 8-5788] Register h_pixel_start_reg in module vga_time_generator is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/vga/vga_time_generator.v:183]
+WARNING: [Synth 8-5788] Register h_pixel_end_reg in module vga_time_generator is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/vga/vga_time_generator.v:183]
+WARNING: [Synth 8-5788] Register h_sync_polarity_reg in module vga_time_generator is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/vga/vga_time_generator.v:212]
+WARNING: [Synth 8-5788] Register vga_vs_reg in module vga_time_generator is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/vga/vga_time_generator.v:273]
+WARNING: [Synth 8-5788] Register v_pixel_start_reg in module vga_time_generator is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/vga/vga_time_generator.v:258]
+WARNING: [Synth 8-5788] Register v_pixel_end_reg in module vga_time_generator is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/vga/vga_time_generator.v:258]
+WARNING: [Synth 8-5788] Register v_total_reg in module vga_time_generator is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/vga/vga_time_generator.v:285]
+WARNING: [Synth 8-5788] Register v_sync_polarity_reg in module vga_time_generator is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/vga/vga_time_generator.v:286]
+WARNING: [Synth 8-5788] Register v_interlaced_reg in module vga_time_generator is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/vga/vga_time_generator.v:287]
+WARNING: [Synth 8-5788] Register f0_to_f1_reg in module vga_time_generator is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/vga/vga_time_generator.v:288]
+INFO: [Synth 8-6155] done synthesizing module 'vga_time_generator' (27#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/vga/vga_time_generator.v:108]
+INFO: [Synth 8-6155] done synthesizing module 'draw_tetris' (28#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/tetris/rtl/draw_tetris.sv:3]
+WARNING: [Synth 8-3848] Net VGA_SYNC_N in module/entity top does not have driver. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/new/top.sv:22]
+INFO: [Synth 8-6155] done synthesizing module 'top' (29#1) [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/new/top.sv:3]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[score][5][3]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[score][5][2]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[score][5][1]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[score][5][0]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[score][4][3]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[score][4][2]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[score][4][1]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[score][4][0]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[score][3][3]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[score][3][2]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[score][3][1]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[score][3][0]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[score][2][3]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[score][2][2]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[score][2][1]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[score][2][0]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[score][1][3]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[score][1][2]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[score][1][1]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[score][1][0]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[score][0][3]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[score][0][2]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[score][0][1]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[score][0][0]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[lines][5][3]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[lines][5][2]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[lines][5][1]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[lines][5][0]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[lines][4][3]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[lines][4][2]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[lines][4][1]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[lines][4][0]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[lines][3][3]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[lines][3][2]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[lines][3][1]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[lines][3][0]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[lines][2][3]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[lines][2][2]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[lines][2][1]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[lines][2][0]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[lines][1][3]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[lines][1][2]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[lines][1][1]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[lines][1][0]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[lines][0][3]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[lines][0][2]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[lines][0][1]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[lines][0][0]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[level][5][3]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[level][5][2]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[level][5][1]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[level][5][0]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[level][4][3]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[level][4][2]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[level][4][1]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[level][4][0]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[level][3][3]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[level][3][2]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[level][3][1]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[level][3][0]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[level][2][3]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[level][2][2]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[level][2][1]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[level][2][0]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[level][1][3]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[level][1][2]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[level][1][1]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[level][1][0]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[level][0][3]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[level][0][2]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[level][0][1]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[level][0][0]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[next_block][x][4]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[next_block][x][3]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[next_block][x][2]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[next_block][x][1]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[next_block][x][0]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[next_block][y][5]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[next_block][y][4]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[next_block][y][3]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[next_block][y][2]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[next_block][y][1]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[next_block][y][0]
+WARNING: [Synth 8-3331] design draw_field has unconnected port game_data_i[game_over_state]
+WARNING: [Synth 8-3331] design draw_strings has unconnected port game_data_i[field][19][9][2]
+WARNING: [Synth 8-3331] design draw_strings has unconnected port game_data_i[field][19][9][1]
+WARNING: [Synth 8-3331] design draw_strings has unconnected port game_data_i[field][19][9][0]
+WARNING: [Synth 8-3331] design draw_strings has unconnected port game_data_i[field][19][8][2]
+WARNING: [Synth 8-3331] design draw_strings has unconnected port game_data_i[field][19][8][1]
+WARNING: [Synth 8-3331] design draw_strings has unconnected port game_data_i[field][19][8][0]
+WARNING: [Synth 8-3331] design draw_strings has unconnected port game_data_i[field][19][7][2]
+WARNING: [Synth 8-3331] design draw_strings has unconnected port game_data_i[field][19][7][1]
+WARNING: [Synth 8-3331] design draw_strings has unconnected port game_data_i[field][19][7][0]
+WARNING: [Synth 8-3331] design draw_strings has unconnected port game_data_i[field][19][6][2]
+WARNING: [Synth 8-3331] design draw_strings has unconnected port game_data_i[field][19][6][1]
+WARNING: [Synth 8-3331] design draw_strings has unconnected port game_data_i[field][19][6][0]
+WARNING: [Synth 8-3331] design draw_strings has unconnected port game_data_i[field][19][5][2]
+WARNING: [Synth 8-3331] design draw_strings has unconnected port game_data_i[field][19][5][1]
+WARNING: [Synth 8-3331] design draw_strings has unconnected port game_data_i[field][19][5][0]
+WARNING: [Synth 8-3331] design draw_strings has unconnected port game_data_i[field][19][4][2]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 898.586 ; gain = 493.578
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin ps2:the_command[7] to constant 0 [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-3295] tying undriven pin ps2:the_command[6] to constant 0 [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-3295] tying undriven pin ps2:the_command[5] to constant 0 [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-3295] tying undriven pin ps2:the_command[4] to constant 0 [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-3295] tying undriven pin ps2:the_command[3] to constant 0 [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-3295] tying undriven pin ps2:the_command[2] to constant 0 [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-3295] tying undriven pin ps2:the_command[1] to constant 0 [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-3295] tying undriven pin ps2:the_command[0] to constant 0 [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-3295] tying undriven pin ps2:send_command to constant 0 [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/new/top.sv:68]
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 898.586 ; gain = 493.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 898.586 ; gain = 493.578
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/ip/clk_wiz/clk_wiz/clk_wiz_in_context.xdc] for cell 'clk_wiz_inst'
+Finished Parsing XDC File [c:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/ip/clk_wiz/clk_wiz/clk_wiz_in_context.xdc] for cell 'clk_wiz_inst'
+Parsing XDC File [c:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/ip/string_rom/string_rom/string_rom_in_context.xdc] for cell 'draw_tetris/draw_strings/font_rom'
+Finished Parsing XDC File [c:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/ip/string_rom/string_rom/string_rom_in_context.xdc] for cell 'draw_tetris/draw_strings/font_rom'
+Parsing XDC File [c:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/ip/string_rom_head/string_rom_head/string_rom_head_in_context.xdc] for cell 'draw_tetris/draw_strings/draw_head/string_rom_head_inst'
+Finished Parsing XDC File [c:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/ip/string_rom_head/string_rom_head/string_rom_head_in_context.xdc] for cell 'draw_tetris/draw_strings/draw_head/string_rom_head_inst'
+Parsing XDC File [c:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/ip/string_rom_gameover/string_rom_gameover/string_rom_gameover_in_context.xdc] for cell 'draw_tetris/draw_strings/draw_game_over/string_rom_gameover_inst'
+Finished Parsing XDC File [c:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/ip/string_rom_gameover/string_rom_gameover/string_rom_gameover_in_context.xdc] for cell 'draw_tetris/draw_strings/draw_game_over/string_rom_gameover_inst'
+Parsing XDC File [c:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'user_input/user_input_fifo'
+Finished Parsing XDC File [c:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'user_input/user_input_fifo'
+Parsing XDC File [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc]
+WARNING: [Vivado 12-584] No ports matched 'AC_ADR0'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:69]
+WARNING: [Vivado 12-584] No ports matched 'AC_ADR1'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:70]
+WARNING: [Vivado 12-584] No ports matched 'AC_GPIO0'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:71]
+WARNING: [Vivado 12-584] No ports matched 'AC_GPIO1'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:72]
+WARNING: [Vivado 12-584] No ports matched 'AC_GPIO2'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:73]
+WARNING: [Vivado 12-584] No ports matched 'AC_GPIO3'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:74]
+WARNING: [Vivado 12-584] No ports matched 'AC_MCLK'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:75]
+WARNING: [Vivado 12-584] No ports matched 'AC_SCK'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:76]
+WARNING: [Vivado 12-584] No ports matched 'AC_SDA'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:77]
+WARNING: [Vivado 12-584] No ports matched 'JA1'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:87]
+WARNING: [Vivado 12-584] No ports matched 'JA10'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:88]
+WARNING: [Vivado 12-584] No ports matched 'JA2'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:89]
+WARNING: [Vivado 12-584] No ports matched 'JA3'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:90]
+WARNING: [Vivado 12-584] No ports matched 'JA4'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:91]
+WARNING: [Vivado 12-584] No ports matched 'JA7'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:92]
+WARNING: [Vivado 12-584] No ports matched 'JA8'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:93]
+WARNING: [Vivado 12-584] No ports matched 'JA9'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:94]
+WARNING: [Vivado 12-584] No ports matched 'JB1'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:100]
+WARNING: [Vivado 12-584] No ports matched 'JB10'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:101]
+WARNING: [Vivado 12-584] No ports matched 'JB2'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:102]
+WARNING: [Vivado 12-584] No ports matched 'JB3'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:103]
+WARNING: [Vivado 12-584] No ports matched 'JB4'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:104]
+WARNING: [Vivado 12-584] No ports matched 'JB7'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:105]
+WARNING: [Vivado 12-584] No ports matched 'JB8'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:106]
+WARNING: [Vivado 12-584] No ports matched 'JB9'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:107]
+WARNING: [Vivado 12-584] No ports matched 'JC1_N'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:112]
+WARNING: [Vivado 12-584] No ports matched 'JC2_N'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:114]
+WARNING: [Vivado 12-584] No ports matched 'JC2_P'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:115]
+WARNING: [Vivado 12-584] No ports matched 'JC3_N'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:116]
+WARNING: [Vivado 12-584] No ports matched 'JC4_N'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:118]
+WARNING: [Vivado 12-584] No ports matched 'JC4_P'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:119]
+WARNING: [Vivado 12-584] No ports matched 'JD1_N'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:124]
+WARNING: [Vivado 12-584] No ports matched 'JD1_P'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:125]
+WARNING: [Vivado 12-584] No ports matched 'JD2_N'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:126]
+WARNING: [Vivado 12-584] No ports matched 'JD2_P'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:127]
+WARNING: [Vivado 12-584] No ports matched 'JD3_N'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:128]
+WARNING: [Vivado 12-584] No ports matched 'JD3_P'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:129]
+WARNING: [Vivado 12-584] No ports matched 'JD4_N'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:130]
+WARNING: [Vivado 12-584] No ports matched 'JD4_P'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:131]
+WARNING: [Vivado 12-584] No ports matched 'OLED_DC'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:136]
+WARNING: [Vivado 12-584] No ports matched 'OLED_RES'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:137]
+WARNING: [Vivado 12-584] No ports matched 'OLED_SCLK'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:138]
+WARNING: [Vivado 12-584] No ports matched 'OLED_SDIN'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:139]
+WARNING: [Vivado 12-584] No ports matched 'OLED_VBAT'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:140]
+WARNING: [Vivado 12-584] No ports matched 'OLED_VDD'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:141]
+WARNING: [Vivado 12-584] No ports matched 'HD_CLK'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:146]
+WARNING: [Vivado 12-584] No ports matched 'HD_D0'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:147]
+WARNING: [Vivado 12-584] No ports matched 'HD_D1'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:148]
+WARNING: [Vivado 12-584] No ports matched 'HD_D10'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:149]
+WARNING: [Vivado 12-584] No ports matched 'HD_D11'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:150]
+WARNING: [Vivado 12-584] No ports matched 'HD_D12'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:151]
+WARNING: [Vivado 12-584] No ports matched 'HD_D13'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:152]
+WARNING: [Vivado 12-584] No ports matched 'HD_D14'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:153]
+WARNING: [Vivado 12-584] No ports matched 'HS_D15'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:154]
+WARNING: [Vivado 12-584] No ports matched 'HD_D2'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:155]
+WARNING: [Vivado 12-584] No ports matched 'HD_D3'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:156]
+WARNING: [Vivado 12-584] No ports matched 'HD_D4'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:157]
+WARNING: [Vivado 12-584] No ports matched 'HD_D5'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:158]
+WARNING: [Vivado 12-584] No ports matched 'HD_D6'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:159]
+WARNING: [Vivado 12-584] No ports matched 'HD_D7'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:160]
+WARNING: [Vivado 12-584] No ports matched 'HD_D8'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:161]
+WARNING: [Vivado 12-584] No ports matched 'HD_D9'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:162]
+WARNING: [Vivado 12-584] No ports matched 'HD_DE'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:163]
+WARNING: [Vivado 12-584] No ports matched 'HD_HSYNC'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:164]
+WARNING: [Vivado 12-584] No ports matched 'HD_INT'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:165]
+WARNING: [Vivado 12-584] No ports matched 'HD_SCL'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:166]
+WARNING: [Vivado 12-584] No ports matched 'HD_SDA'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:167]
+WARNING: [Vivado 12-584] No ports matched 'HD_SPDIF'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:168]
+WARNING: [Vivado 12-584] No ports matched 'HD_SPDIFO'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:169]
+WARNING: [Vivado 12-584] No ports matched 'HD_VSYNC'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:170]
+WARNING: [Vivado 12-584] No ports matched 'LD0'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:175]
+WARNING: [Vivado 12-584] No ports matched 'LD1'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:176]
+WARNING: [Vivado 12-584] No ports matched 'LD2'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:177]
+WARNING: [Vivado 12-584] No ports matched 'LD3'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:178]
+WARNING: [Vivado 12-584] No ports matched 'LD4'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:179]
+WARNING: [Vivado 12-584] No ports matched 'LD5'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:180]
+WARNING: [Vivado 12-584] No ports matched 'LD6'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:181]
+WARNING: [Vivado 12-584] No ports matched 'LD7'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:182]
+WARNING: [Vivado 12-584] No ports matched 'BTNC'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:205]
+WARNING: [Vivado 12-584] No ports matched 'BTND'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:206]
+WARNING: [Vivado 12-584] No ports matched 'BTNL'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:207]
+WARNING: [Vivado 12-584] No ports matched 'BTNR'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:208]
+WARNING: [Vivado 12-584] No ports matched 'BTNU'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:209]
+WARNING: [Vivado 12-584] No ports matched 'OTG_VBUSOC'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:214]
+WARNING: [Vivado 12-584] No ports matched 'XADC_GIO0'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:219]
+WARNING: [Vivado 12-584] No ports matched 'XADC_GIO1'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:220]
+WARNING: [Vivado 12-584] No ports matched 'XADC_GIO2'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:221]
+WARNING: [Vivado 12-584] No ports matched 'XADC_GIO3'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:222]
+WARNING: [Vivado 12-584] No ports matched 'PUDC_B'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:227]
+WARNING: [Vivado 12-584] No ports matched 'OTG_RESETN'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:232]
+WARNING: [Vivado 12-584] No ports matched 'AD0N_R'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:249]
+WARNING: [Vivado 12-584] No ports matched 'AD0P_R'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:250]
+WARNING: [Vivado 12-584] No ports matched 'AD8N_N'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:251]
+WARNING: [Vivado 12-584] No ports matched 'AD8P_R'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:252]
+WARNING: [Vivado 12-584] No ports matched 'FMC_SCL'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:257]
+WARNING: [Vivado 12-584] No ports matched 'FMC_SDA'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:258]
+WARNING: [Vivado 12-584] No ports matched 'FMC_PRSNT'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:263]
+WARNING: [Vivado 12-584] No ports matched 'FMC_CLK0_N'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:268]
+WARNING: [Vivado 12-584] No ports matched 'FMC_CLK0_P'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:269]
+WARNING: [Vivado 12-584] No ports matched 'FMC_LA00_CC_N'. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:270]
+INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc:270]
+Finished Parsing XDC File [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/top_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/constrs_1/new/pin.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1252.059 ; gain = 0.000
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1252.605 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1252.605 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1252.605 ; gain = 0.000
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'draw_tetris/draw_strings/font_rom' at clock pin 'clka' is different from the actual clock period '9.256', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'draw_tetris/draw_strings/draw_game_over/string_rom_gameover_inst' at clock pin 'clka' is different from the actual clock period '9.256', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'draw_tetris/draw_strings/draw_head/string_rom_head_inst' at clock pin 'clka' is different from the actual clock period '9.256', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'user_input/user_input_fifo' at clock pin 'clk' is different from the actual clock period '9.256', this can lead to different synthesis results.
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1252.605 ; gain = 847.598
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 4 processes.
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'main_game_logic'
+INFO: [Synth 8-5545] ROM "next_req_move" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "cur_block" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "cur_block_draw_en" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][11]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][11]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][11]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][11]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][11]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][11]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][11]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][11]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][11]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][11]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][11]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][11]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][11]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][11]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][11]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][11]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][10]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][10]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][10]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][10]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][10]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][10]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][10]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][10]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][10]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][10]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][10]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][10]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][10]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][10]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][10]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][10]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][9]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][9]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][9]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][9]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][9]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][9]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][9]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][9]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][9]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][9]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][9]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][9]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][9]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][9]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][9]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][9]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][8]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][8]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][8]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][8]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][8]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][8]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][8]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][8]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][8]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][8]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][8]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][8]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][8]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][8]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][8]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][8]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][7]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][7]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][7]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][7]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][7]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][7]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][7]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][7]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][7]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][7]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][7]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][7]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][7]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][7]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][7]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][7]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][6]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][6]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][6]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][6]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][6]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][6]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][6]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][6]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][6]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][6]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][6]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][6]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][6]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][6]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "field_with_cur_block_reg[21][6]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Common 17-14] Message 'Synth 8-5545' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "field_with_cur_block_reg[21][11]" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "field_with_cur_block_reg[21][10]" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "field_with_cur_block_reg[21][9]" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "field_with_cur_block_reg[21][8]" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "field_with_cur_block_reg[21][7]" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "field_with_cur_block_reg[21][6]" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "field_with_cur_block_reg[21][5]" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "field_with_cur_block_reg[21][4]" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "field_with_cur_block_reg[21][3]" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "field_with_cur_block_reg[21][2]" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "field_with_cur_block_reg[21][1]" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "field_with_cur_block_reg[21][0]" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "v_counter" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+        PS2_STATE_0_IDLE |                            00001 |                              000
+PS2_STATE_1_WAIT_FOR_DATA |                            00010 |                              001
+     PS2_STATE_2_DATA_IN |                            00100 |                              010
+   PS2_STATE_3_PARITY_IN |                            01000 |                              011
+     PS2_STATE_4_STOP_IN |                            10000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 's_ps2_receiver_reg' using encoding 'one-hot' in module 'Altera_UP_PS2_Data_In'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+        PS2_STATE_0_IDLE |                         00000010 |                              000
+PS2_STATE_1_INITIATE_COMMUNICATION |                         10000000 |                              001
+PS2_STATE_2_WAIT_FOR_CLOCK |                         01000000 |                              010
+PS2_STATE_3_TRANSMIT_DATA |                         00100000 |                              011
+PS2_STATE_4_TRANSMIT_STOP_BIT |                         00010000 |                              100
+PS2_STATE_5_RECEIVE_ACK_BIT |                         00001000 |                              101
+PS2_STATE_6_COMMAND_WAS_SENT |                         00000100 |                              110
+PS2_STATE_7_TRANSMISSION_ERROR |                         00000001 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 's_ps2_transmitter_reg' using encoding 'one-hot' in module 'Altera_UP_PS2_Command_Out'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+        PS2_STATE_0_IDLE |                            00001 |                              000
+ PS2_STATE_2_COMMAND_OUT |                            00010 |                              010
+PS2_STATE_3_END_TRANSFER |                            00100 |                              011
+ PS2_STATE_4_END_DELAYED |                            01000 |                              100
+     PS2_STATE_1_DATA_IN |                            10000 |                              001
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 's_ps2_transceiver_reg' using encoding 'one-hot' in module 'PS2_Controller'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  IDLE_S |                        000000001 | 00000000000000000000000000000000
+              NEW_GAME_S |                        000000010 | 00000000000000000000000000000001
+         GEN_NEW_BLOCK_S |                        000000100 | 00000000000000000000000000000010
+            CHECK_MOVE_S |                        000001000 | 00000000000000000000000000000100
+             MAKE_MOVE_S |                        000010000 | 00000000000000000000000000000101
+             GAME_OVER_S |                        000100000 | 00000000000000000000000000001000
+          APPEND_BLOCK_S |                        001000000 | 00000000000000000000000000000110
+           CHECK_LINES_S |                        010000000 | 00000000000000000000000000000111
+            WAIT_EVENT_S |                        100000000 | 00000000000000000000000000000011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'main_game_logic'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:19 ; elapsed = 00:01:26 . Memory (MB): peak = 1252.605 ; gain = 847.598
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+---------------------+------------+----------+
+|      |RTL Partition        |Replication |Instances |
++------+---------------------+------------+----------+
+|1     |main_game_logic__GB0 |           1|     40484|
+|2     |main_game_logic__GB1 |           1|      7436|
+|3     |main_game_logic__GB2 |           1|     10271|
+|4     |main_game_logic__GB3 |           1|     13400|
+|5     |main_game_logic__GB4 |           1|     18420|
+|6     |main_game_logic__GB5 |           1|     21824|
+|7     |main_game_logic__GB6 |           1|     28480|
+|8     |main_game_logic__GB7 |           1|     35776|
+|9     |top__GC0             |           1|      8583|
++------+---------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     17 Bit       Adders := 4     
+	   2 Input     15 Bit       Adders := 1     
+	   3 Input     14 Bit       Adders := 1     
+	   2 Input     13 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 14    
+	   3 Input     12 Bit       Adders := 6     
+	   4 Input     12 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	   3 Input      6 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 2     
+	   3 Input      5 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 54    
+	   2 Input      3 Bit       Adders := 6     
+	  18 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 2     
++---XORs : 
+	   2 Input     17 Bit         XORs := 4     
+	   2 Input      1 Bit         XORs := 2     
++---XORs : 
+	                8 Bit    Wide XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 3     
+	               17 Bit    Registers := 6     
+	               15 Bit    Registers := 1     
+	               14 Bit    Registers := 1     
+	               12 Bit    Registers := 13    
+	               10 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 8     
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 3     
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 43    
+	                3 Bit    Registers := 275   
+	                2 Bit    Registers := 5     
+	                1 Bit    Registers := 41    
++---RAMs : 
+	             512K Bit         RAMs := 1     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 20    
+	   9 Input     32 Bit        Muxes := 4     
+	   3 Input     26 Bit        Muxes := 1     
+	   4 Input     24 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 3     
+	   8 Input     24 Bit        Muxes := 1     
+	  11 Input     24 Bit        Muxes := 1     
+	   3 Input     14 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 1     
+	   3 Input     13 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 10    
+	   3 Input     10 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1     
+	   9 Input      9 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 11    
+	   3 Input      9 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 12    
+	   4 Input      7 Bit        Muxes := 9     
+	   2 Input      6 Bit        Muxes := 2     
+	   4 Input      6 Bit        Muxes := 3     
+	   3 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 18    
+	   5 Input      5 Bit        Muxes := 2     
+	   4 Input      4 Bit        Muxes := 20    
+	   2 Input      4 Bit        Muxes := 47    
+	   5 Input      4 Bit        Muxes := 1     
+	   7 Input      4 Bit        Muxes := 7     
+	   6 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 9100  
+	   7 Input      3 Bit        Muxes := 5     
+	   3 Input      3 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 203   
+	   5 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 7     
+	   6 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2712  
+	   3 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 84    
+	   6 Input      1 Bit        Muxes := 3     
+	  20 Input      1 Bit        Muxes := 1     
+	  10 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module top 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module check_move 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input      6 Bit       Adders := 1     
+	   3 Input      5 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 2     
++---Registers : 
+	                4 Bit    Registers := 4     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   4 Input      4 Bit        Muxes := 9     
+	   2 Input      4 Bit        Muxes := 4     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   6 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+Module bin_2_bcd 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 33    
+	   2 Input      3 Bit       Adders := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 26    
+Module bin_2_bcd__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 17    
+	   2 Input      3 Bit       Adders := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 12    
+Module tetris_stat 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     15 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 2     
++---Registers : 
+	               14 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                4 Bit    Registers := 11    
++---Muxes : 
+	   3 Input     14 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 1     
+	   3 Input     13 Bit        Muxes := 1     
+	   3 Input     10 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1     
+	   3 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   5 Input      4 Bit        Muxes := 1     
+Module gen_next_block 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               15 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 8     
+	                3 Bit    Registers := 7     
+	                2 Bit    Registers := 2     
++---Muxes : 
+	   7 Input      4 Bit        Muxes := 7     
+	   7 Input      3 Bit        Muxes := 5     
+Module gen_sys_event 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	   3 Input     26 Bit        Muxes := 1     
+Module main_game_logic 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	  18 Input      3 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 16    
+	                3 Bit    Registers := 264   
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 19    
+	   9 Input     32 Bit        Muxes := 4     
+	   9 Input      9 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 11    
+	   3 Input      9 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 3     
+	   4 Input      4 Bit        Muxes := 7     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 9083  
+	   3 Input      3 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 203   
+	   2 Input      2 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 2673  
+	   3 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 84    
+Module Altera_UP_PS2_Data_In 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   5 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 7     
+	   2 Input      1 Bit        Muxes := 2     
+Module Altera_UP_PS2_Command_Out 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---XORs : 
+	                8 Bit    Wide XORs := 1     
++---Registers : 
+	                9 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 12    
+	   2 Input      1 Bit        Muxes := 12    
+	   3 Input      1 Bit        Muxes := 1     
+Module PS2_Controller 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   5 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 2     
+Module sync_r2w 
+Detailed RTL Component Info : 
++---Registers : 
+	               17 Bit    Registers := 2     
+Module sync_w2r 
+Detailed RTL Component Info : 
++---Registers : 
+	               17 Bit    Registers := 2     
+Module wptr_full 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 2     
++---XORs : 
+	   2 Input     17 Bit         XORs := 2     
++---Registers : 
+	               17 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
+Module fifomem 
+Detailed RTL Component Info : 
++---RAMs : 
+	             512K Bit         RAMs := 1     
+Module rptr_empty 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 2     
++---XORs : 
+	   2 Input     17 Bit         XORs := 2     
++---Registers : 
+	               17 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
+Module user_input 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   6 Input      4 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 1     
+Module draw_big_string_head 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
++---Registers : 
+	                7 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module draw_big_string_gameover 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	                6 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module draw_strings 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   4 Input     24 Bit        Muxes := 1     
+	   4 Input      7 Bit        Muxes := 9     
+	   4 Input      6 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 1     
+Module draw_field_helper 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 2     
+	   3 Input     12 Bit       Adders := 2     
++---Registers : 
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	  20 Input      1 Bit        Muxes := 1     
+	  10 Input      1 Bit        Muxes := 1     
+Module draw_field_helper__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 2     
+	   3 Input     12 Bit       Adders := 2     
++---Registers : 
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   5 Input      3 Bit        Muxes := 2     
+	   6 Input      1 Bit        Muxes := 2     
+Module draw_field 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     24 Bit        Muxes := 1     
+	   8 Input     24 Bit        Muxes := 1     
+	  11 Input     24 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 4     
+	   2 Input      3 Bit        Muxes := 16    
+Module vga_time_generator 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     14 Bit       Adders := 1     
+	   2 Input     13 Bit       Adders := 1     
+	   4 Input     12 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 8     
+	   3 Input     12 Bit       Adders := 2     
++---Registers : 
+	               12 Bit    Registers := 13    
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 10    
+	   2 Input      1 Bit        Muxes := 20    
+Module draw_tetris 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 3     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input     24 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "p_2_out0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "PS2_Command_Out/ns_ps2_transmitter" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "PS2_Command_Out/ns_ps2_transmitter" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "PS2_Command_Out/ns_ps2_transmitter" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "PS2_Command_Out/ns_ps2_transmitter" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "PS2_Command_Out/ns_ps2_transmitter" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-4471] merging register 'vga_time_generator_instance/v_sync_polarity_reg' into 'vga_time_generator_instance/v_interlaced_reg' [C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.srcs/sources_1/import/vga/vga_time_generator.v:286]
+INFO: [Synth 8-5546] ROM "vga_time_generator_instance/v_counter" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_total_reg[0]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_total_reg[1]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_total_reg[2]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[0]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[0]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_total_reg[0]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_total_reg[1]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_total_reg[2]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_total_reg[3]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_total_reg[4]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_total_reg[5]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_total_reg[6]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_total_reg[7]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_total_reg[8]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_total_reg[9]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_total_reg[10]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_total_reg[11]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_total_half_reg[0]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_total_half_reg[1]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_total_half_reg[2]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[8]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_total_reg[3]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[8]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_total_reg[4]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[8]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_total_reg[5]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_total_reg[6]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_total_reg[7]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[8]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_total_reg[8]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_total_reg[9]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[8]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_total_reg[10]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[8]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_total_reg[11]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[1]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[1]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_end_reg[0]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_end_reg[1]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_end_reg[2]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_end_reg[3]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_end_reg[4]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_end_reg[5]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_end_reg[6]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_end_reg[7]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_end_reg[8]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_end_reg[9]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_end_reg[10]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_end_reg[11]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[2]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[3]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[4]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[5]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_cur_disp_reg[10]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[6]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[7]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[8]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[9]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[10]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_pixel_start_reg[11]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_interlaced_reg'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_end_reg[0]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_end_reg[1]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_end_reg[2]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_end_reg[3]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[8]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_end_reg[4]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_end_reg[5]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[8]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_end_reg[6]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[8]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_end_reg[7]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_end_reg[8]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_end_reg[9]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[8]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_end_reg[10]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[8]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_end_reg[11]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[2]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[3]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[8]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[4]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[5]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[8]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[6]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[8]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[7]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[8]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_total_half_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[9]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[10]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_pixel_start_reg[11]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_total_half_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_interlaced_reg' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_cur_disp_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_cur_disp_reg[2]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_cur_disp_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_cur_disp_reg[3]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_cur_disp_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_cur_disp_reg[4]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_cur_disp_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_cur_disp_reg[1]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_cur_disp_reg[11]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_0/\draw_tetris/vga_time_generator_instance/v_cur_disp_reg[10] )
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_cur_disp_reg[0]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_cur_disp_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_cur_disp_reg[8]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_cur_disp_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_cur_disp_reg[9]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_cur_disp_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_cur_disp_reg[11]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_cur_disp_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_cur_disp_reg[7]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_cur_disp_reg[6]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/v_cur_disp_reg[5]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/v_cur_disp_reg[6]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\draw_tetris/vga_time_generator_instance/v_cur_disp_reg[6] )
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_total_half_reg[3]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_total_half_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_total_half_reg[4]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_total_half_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_total_half_reg[5]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_total_half_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_total_half_reg[6]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_total_half_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_total_half_reg[7]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_total_half_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_total_half_reg[8]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_total_half_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_total_half_reg[9]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_cur_disp_reg[8]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_total_half_reg[10]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_total_half_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_total_half_reg[11]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_sync_polarity_reg'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_sync_polarity_reg' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_cur_disp_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_cur_disp_reg[1]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_cur_disp_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_cur_disp_reg[2]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_cur_disp_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_cur_disp_reg[3]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_cur_disp_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_0/draw_tetris/vga_time_generator_instance/h_cur_disp_reg[8]' (FDE) to 'i_0/draw_tetris/vga_time_generator_instance/h_cur_disp_reg[10]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_0/\draw_tetris/vga_time_generator_instance/h_cur_disp_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\draw_tetris/vga_time_generator_instance/h_cur_disp_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\draw_tetris/vga_time_generator_instance/f0_to_f1_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\draw_tetris/vga_time_generator_instance/pixel_i_odd_frame_reg )
+INFO: [Synth 8-5544] ROM "cur_block_i" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (gen_sys_event/\sys_event_period_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (gen_sys_event/\sys_event_period_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (gen_sys_event/\sys_event_period_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (check_move/\y_move_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\req_move_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (gen_sys_event/\sys_event_period_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (gen_sys_event/\sys_event_period_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (gen_sys_event/\sys_event_period_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cur_block_reg[data][1][2][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (gen_next_block/\next_block_o_reg[x][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (gen_next_block/\next_block_o_reg[data][3][0][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (stat/\score_o_reg[1][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (check_move/\check_data_reg[3][3] )
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:02 ; elapsed = 00:03:15 . Memory (MB): peak = 1252.605 ; gain = 847.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++-------------------------------------+-----------------+-----------+----------------------+----------------------------------+
+|Module Name                          | RTL Object      | Inference | Size (Depth x Width) | Primitives                       | 
++-------------------------------------+-----------------+-----------+----------------------+----------------------------------+
+|i_0/user_input/async_fifo_user_input | fifomem/mem_reg | Implied   | 64 K x 8             | RAM64X1D x 2048  RAM64M x 2048   | 
++-------------------------------------+-----------------+-----------+----------------------+----------------------------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+---------------------+------------+----------+
+|      |RTL Partition        |Replication |Instances |
++------+---------------------+------------+----------+
+|1     |main_game_logic__GB0 |           1|     11872|
+|2     |main_game_logic__GB1 |           1|      1271|
+|3     |main_game_logic__GB2 |           1|       855|
+|4     |main_game_logic__GB3 |           1|      1287|
+|5     |main_game_logic__GB4 |           1|      1150|
+|6     |main_game_logic__GB5 |           1|      2202|
+|7     |main_game_logic__GB6 |           1|      2325|
+|8     |main_game_logic__GB7 |           1|      1347|
+|9     |top__GC0             |           1|     45421|
++------+---------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'clk_wiz_inst/clk_out1' to pin 'clk_wiz_inst/bbstub_clk_out1/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'clk_wiz_inst/clk_out2' to pin 'clk_wiz_inst/bbstub_clk_out2/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'clk_wiz_inst/clk_out3' to pin 'clk_wiz_inst/bbstub_clk_out3/O'
+INFO: [Synth 8-5819] Moved 3 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:11 ; elapsed = 00:03:25 . Memory (MB): peak = 1252.605 ; gain = 847.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:05:32 ; elapsed = 00:05:47 . Memory (MB): peak = 1393.559 ; gain = 988.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping  Report
++-------------------------------------+-----------------+-----------+----------------------+----------------------------------+
+|Module Name                          | RTL Object      | Inference | Size (Depth x Width) | Primitives                       | 
++-------------------------------------+-----------------+-----------+----------------------+----------------------------------+
+|i_0/user_input/async_fifo_user_input | fifomem/mem_reg | Implied   | 64 K x 8             | RAM64X1D x 2048  RAM64M x 2048   | 
++-------------------------------------+-----------------+-----------+----------------------+----------------------------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+---------------------+------------+----------+
+|      |RTL Partition        |Replication |Instances |
++------+---------------------+------------+----------+
+|1     |main_game_logic__GB1 |           1|      1113|
+|2     |main_game_logic__GB2 |           1|       756|
+|3     |main_game_logic__GB3 |           1|      1151|
+|4     |main_game_logic__GB4 |           1|      1003|
+|5     |main_game_logic__GB5 |           1|      1961|
+|6     |main_game_logic__GB6 |           1|      2067|
+|7     |main_game_logic__GB7 |           1|      1186|
+|8     |top_GT2              |           1|      2969|
+|9     |top_GT0              |           1|     51137|
++------+---------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:05:36 ; elapsed = 00:06:16 . Memory (MB): peak = 1393.559 ; gain = 988.551
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+---------------------+------------+----------+
+|      |RTL Partition        |Replication |Instances |
++------+---------------------+------------+----------+
+|1     |main_game_logic__GB1 |           1|       333|
+|2     |main_game_logic__GB2 |           1|       210|
+|3     |main_game_logic__GB3 |           1|       344|
+|4     |main_game_logic__GB4 |           1|       304|
+|5     |main_game_logic__GB5 |           1|       571|
+|6     |main_game_logic__GB6 |           1|       579|
+|7     |main_game_logic__GB7 |           1|       330|
+|8     |top_GT2              |           1|      1321|
+|9     |top_GT0              |           1|     20133|
++------+---------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:05:43 ; elapsed = 00:06:23 . Memory (MB): peak = 1393.559 ; gain = 988.551
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:05:43 ; elapsed = 00:06:23 . Memory (MB): peak = 1393.559 ; gain = 988.551
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:05:47 ; elapsed = 00:06:27 . Memory (MB): peak = 1393.559 ; gain = 988.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:05:47 ; elapsed = 00:06:28 . Memory (MB): peak = 1393.559 ; gain = 988.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:05:49 ; elapsed = 00:06:29 . Memory (MB): peak = 1393.559 ; gain = 988.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:05:49 ; elapsed = 00:06:29 . Memory (MB): peak = 1393.559 ; gain = 988.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+-------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                  | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+-------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|top         | main_logic/gen_next_block/prbs_15_reg[13] | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|top         | draw_tetris/vga_hs_o_reg                  | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
++------------+-------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------------+----------+
+|      |BlackBox name       |Instances |
++------+--------------------+----------+
+|1     |clk_wiz             |         1|
+|2     |ila_0               |         1|
+|3     |string_rom          |         1|
+|4     |string_rom_gameover |         1|
+|5     |string_rom_head     |         1|
++------+--------------------+----------+
+
+Report Cell Usage: 
++------+--------------------+------+
+|      |Cell                |Count |
++------+--------------------+------+
+|1     |clk_wiz             |     1|
+|2     |ila_0               |     1|
+|3     |string_rom          |     1|
+|4     |string_rom_gameover |     1|
+|5     |string_rom_head     |     1|
+|6     |CARRY4              |   108|
+|7     |LUT1                |   134|
+|8     |LUT2                |   606|
+|9     |LUT3                |   920|
+|10    |LUT4                |  4979|
+|11    |LUT5                |  1703|
+|12    |LUT6                |  8469|
+|13    |MUXF7               |  1176|
+|14    |MUXF8               |   581|
+|15    |RAM64M              |  2048|
+|16    |RAM64X1D            |  2048|
+|17    |SRL16E              |     2|
+|18    |FDCE                |  1272|
+|19    |FDPE                |     2|
+|20    |FDRE                |   310|
+|21    |FDSE                |    53|
+|22    |IBUF                |     3|
+|23    |OBUF                |    28|
+|24    |OBUFT               |     1|
++------+--------------------+------+
+
+Report Instance Areas: 
++------+--------------------------------+----------------------------------+------+
+|      |Instance                        |Module                            |Cells |
++------+--------------------------------+----------------------------------+------+
+|1     |top                             |                                  | 24591|
+|2     |  user_input                    |user_input                        | 17014|
+|3     |    async_fifo_user_input       |async_fifo                        | 16929|
+|4     |      fifomem                   |fifomem                           |  7912|
+|5     |      rptr_empty                |rptr_empty                        |   104|
+|6     |      sync_r2w                  |sync_r2w                          |    34|
+|7     |      sync_w2r                  |sync_w2r                          |    34|
+|8     |      wptr_full                 |wptr_full                         |  8845|
+|9     |  draw_tetris                   |draw_tetris                       |   763|
+|10    |    draw_field                  |draw_field                        |    92|
+|11    |      draw_nbp_field            |draw_field_helper__parameterized0 |    60|
+|12    |      main_field                |draw_field_helper                 |    32|
+|13    |    draw_strings                |draw_strings                      |   291|
+|14    |      draw_game_over            |draw_big_string_gameover          |    68|
+|15    |      draw_head                 |draw_big_string_head              |   144|
+|16    |    vga_time_generator_instance |vga_time_generator                |   350|
+|17    |  main_logic                    |main_game_logic                   |  6732|
+|18    |    check_move                  |check_move                        |   487|
+|19    |    gen_next_block              |gen_next_block                    |    81|
+|20    |    gen_sys_event               |gen_sys_event                     |   124|
+|21    |    stat                        |tetris_stat                       |   346|
+|22    |  ps2                           |PS2_Controller                    |    44|
+|23    |    PS2_Data_In                 |Altera_UP_PS2_Data_In             |    39|
++------+--------------------------------+----------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:05:49 ; elapsed = 00:06:29 . Memory (MB): peak = 1393.559 ; gain = 988.551
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 11 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:05:17 ; elapsed = 00:06:16 . Memory (MB): peak = 1393.559 ; gain = 634.531
+Synthesis Optimization Complete : Time (s): cpu = 00:05:49 ; elapsed = 00:06:30 . Memory (MB): peak = 1393.559 ; gain = 988.551
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 5961 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 3 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1393.559 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4096 instances were transformed.
+  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 2048 instances
+  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 2048 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+369 Infos, 244 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:06:00 ; elapsed = 00:06:41 . Memory (MB): peak = 1393.559 ; gain = 990.270
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit, general.maxThreads
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1393.559 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV3/fpgatetris.runs/synth_1/top.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1393.559 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue May 10 21:52:15 2022...

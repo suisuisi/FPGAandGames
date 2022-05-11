@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Wed May  4 20:22:28 2022
+# Process ID: 4072
+# Current directory: C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11800 C:\Users\Administrator\Desktop\yafpgatetris\fpgatetrisV1\fpgatetris.xpr
+# Log file: C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV1/vivado.log
+# Journal file: C:/Users/Administrator/Desktop/yafpgatetris/fpgatetrisV1\vivado.jou
+#-----------------------------------------------------------
+Sourcing tcl script 'C:/Xilinx/Vivado/2021.1/scripts/Vivado_init.tcl'
+start_gui
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed May  4 22:16:58 2022...
