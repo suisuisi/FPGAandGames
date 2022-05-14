@@ -2,7 +2,7 @@
 from https://github.com/Geyuhao/ECE-385
 
 
- ![image](hhttps://github.com/suisuisi/FPGAandGames/blob/main/DoodleJump/ECE-385-Doodle_Jump/BlockDiagram.jpg?raw=true)
+![DoodleJump](https://github.com/suisuisi/FPGAandGames/blob/main/DoodleJump/ECE-385-Doodle_Jump/BlockDiagram.jpg?raw=true "DoodleJump")
 
 
 
@@ -22,4 +22,6 @@ DE2-115
 
 ## Video demo
 https://www.bilibili.com/video/BV1AS4y1T7gG/
+
+
  ![image](https://github.com/Geyuhao/ECE-385/blob/main/pic.png)
