@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable filter="All Interfaces">
+  <columns>
+   <connections preferredWidth="751" />
+   <irq preferredWidth="47" />
+   <inputclock preferredWidth="98" />
+   <name preferredWidth="270" />
+  </columns>
+ </systemtable>
+ <library expandedCategories="Library,Project" />
+ <window width="1920" height="1030" x="0" y="0" />
+ <generation path="qsys" block_symbol_file="0" />
+</preferences>
