@@ -1,0 +1,7 @@
+v1
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,background:my_background|lpm_mult:Mult5|mult_v5t:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,background:my_background|lpm_mult:Mult6|mult_p5t:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,background:my_background|lpm_mult:Mult3|mult_v5t:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,background:my_background|lpm_mult:Mult4|mult_p5t:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,background:my_background|lpm_mult:Mult0|mult_v5t:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,background:my_background|lpm_mult:Mult1|mult_p5t:auto_generated|mac_out2,

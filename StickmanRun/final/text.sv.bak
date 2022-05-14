@@ -1,0 +1,208 @@
+//-------------------------------------------------------------------------
+//    stickman.sv Spring 2020											 --
+//    Adapted from Ball.sv, lab8                                         --
+//    Real time score keeper on VGA display					             --
+//    Tell the ColorMapper whether this pixel is a part of the stickman  --
+//-------------------------------------------------------------------------
+
+module lose_text ( 	input		Clk,                // 50 MHz clock
+							Reset,              // Active-high reset signal
+				
+				input [9:0] DrawX, DrawY,       // Current pixel coordinates
+				output logic is_lose_text           // Whether current pixel belongs to ball or background
+			  );
+
+    parameter [9:0] lose_Y_Pos = 10'd120;
+	parameter [9:0] lose1_X_Pos = 10'd50; //"G"
+	parameter [9:0] lose2_X_Pos = 10'd112; //"A"
+    parameter [9:0] lose3_X_Pos = 10'd174; //"M"
+	parameter [9:0] lose4_X_Pos = 10'd236; //"E"
+    parameter [9:0] lose5_X_Pos = 10'd348; //"O"
+	parameter [9:0] lose6_X_Pos = 10'd410; //"V"
+    parameter [9:0] lose7_X_Pos = 10'd472; //"E"
+	parameter [9:0] lose8_X_Pos = 10'd534; //"R"
+
+
+
+	parameter [4:0] Text_Height = 5'd16;   // Height of the single score
+	parameter [3:0] Text_Width = 4'd8;     // Width of the single score
+
+	logic text_on;         //Tell whether the pixel belongs to score1 or score2 font
+
+
+    //Compute whether the pixel belongs to the score font.
+    /* Since the dividers are required to be signed, we have to first cast them
+       from logic to int (signed by default) before they are divided. */
+
+	int Scaled_X, Scaled_Y; //the scaled difference betweent th epixel and the origin of score
+	
+	logic [9:0] sprite_adress;
+	logic [0:7] sprite_data;
+
+	always_comb begin
+        //G
+		if ( DrawX >=lose1_X_Pos && DrawX < lose1_X_Pos + Text_Width*7 &&
+				DrawY >=lose_Y_Pos && DrawY < lose_Y_Pos + Text_Height*7) begin    
+			text_on = 1'b1;
+			Scaled_X = (DrawX-lose1_X_Pos)/7;
+			Scaled_Y = (DrawY-lose_Y_Pos)/7;
+			sprite_adress = Scaled_Y + Text_Height* 8'h7;
+		end
+        //A
+		else if ( DrawX >=lose2_X_Pos && DrawX < lose2_X_Pos + Text_Width*7 &&
+				DrawY >=lose_Y_Pos && DrawY < lose_Y_Pos + Text_Height*7) begin    
+			text_on = 1'b1;
+			Scaled_X = (DrawX-lose2_X_Pos)/7;
+			Scaled_Y = (DrawY-lose_Y_Pos)/7;
+			sprite_adress = Scaled_Y + Text_Height* 8'h1;
+		end
+        //M
+        else if ( DrawX >=lose3_X_Pos && DrawX < lose3_X_Pos + Text_Width*7 &&
+				DrawY >=lose_Y_Pos && DrawY < lose_Y_Pos + Text_Height*7) begin    
+			text_on = 1'b1;
+			Scaled_X = (DrawX-lose3_X_Pos)/7;
+			Scaled_Y = (DrawY-lose_Y_Pos)/7;
+			sprite_adress = Scaled_Y + Text_Height* 8'hd;
+		end
+        //E
+		else if ( DrawX >=lose4_X_Pos && DrawX < lose4_X_Pos + Text_Width*7 &&
+				DrawY >=lose_Y_Pos && DrawY < lose_Y_Pos + Text_Height*7) begin    
+			text_on = 1'b1;
+			Scaled_X = (DrawX-lose4_X_Pos)/7;
+			Scaled_Y = (DrawY-lose_Y_Pos)/7;
+			sprite_adress = Scaled_Y + Text_Height* 8'h5;
+		end
+        //O
+        else if ( DrawX >=lose5_X_Pos && DrawX < lose5_X_Pos + Text_Width*7 &&
+				DrawY >=lose_Y_Pos && DrawY < lose_Y_Pos + Text_Height*7) begin    
+			text_on = 1'b1;
+			Scaled_X = (DrawX-lose5_X_Pos)/7;
+			Scaled_Y = (DrawY-lose_Y_Pos)/7;
+			sprite_adress = Scaled_Y + Text_Height* 8'hf;
+		end
+        //V
+        else if ( DrawX >=lose6_X_Pos && DrawX < lose6_X_Pos + Text_Width*7 &&
+				DrawY >=lose_Y_Pos && DrawY < lose_Y_Pos + Text_Height*7) begin    
+			text_on = 1'b1;
+			Scaled_X = (DrawX-lose6_X_Pos)/7;
+			Scaled_Y = (DrawY-lose_Y_Pos)/7;
+			sprite_adress = Scaled_Y + Text_Height* 8'h16;
+		end
+        //E
+		else if ( DrawX >=lose7_X_Pos && DrawX < lose7_X_Pos + Text_Width*7 &&
+				DrawY >=lose_Y_Pos && DrawY < lose_Y_Pos + Text_Height*7) begin    
+			text_on = 1'b1;
+			Scaled_X = (DrawX-lose7_X_Pos)/7;
+			Scaled_Y = (DrawY-lose_Y_Pos)/7;
+			sprite_adress = Scaled_Y + Text_Height* 8'h5;
+		end
+        //R
+		else if ( DrawX >=lose8_X_Pos && DrawX < lose8_X_Pos + Text_Width*7 &&
+				DrawY >=lose_Y_Pos && DrawY < lose_Y_Pos + Text_Height*7) begin    
+			text_on = 1'b1;
+			Scaled_X = (DrawX-lose8_X_Pos)/7;
+			Scaled_Y = (DrawY-lose_Y_Pos)/7;
+			sprite_adress = Scaled_Y + Text_Height* 8'h12;
+		end
+        
+        
+		
+
+		else begin
+			text_on = 1'b0;
+			Scaled_X = 0;
+			Scaled_Y = 0;
+			sprite_adress = 10'b0;
+		end
+
+	end
+
+	alphabet_rom game_lose(.addr(sprite_adress), .data(sprite_data));
+
+	always_comb begin
+		if (text_on==1'b1 && sprite_data[Scaled_X]== 1'b1)
+			is_lose_text = 1'b1;
+		else
+			is_lose_text = 1'b0;
+	end 
+
+endmodule
+
+
+module  win_text( 	input		Clk,                // 50 MHz clock
+							Reset,              // Active-high reset signal
+				
+				input [9:0] DrawX, DrawY,       // Current pixel coordinates
+				output logic is_win_text           // Whether current pixel belongs to ball or background
+			  );
+
+    parameter [9:0] win_Y_Pos = 10'd40;
+	parameter [9:0] win1_X_Pos = 10'd460; //"W"
+	parameter [9:0] win2_X_Pos = 10'd505; //"I"
+    parameter [9:0] win3_X_Pos = 10'd550; //"N"
+	
+
+
+
+	parameter [4:0] Text_Height = 5'd16;   // Height of the single score
+	parameter [3:0] Text_Width = 4'd8;     // Width of the single score
+
+	logic text_on;         //Tell whether the pixel belongs to score1 or score2 font
+
+
+    //Compute whether the pixel belongs to the score font.
+    /* Since the dividers are required to be signed, we have to first cast them
+       from logic to int (signed by default) before they are divided. */
+
+	int Scaled_X, Scaled_Y; //the scaled difference betweent th epixel and the origin of score
+	
+	logic [9:0] sprite_adress;
+	logic [0:7] sprite_data;
+
+	always_comb begin
+        //W
+		if ( DrawX >=win1_X_Pos && DrawX < win1_X_Pos + Text_Width*5 &&
+				DrawY >=lose_Y_Pos && DrawY < lose_Y_Pos + Text_Height*5) begin    
+			text_on = 1'b1;
+			Scaled_X = (DrawX-win1_X_Pos)/5;
+			Scaled_Y = (DrawY-win_Y_Pos)/5;
+			sprite_adress = Scaled_Y + Text_Height* 8'h17;
+		end
+        //I
+        else if ( DrawX >=win1_X_Pos && DrawX < win1_X_Pos + Text_Width*5 &&
+				DrawY >=lose_Y_Pos && DrawY < lose_Y_Pos + Text_Height*5) begin    
+			text_on = 1'b1;
+			Scaled_X = (DrawX-win2_X_Pos)/5;
+			Scaled_Y = (DrawY-win_Y_Pos)/5;
+			sprite_adress = Scaled_Y + Text_Height* 8'h9;
+		end
+        //N
+        else if ( DrawX >=win1_X_Pos && DrawX < win1_X_Pos + Text_Width*5 &&
+				DrawY >=lose_Y_Pos && DrawY < lose_Y_Pos + Text_Height*5) begin    
+			text_on = 1'b1;
+			Scaled_X = (DrawX-win3_X_Pos)/5;
+			Scaled_Y = (DrawY-win_Y_Pos)/5;
+			sprite_adress = Scaled_Y + Text_Height* 8'he;
+		end
+
+        
+
+		else begin
+			text_on = 1'b0;
+			Scaled_X = 0;
+			Scaled_Y = 0;
+			sprite_adress = 10'b0;
+		end
+
+	end
+
+	alphabet_rom game_win(.addr(sprite_adress), .data(sprite_data));
+
+	always_comb begin
+		if (text_on==1'b1 && sprite_data[Scaled_X]== 1'b1)
+			is_win_text = 1'b1;
+		else
+			is_win_text = 1'b0;
+	end 
+
+endmodule

@@ -1,0 +1,4 @@
+module I2C_Protocol(
+	input clk,reset
+);
+endmodule 

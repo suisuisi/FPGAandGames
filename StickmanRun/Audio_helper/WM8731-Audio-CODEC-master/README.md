@@ -1,0 +1,2 @@
+# WM8731-Audio-CODEC (DE2-115)
+WM8731 Audio CODEC using Verilog, configuring the chip through simple I2C driver and loading 13 seconds of music stored inside M9K blocks to the chip to hear them, I used Audacity software to convert the audio to PCM 16-bit 8kHz sampling frequency type and used HEX Editor Neo to save the converted file as a HEX file then wrote a MATLAB script (attached) to convert that HEX file to mif to use as a ROM table in Quartus software

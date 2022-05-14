@@ -1,0 +1,247 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dQ:/FPGA_Projects/Verilog_Projects/Audio_CODEC/simulation/qsim
+vhard_block
+!s110 1563981930
+!i10b 1
+!s100 SGY0Q;ZC>d6o?zCg>A`z`2
+IJW:O3VI<NYo_PJY8>ZfXA0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1563981928
+Z2 8Top.vo
+Z3 FTop.vo
+L0 36468
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1563981929.000000
+Z5 !s107 Top.vo|
+Z6 !s90 -work|work|Top.vo|
+!i113 1
+Z7 o-work work
+Z8 tCvgOpt 0
+vI2C_Protocol
+Z9 !s110 1563978533
+!i10b 1
+!s100 <5e_8KbZ>]T^IO87@J6?P2
+IHb0j57I9JU0;=e81]KcLC3
+R1
+R0
+w1563978532
+R2
+R3
+Z10 L0 32
+R4
+r1
+!s85 0
+31
+Z11 !s108 1563978533.000000
+R5
+R6
+!i113 1
+R7
+R8
+n@i2@c_@protocol
+vI2C_Protocol_vlg_vec_tst
+R9
+!i10b 1
+!s100 b;CD@GL6BPEFDC_nk=X>n3
+IY9XXokPQK7M`ez43Ea4d[0
+R1
+R0
+w1563978531
+8I2C_Protocol_test.vwf.vt
+FI2C_Protocol_test.vwf.vt
+Z12 L0 30
+R4
+r1
+!s85 0
+31
+R11
+!s107 I2C_Protocol_test.vwf.vt|
+!s90 -work|work|I2C_Protocol_test.vwf.vt|
+!i113 1
+R7
+R8
+n@i2@c_@protocol_vlg_vec_tst
+vmux_16_to_1
+!s110 1563540647
+!i10b 1
+!s100 4QjiK;C5VKSX;lVU@9gS43
+IGo`5BnI<oZ5^@Sg<Hdgab2
+R1
+R0
+w1563540647
+R2
+R3
+R10
+R4
+r1
+!s85 0
+31
+!s108 1563540647.000000
+R5
+R6
+!i113 1
+R7
+R8
+vmux_16_to_1_vlg_vec_tst
+!s110 1563540648
+!i10b 1
+!s100 @TB?`YMHX?HeD8bmmZ`ni0
+I0>Eh1]_]SP?01e?H8BXQA0
+R1
+R0
+w1563540646
+8mux_16_to_1.vwf.vt
+Fmux_16_to_1.vwf.vt
+R12
+R4
+r1
+!s85 0
+31
+!s108 1563540648.000000
+!s107 mux_16_to_1.vwf.vt|
+!s90 -work|work|mux_16_to_1.vwf.vt|
+!i113 1
+R7
+R8
+vmux_8_to_1
+Z13 !s110 1563645112
+!i10b 1
+!s100 SR;=jg4cm3[<6e5IZBSoA1
+IGB^Q6A<EZ359S5;7@ezQ:1
+R1
+R0
+w1563645112
+R2
+R3
+R10
+R4
+r1
+!s85 0
+31
+Z14 !s108 1563645112.000000
+R5
+R6
+!i113 1
+R7
+R8
+vmux_8_to_1_vlg_vec_tst
+R13
+!i10b 1
+!s100 >2SEKdYdG5MlQ?jzcljF30
+I3heL1;8Q46zboFz791nSD2
+R1
+R0
+w1563645111
+8mux_8_to_1.vwf.vt
+Fmux_8_to_1.vwf.vt
+R12
+R4
+r1
+!s85 0
+31
+R14
+!s107 mux_8_to_1.vwf.vt|
+!s90 -work|work|mux_8_to_1.vwf.vt|
+!i113 1
+R7
+R8
+vShift_Register
+!s110 1563465017
+!i10b 1
+!s100 2BNN7d16TP:L]Ac=>5><B3
+I2DCW0f2YagNgmom4UmNN`1
+R1
+R0
+w1563465016
+R2
+R3
+R10
+R4
+r1
+!s85 0
+31
+!s108 1563465017.000000
+R5
+R6
+!i113 1
+R7
+R8
+n@shift_@register
+vShift_Register_vlg_vec_tst
+!s110 1563465018
+!i10b 1
+!s100 h5NDi@[KNF`BN6B3L:Gc00
+Io;b>R8K^E7N[bzNTPjHYS0
+R1
+R0
+w1563465015
+8mux_8_to_1_test.v.vwf.vt
+Fmux_8_to_1_test.v.vwf.vt
+R12
+R4
+r1
+!s85 0
+31
+!s108 1563465018.000000
+!s107 mux_8_to_1_test.v.vwf.vt|
+!s90 -work|work|mux_8_to_1_test.v.vwf.vt|
+!i113 1
+R7
+R8
+n@shift_@register_vlg_vec_tst
+vTop
+!s110 1564069219
+!i10b 1
+!s100 >_oIeH3eE:@fS[MZg=CQz3
+IV;^^bT^N8]Mg@9o2:jQgW3
+R1
+R0
+w1564069219
+R2
+R3
+R10
+R4
+r1
+!s85 0
+31
+Z15 !s108 1564069219.000000
+R5
+R6
+!i113 1
+R7
+R8
+n@top
+vTop_vlg_vec_tst
+!s110 1564069220
+!i10b 1
+!s100 :l@40@eJ2W1JLBGTV::Ee2
+I8^nSMO4?J1[;61jiiYzz13
+R1
+R0
+w1564069218
+8Top_test.vwf.vt
+FTop_test.vwf.vt
+R12
+R4
+r1
+!s85 0
+31
+R15
+!s107 Top_test.vwf.vt|
+!s90 -work|work|Top_test.vwf.vt|
+!i113 1
+R7
+R8
+n@top_vlg_vec_tst

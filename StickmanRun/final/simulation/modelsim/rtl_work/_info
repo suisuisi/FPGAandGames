@@ -1,0 +1,180 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/0Xinyi/final/ECE385_FinalProject/final/simulation/modelsim
+vgame_logic
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1587332362
+!i10b 1
+!s100 ^N@OMSlYkaH3NPiNUlBhl2
+I1FoejH97Nf9IXmd1Ceef;0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 game_logic_sv_unit
+S1
+R0
+w1587328970
+8D:/0Xinyi/final/ECE385_FinalProject/final/game_logic.sv
+FD:/0Xinyi/final/ECE385_FinalProject/final/game_logic.sv
+L0 8
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1587332362.000000
+!s107 D:/0Xinyi/final/ECE385_FinalProject/final/game_logic.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/0Xinyi/final/ECE385_FinalProject/final|D:/0Xinyi/final/ECE385_FinalProject/final/game_logic.sv|
+!i113 1
+Z6 o-sv -work work
+Z7 !s92 -sv -work work +incdir+D:/0Xinyi/final/ECE385_FinalProject/final
+Z8 tCvgOpt 0
+vground
+R1
+R2
+!i10b 1
+!s100 ZRnTV6A]JBEk><8nlMKhX2
+IQ793A_A;eQ3MbR40<]T1B1
+R3
+!s105 ground_sv_unit
+S1
+R0
+w1587331602
+8D:/0Xinyi/final/ECE385_FinalProject/final/ground.sv
+FD:/0Xinyi/final/ECE385_FinalProject/final/ground.sv
+L0 9
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/0Xinyi/final/ECE385_FinalProject/final/ground.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/0Xinyi/final/ECE385_FinalProject/final|D:/0Xinyi/final/ECE385_FinalProject/final/ground.sv|
+!i113 1
+R6
+R7
+R8
+vstickman
+R1
+R2
+!i10b 1
+!s100 LdNEc=<?_jo]@_n=ARQO=2
+Ihb8G^C4emo:_N0GAEC0<A2
+R3
+!s105 stickman_sv_unit
+S1
+R0
+w1587331704
+8D:/0Xinyi/final/ECE385_FinalProject/final/stickman.sv
+FD:/0Xinyi/final/ECE385_FinalProject/final/stickman.sv
+L0 9
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/0Xinyi/final/ECE385_FinalProject/final/stickman.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/0Xinyi/final/ECE385_FinalProject/final|D:/0Xinyi/final/ECE385_FinalProject/final/stickman.sv|
+!i113 1
+R6
+R7
+R8
+vstickman_rom
+R1
+R2
+!i10b 1
+!s100 _MKJ^kWge@[R1>Omb?EOJ0
+I91T`Q`EDXKWgLSd5nG_ea3
+R3
+!s105 stickman_rom_sv_unit
+S1
+R0
+w1587327948
+8D:/0Xinyi/final/ECE385_FinalProject/final/stickman_rom.sv
+FD:/0Xinyi/final/ECE385_FinalProject/final/stickman_rom.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/0Xinyi/final/ECE385_FinalProject/final/stickman_rom.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/0Xinyi/final/ECE385_FinalProject/final|D:/0Xinyi/final/ECE385_FinalProject/final/stickman_rom.sv|
+!i113 1
+R6
+R7
+R8
+vvga_clk
+Z9 !s110 1587332359
+!i10b 1
+!s100 OGlLO8;N^^k^>BA7[_bgn1
+I5XHOkoamlVz7cfZV[IiDA2
+R3
+R0
+w1587053007
+8D:/0Xinyi/final/ECE385_FinalProject/final/vga_clk.v
+FD:/0Xinyi/final/ECE385_FinalProject/final/vga_clk.v
+L0 40
+R4
+r1
+!s85 0
+31
+Z10 !s108 1587332359.000000
+!s107 D:/0Xinyi/final/ECE385_FinalProject/final/vga_clk.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/0Xinyi/final/ECE385_FinalProject/final|D:/0Xinyi/final/ECE385_FinalProject/final/vga_clk.v|
+!i113 1
+Z11 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+D:/0Xinyi/final/ECE385_FinalProject/final
+R8
+vvga_clk_altpll
+R9
+!i10b 1
+!s100 M:z4m=8?iG0fP6=5PXSTl1
+IbhUPV0mG4FGSD40Kc_X6k0
+R3
+R0
+w1587263635
+8D:/0Xinyi/final/ECE385_FinalProject/final/db/vga_clk_altpll.v
+FD:/0Xinyi/final/ECE385_FinalProject/final/db/vga_clk_altpll.v
+L0 29
+R4
+r1
+!s85 0
+31
+R10
+!s107 D:/0Xinyi/final/ECE385_FinalProject/final/db/vga_clk_altpll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/0Xinyi/final/ECE385_FinalProject/final/db|D:/0Xinyi/final/ECE385_FinalProject/final/db/vga_clk_altpll.v|
+!i113 1
+R11
+!s92 -vlog01compat -work work +incdir+D:/0Xinyi/final/ECE385_FinalProject/final/db
+R8
+vVGA_controller
+R1
+R2
+!i10b 1
+!s100 iZ^ZkeRFZV@Tdc684OR@G2
+IWFf<;^Y2BXg0BHLI853nl1
+R3
+!s105 VGA_controller_sv_unit
+S1
+R0
+w1587053006
+8D:/0Xinyi/final/ECE385_FinalProject/final/VGA_controller.sv
+FD:/0Xinyi/final/ECE385_FinalProject/final/VGA_controller.sv
+L0 26
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/0Xinyi/final/ECE385_FinalProject/final/VGA_controller.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/0Xinyi/final/ECE385_FinalProject/final|D:/0Xinyi/final/ECE385_FinalProject/final/VGA_controller.sv|
+!i113 1
+R6
+R7
+R8
+n@v@g@a_controller

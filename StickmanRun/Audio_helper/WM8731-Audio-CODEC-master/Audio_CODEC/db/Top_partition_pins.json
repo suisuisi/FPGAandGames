@@ -1,0 +1,49 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "SCLK",
+					"strict" : false
+				},
+				{
+					"name" : "DAC_LR_CLK",
+					"strict" : false
+				},
+				{
+					"name" : "DAC_DATA",
+					"strict" : false
+				},
+				{
+					"name" : "ACK_LEDR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ACK_LEDR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ACK_LEDR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SDIN",
+					"strict" : false
+				},
+				{
+					"name" : "SW0",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

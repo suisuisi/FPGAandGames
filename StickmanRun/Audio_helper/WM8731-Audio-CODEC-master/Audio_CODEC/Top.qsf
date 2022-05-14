@@ -1,0 +1,77 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2017  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel MegaCore Function License Agreement, or other 
+# applicable license agreement, including, without limitation, 
+# that your use is for the sole purpose of programming logic 
+# devices manufactured by Intel and sold by Intel or its 
+# authorized distributors.  Please refer to the applicable 
+# agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+# Date created = 19:53:49  July 15, 2019
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		Top_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE115F29C7
+set_global_assignment -name TOP_LEVEL_ENTITY Top
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.0.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "19:53:49  JULY 15, 2019"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.0.0 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_location_assignment PIN_Y2 -to clk
+set_location_assignment PIN_M23 -to reset
+set_location_assignment PIN_B7 -to SCLK
+set_location_assignment PIN_A8 -to SDIN
+set_location_assignment PIN_E1 -to USB_clk
+set_location_assignment PIN_F2 -to BCLK
+set_location_assignment PIN_D1 -to DAC_DATA
+set_location_assignment PIN_E3 -to DAC_LR_CLK
+set_location_assignment PIN_M21 -to Push_1
+set_global_assignment -name VERILOG_FILE Top.v
+set_global_assignment -name VERILOG_FILE I2C_Protocol.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE I2C_Protocol_test.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Top_test.vwf
+set_global_assignment -name QIP_FILE USB_Clock_PLL.qip
+set_global_assignment -name QIP_FILE Five_Centimeters_Per_Second_ROM.qip
+set_location_assignment PIN_E19 -to ACK_LEDR[2]
+set_location_assignment PIN_F19 -to ACK_LEDR[1]
+set_location_assignment PIN_G19 -to ACK_LEDR[0]
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_AB22 -to BCLK_test
+set_location_assignment PIN_AB21 -to DAC_LR_test
+set_location_assignment PIN_AB28 -to SW0
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

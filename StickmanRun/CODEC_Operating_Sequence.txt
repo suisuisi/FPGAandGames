@@ -1,0 +1,41 @@
+by default the chip is in 2-wire mode, this is clear from DE2-115 board schematics page 19
+check register map at page: 49
+----------------------------------------------------------------------------------------------- 
+register:		  register address:	W/R	bits:		Notes:
+*********		  ******************	*****	*****		*******
+Sampling control	  0001000		0	00001101		USB mode, 250fs, ADC and DAC have 8kHz sampling rate, in USB mode MCLK should be 12MHz, digital filter of type 0, page:44.
+Digital Audio interface	  0000111		0	00010011		DSP mode, 16 bit length, MSB is available on 2st BCLK rising edge after DACLRC rising edge (mode A).
+Active Control	  0001001		0	00000001		It is recommended that between changing any content of Digital Audio Interface or Sampling Control Register that the active bit is reset then set.
+Left Headphone out	  0000011		0	01111001		left and right headphone outputs are enabled by default
+Analog Audio Path	  0000100		0	00010010		Enable DAC, Disable Bypass
+Digital Audio Path	  0000101		0	00000000		Disable DAC soft mute 
+Reset Register	  0001111		0	xxxxxxxx		default is not reseting, to reset the device write 0x00 to this register.
+-----------------------------------------------------------------------------------------------
+registers programming sequence:(page:46), this section for SCLK and SDIN pins ONLY.
+1. SDIN is low while SCLK is high : this indicates that an address and data transfer will follow.
+2. send address 0x34 starting with MSB, this indicating 2-wire mode and the device is in slave mode, wait for ACK.
+3. shift an 8-bit register address and wait for ACK.
+4. send (B7-B0) data bits and the device will acknowledge again by pulling SDIN low.
+5. initiate a stop condition by pulling SDIN to high while SCLK is high, if stop or start condition is detected the device will jump to idle state.
+Note: acknowledge pulse is done by WM8731 to indicate correct data or address, this means that SDIN is bidirectional port, SCLK is clearly input port.
+----------------------------------------------------------------------------------------------
+Notes:
+1. Latch DACDAT at falling edge.
+2. Device operates in DSP/PCM mode.
+3. Using 8kHz sampling rate we can store up to 31 seconds of sound data inside on-chip memory (here is M9K blocks).
+4. Mono sound means both right and left channels will receive the same data.
+----------------------------------------------------------------------------------------------
+FPGA connections:
+AUD_XCK: Crystal clock, for USB mode as described above send 12MHz signal to this pin, this pin is used to define sampling rates of ADCs and DACs inside the chip, with help of sampling control register.
+I2C_SCLK: Serial CLK.
+I2C_SDAT: Serial DATA.
+AUD_DACDAT: DAC DATA.
+AUD_BCLK: Serial clock to inject digitized data to the chip (Bit-Stream clock)
+AUD_DACLRCK: DAC LR Clock 
+----------------------------------------------------------------------------------------------
+Timing figure used is in page 38
+----------------------------------------------------------------------------------------------
+Suggested frequencies:
+BCLK: 256kHz, fs = 8kHz and every channel is 16-bit wide , so (1/8k)/(32) = 1/256k seconds which is 256kHz
+MCLK:12MHz, USB mode, this should be continuously generated.
+SCLK: 2.5kHz, for control registers, generate this same as TLC549 logic, it does not matter actually about this frequency because this will be used to configure the chip as needed then dump it.
