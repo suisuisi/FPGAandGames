@@ -26,3 +26,29 @@ snake小游戏
 - ![tetris](https://github.com/suisuisi/FPGAandGames/blob/main/TETRIS/image/%E8%BF%90%E8%A1%8C%E7%94%BB%E9%9D%A2%20(1).jpg?raw=true "tetris")
 
 俄罗斯方块~~好好玩！
+
+# DoodleJump
+
+2022-05-12
+
+- ![DoodleJump](https://github.com/suisuisi/FPGAandGames/blob/main/DoodleJump/ECE-385-Doodle_Jump/pic.png?raw=true "DoodleJump")
+
+涂鸦跳跃！
+
+# Raiden
+
+2022-05-13
+
+https://github.com/suisuisi/FPGAandGames/blob/main/Raiden/Raiden/Raiden.mp4
+
+视频链接如上
+
+雷电射击
+
+# TankWorld
+
+2022-05-12
+
+- ![TankWorld](https://github.com/suisuisi/FPGAandGames/blob/main/TankWorld/Tank-World-on-FPGA/final_project/385_final/test.png?raw=true "TankWorld")
+
+坦克大战
