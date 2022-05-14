@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Thu Oct 21 23:18:29 2021
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : lab3
+Top-level Entity Name : lab3
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 11
+Total pins : 24
+Total virtual pins : 0
+Total block memory bits : 0
+Total DSP Blocks : 0
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0

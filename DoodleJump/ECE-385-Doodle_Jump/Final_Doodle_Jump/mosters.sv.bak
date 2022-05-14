@@ -1,0 +1,204 @@
+
+// This module is used to generate monsters
+module stair ( input Clk, Reset,
+					input frame_clk,  
+					input gene,
+					input [9:0]   DrawX, DrawY,       // Current pixel coordinates
+					input [19:0]  random_num,
+					input [9:0]  distance,
+					output logic [13:0][9:0]  stair_x, stair_y,
+					output logic [9:0]stair_size,   
+					output logic  is_stair,
+					output logic [3:0] counter
+					);	
+					
+    parameter [9:0] X_Min = 10'd160;       // Leftmost point on the X axis
+    parameter [9:0] X_Max = 10'd479;     // Rightmost point on the X axis
+	 logic [9:0] move;
+	 
+	 logic[13:0] check;
+	 assign stair_size = 10'd20; // Stair size
+	 logic[3:0] halt;
+	 logic[9:0] stair_x_in;
+	 
+	 
+    logic frame_clk_delayed, frame_clk_rising_edge;
+	 logic [3:0] slow_frame_clk;
+    always_ff @ (posedge Clk) begin
+        frame_clk_delayed <= frame_clk;
+        frame_clk_rising_edge <= (frame_clk == 1'b1) && (frame_clk_delayed == 1'b0);
+		  if (frame_clk_rising_edge)
+				begin
+					slow_frame_clk <= slow_frame_clk + 1'b1;
+				end
+    end
+	 
+	 // The movement of the stairs
+    always_ff @ (posedge Clk) 
+	 begin
+		 if (stair_x[0] + stair_size >= X_Max)
+			 begin
+				 stair_x_in <= -1;
+			 end
+		 else if(stair_x[0] - stair_size <= X_Min)
+			 begin
+				 stair_x_in <= 1;
+			 end
+		 else
+			 stair_x_in <= stair_x_in;
+	 end
+	 
+	 
+
+    always_ff @ (posedge Clk) 
+	 begin
+		if(Reset)
+			begin													// Reset button clears all the stairs
+				counter <= 4'b0;
+				halt <= 4'b0;
+				stair_x <= ~20'b1;
+				move <= 1'b1;
+			end
+		else if (slow_frame_clk == 1'b1)
+			begin
+				counter <= halt + 1'b1;						// Rise button controls the generation one by one
+			end
+		else
+			begin
+				case(counter) 									// Randomly generate 14 stairs on the screen
+				 4'd1: 
+					begin
+					 stair_x[0] <= random_num[9:0];
+					 stair_y[0] <= random_num[19:10];
+					 halt <= counter;
+					 counter <= 4'd15;
+					end
+				 4'd2: 
+					begin
+					 stair_x[1] <= random_num[9:0];
+					 stair_y[1] <= random_num[19:10];
+					 halt <= counter;
+					 counter <= 4'd15;
+					end
+				 4'd3: 
+					begin
+					 stair_x[2] <= random_num[9:0];
+					 stair_y[2] <= random_num[19:10];
+					 halt <= counter;
+					 counter <= 4'd15;
+					end
+				 4'd4: 
+					begin
+					 stair_x[3] <= random_num[9:0];
+					 stair_y[3] <= random_num[19:10];
+					 halt <= counter;
+					 counter <= 4'd15;
+					end
+				 4'd5: 
+					begin
+					 stair_x[4] <= random_num[9:0];
+					 stair_y[4] <= random_num[19:10];
+					 halt <= counter;
+					 counter <= 4'd15;
+					end
+				 4'd6: 
+					begin
+					 stair_x[5] <= random_num[9:0];
+					 stair_y[5] <= random_num[19:10];
+					 halt <= counter;
+					 counter <= 4'd15;
+					end
+				 4'd7: 
+					begin
+					 stair_x[6] <= random_num[9:0];
+					 stair_y[6] <= random_num[19:10];
+					 halt <= counter;
+					 counter <= 4'd15;
+					end
+				 4'd8: 
+					begin
+					 stair_x[7] <= random_num[9:0];
+					 stair_y[7] <= random_num[19:10];
+					 halt <= counter;
+					 counter <= 4'd15;
+					end
+				 4'd9: 
+					begin
+					 stair_x[8] <= random_num[9:0];
+					 stair_y[8] <= random_num[19:10];
+					 halt <= counter;
+					 counter <= 4'd15;
+					end
+				 4'd10: 
+					begin
+					 stair_x[9] <= random_num[9:0];
+					 stair_y[9] <= random_num[19:10];
+					 halt <= counter;
+					 counter <= 4'd15;
+					end
+				 4'd11: 
+					begin
+					 stair_x[10] <= random_num[9:0];
+					 stair_y[10] <= random_num[19:10];
+					 halt <= counter;
+					 counter <= 4'd15;
+					end
+				 4'd12: 
+					begin
+					 stair_x[11] <= random_num[9:0];
+					 stair_y[11] <= random_num[19:10];
+					 halt <= counter;
+					 counter <= 4'd15;
+					end
+				 4'd13: 
+					begin
+					 stair_x[12] <= random_num[9:0];
+					 stair_y[12] <= random_num[19:10];
+					 halt <= counter;
+					 counter <= 4'd15;
+					end
+				 4'd14: 
+					begin
+					 stair_x[13] <= random_num[9:0];
+					 stair_y[13] <= random_num[19:10];
+					 halt <= counter;
+					 counter <= 4'd15;
+					end
+				 default: 
+					begin
+					 for (int j=0; j<14; j++)
+						begin
+							stair_y[j] <= stair_y[j] - distance;
+							if (stair_y[j] > 10'd479)						// If a stair is disappeared, randomly generate a new one from the top
+								begin
+									stair_x[j] <= stair_x[j];  // need modification
+									stair_y[j] <= 10'b0;
+								end	
+						end
+					counter <= 4'd15;
+					if (frame_clk_rising_edge)
+						stair_x[0] <= stair_x[0] + stair_x_in;
+					end
+				endcase
+		   end
+    end
+	 
+	 
+	 
+	 
+
+	 // Is stair signal checks if the present pixel belongs to one of the stairs
+	 always_comb 
+	 begin
+		  for (int j=0; j<14; j++)
+			begin
+				check[j] = ( DrawX <= stair_x[j] +stair_size && DrawX >= stair_x[j] + ~stair_size + 10'b1 ) && ( (DrawY <= stair_y[j] + 10'd5) && (DrawY >= stair_y[j] + ~10'd5 + 10'b1));
+			end
+		  
+		  if (check[0] || check[1] || check[2] || check[3] || check[4] || check[5] || check[6] || check[7] || check[8] || check[9] || check[10] || check[11] || check[12] || check[13] )
+				is_stair = 1'b1;
+		  else
+				is_stair = 1'b0;
+	 end
+	 
+endmodule

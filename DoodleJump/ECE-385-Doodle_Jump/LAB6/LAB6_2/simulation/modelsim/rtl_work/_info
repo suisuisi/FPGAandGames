@@ -1,0 +1,730 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Howar/Desktop/ECE_385/LAB6_2/simulation/modelsim
+vALU
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1636644496
+!i10b 1
+!s100 oK_6hcbiNf7aG^]`H1RoS2
+IcRCb^m=PYl9P<hnGfaQj^1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 ALU_sv_unit
+S1
+R0
+w1636644076
+8C:/Users/Howar/Desktop/ECE_385/LAB6_2/ALU.sv
+FC:/Users/Howar/Desktop/ECE_385/LAB6_2/ALU.sv
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1636644496.000000
+!s107 C:/Users/Howar/Desktop/ECE_385/LAB6_2/ALU.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE_385/LAB6_2|C:/Users/Howar/Desktop/ECE_385/LAB6_2/ALU.sv|
+!i113 1
+Z6 o-sv -work work
+Z7 !s92 -sv -work work +incdir+C:/Users/Howar/Desktop/ECE_385/LAB6_2
+Z8 tCvgOpt 0
+n@a@l@u
+vdatapath
+R1
+R2
+!i10b 1
+!s100 Hk92:?0L@AiK;EUIz`oQI1
+IRc@Ac?Sn22FW<NhQIS<Jz2
+R3
+!s105 datapath_sv_unit
+S1
+R0
+w1636635172
+8C:/Users/Howar/Desktop/ECE_385/LAB6_2/datapath.sv
+FC:/Users/Howar/Desktop/ECE_385/LAB6_2/datapath.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Howar/Desktop/ECE_385/LAB6_2/datapath.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE_385/LAB6_2|C:/Users/Howar/Desktop/ECE_385/LAB6_2/datapath.sv|
+!i113 1
+R6
+R7
+R8
+vHexDriver
+R1
+R2
+!i10b 1
+!s100 ^DddjRd7Wla]U<SlP;mT@0
+I]<zl]RkVg<:LBNUI:m?S>0
+R3
+!s105 HexDriver_sv_unit
+S1
+R0
+w1472679712
+8C:/Users/Howar/Desktop/ECE_385/LAB6_2/HexDriver.sv
+FC:/Users/Howar/Desktop/ECE_385/LAB6_2/HexDriver.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Howar/Desktop/ECE_385/LAB6_2/HexDriver.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE_385/LAB6_2|C:/Users/Howar/Desktop/ECE_385/LAB6_2/HexDriver.sv|
+!i113 1
+R6
+R7
+R8
+n@hex@driver
+vISDU
+R1
+R2
+!i10b 1
+!s100 JV<ZZ0G[FdBd[O6L271li0
+I1@Ym>XKA2AKfSA3WVLJPM2
+R3
+!s105 ISDU_sv_unit
+S1
+R0
+w1635967696
+8C:/Users/Howar/Desktop/ECE_385/LAB6_2/ISDU.sv
+FC:/Users/Howar/Desktop/ECE_385/LAB6_2/ISDU.sv
+Z9 L0 19
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Howar/Desktop/ECE_385/LAB6_2/ISDU.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE_385/LAB6_2|C:/Users/Howar/Desktop/ECE_385/LAB6_2/ISDU.sv|
+!i113 1
+R6
+R7
+R8
+n@i@s@d@u
+vlab6_toplevel
+R1
+R2
+!i10b 1
+!s100 QoESZJ?3?EV6T<nenGGA71
+I3FWeY@;OMPC<hPPKmY>7V2
+R3
+!s105 lab6_toplevel_sv_unit
+S1
+R0
+w1635360998
+8C:/Users/Howar/Desktop/ECE_385/LAB6_2/lab6_toplevel.sv
+FC:/Users/Howar/Desktop/ECE_385/LAB6_2/lab6_toplevel.sv
+L0 10
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Howar/Desktop/ECE_385/LAB6_2/lab6_toplevel.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE_385/LAB6_2|C:/Users/Howar/Desktop/ECE_385/LAB6_2/lab6_toplevel.sv|
+!i113 1
+R6
+R7
+R8
+vMem2IO
+R1
+Z10 !s110 1636644495
+!i10b 1
+!s100 d<=A`]_5?F8Tz<i9:]04<3
+IeKTha_CGAN]nD;iJW85AT0
+R3
+!s105 Mem2IO_sv_unit
+S1
+R0
+Z11 w1506381592
+8C:/Users/Howar/Desktop/ECE_385/LAB6_2/Mem2IO.sv
+FC:/Users/Howar/Desktop/ECE_385/LAB6_2/Mem2IO.sv
+Z12 L0 16
+R4
+r1
+!s85 0
+31
+Z13 !s108 1636644495.000000
+!s107 C:/Users/Howar/Desktop/ECE_385/LAB6_2/Mem2IO.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE_385/LAB6_2|C:/Users/Howar/Desktop/ECE_385/LAB6_2/Mem2IO.sv|
+!i113 1
+R6
+R7
+R8
+n@mem2@i@o
+Xmemory_contents_sv_unit
+R1
+Z14 DXx4 work 6 SLC3_2 0 22 F^=U67^DTWZC@WCOge7;e0
+VQeRmSER8M7iNRhgAM<[010
+r1
+!s85 0
+31
+!i10b 1
+!s100 c2m7WKcaV<L[XVf`30RGj3
+IQeRmSER8M7iNRhgAM<[010
+!i103 1
+S1
+R0
+Z15 w1518295032
+Z16 8C:/Users/Howar/Desktop/ECE_385/LAB6_2/memory_contents.sv
+Z17 FC:/Users/Howar/Desktop/ECE_385/LAB6_2/memory_contents.sv
+L0 14
+R4
+R5
+Z18 !s107 C:/Users/Howar/Desktop/ECE_385/LAB6_2/memory_contents.sv|
+Z19 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE_385/LAB6_2|C:/Users/Howar/Desktop/ECE_385/LAB6_2/memory_contents.sv|
+!i113 1
+R6
+R7
+R8
+vmemory_parser
+R1
+R14
+DXx4 work 23 memory_contents_sv_unit 0 22 QeRmSER8M7iNRhgAM<[010
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 744B[g>P4=Q9zVQXU8>HF2
+I@EGBR0Y6SGk<?a9lCN67>2
+!s105 memory_contents_sv_unit
+S1
+R0
+R15
+R16
+R17
+R12
+R4
+R5
+R18
+R19
+!i113 1
+R6
+R7
+R8
+vMUX2_1
+R1
+R10
+!i10b 1
+!s100 >X?V[S@2DmzGf^A7EeETf2
+I`cVMN_ZER0kh_[BClkSCz3
+R3
+Z20 !s105 Mux_sv_unit
+S1
+R0
+Z21 w1636637180
+Z22 8C:/Users/Howar/Desktop/ECE_385/LAB6_2/Mux.sv
+Z23 FC:/Users/Howar/Desktop/ECE_385/LAB6_2/Mux.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R13
+Z24 !s107 C:/Users/Howar/Desktop/ECE_385/LAB6_2/Mux.sv|
+Z25 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE_385/LAB6_2|C:/Users/Howar/Desktop/ECE_385/LAB6_2/Mux.sv|
+!i113 1
+R6
+R7
+R8
+n@m@u@x2_1
+vMUX2_1_3b
+R1
+R10
+!i10b 1
+!s100 b;dNVZ3gfZ;RPkAgHDHVR2
+I2bS[Zi6GZSb2@QG@9U5Q40
+R3
+R20
+S1
+R0
+R21
+R22
+R23
+L0 72
+R4
+r1
+!s85 0
+31
+R13
+R24
+R25
+!i113 1
+R6
+R7
+R8
+n@m@u@x2_1_3b
+vMUX3_1
+R1
+R10
+!i10b 1
+!s100 C>cFElCiHK?0CAFf_fZ7K2
+IV::T2h>oN5h=VkH[7SV751
+R3
+R20
+S1
+R0
+R21
+R22
+R23
+L0 17
+R4
+r1
+!s85 0
+31
+R13
+R24
+R25
+!i113 1
+R6
+R7
+R8
+n@m@u@x3_1
+vMUX4_1
+R1
+R10
+!i10b 1
+!s100 `FQ=;?am@?z`<4gNBnDWW0
+IfD6Taee8HWT>f@GA@VN?X1
+R3
+R20
+S1
+R0
+R21
+R22
+R23
+L0 34
+R4
+r1
+!s85 0
+31
+R13
+R24
+R25
+!i113 1
+R6
+R7
+R8
+n@m@u@x4_1
+vMUX4_1_16b
+R1
+R10
+!i10b 1
+!s100 5?d7RB:jI:`JRD`D93^DG0
+I`W6z@XK8WK[3BKcBFIi5V1
+R3
+R20
+S1
+R0
+R21
+R22
+R23
+L0 53
+R4
+r1
+!s85 0
+31
+R13
+R24
+R25
+!i113 1
+R6
+R7
+R8
+n@m@u@x4_1_16b
+vmy_slc
+R1
+R2
+!i10b 1
+!s100 S6oKYTGX[1G02lLC@C=991
+I0hE;d^;551K=JhGLoH;k01
+R3
+!s105 slc3_sv_unit
+S1
+R0
+w1636644358
+8C:/Users/Howar/Desktop/ECE_385/LAB6_2/slc3.sv
+FC:/Users/Howar/Desktop/ECE_385/LAB6_2/slc3.sv
+R9
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Howar/Desktop/ECE_385/LAB6_2/slc3.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE_385/LAB6_2|C:/Users/Howar/Desktop/ECE_385/LAB6_2/slc3.sv|
+!i113 1
+R6
+R7
+R8
+vMYDFF
+R1
+R10
+!i10b 1
+!s100 h6C>c_DR4nBdZ`_e7OXmK0
+IRY9jImUlcRWlCgLLPk5CF2
+R3
+Z26 !s105 Register_sv_unit
+S1
+R0
+Z27 w1635967405
+Z28 8C:/Users/Howar/Desktop/ECE_385/LAB6_2/Register.sv
+Z29 FC:/Users/Howar/Desktop/ECE_385/LAB6_2/Register.sv
+L0 63
+R4
+r1
+!s85 0
+31
+R13
+Z30 !s107 C:/Users/Howar/Desktop/ECE_385/LAB6_2/Register.sv|
+Z31 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE_385/LAB6_2|C:/Users/Howar/Desktop/ECE_385/LAB6_2/Register.sv|
+!i113 1
+R6
+R7
+R8
+n@m@y@d@f@f
+vNZP
+R1
+R10
+!i10b 1
+!s100 iii3I^E0P?<YaXPRWVi[]0
+I>ic3QSJWVgh`<9mPzz9RT2
+R3
+!s105 NZP_sv_unit
+S1
+R0
+w1635925060
+8C:/Users/Howar/Desktop/ECE_385/LAB6_2/NZP.sv
+FC:/Users/Howar/Desktop/ECE_385/LAB6_2/NZP.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/Howar/Desktop/ECE_385/LAB6_2/NZP.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE_385/LAB6_2|C:/Users/Howar/Desktop/ECE_385/LAB6_2/NZP.sv|
+!i113 1
+R6
+R7
+R8
+n@n@z@p
+vRegister
+R1
+R10
+!i10b 1
+!s100 :PV_mzcOi9bRm6GGMHVg;1
+ISLZk>;_oPC8I^;zFJl:O92
+R3
+R26
+S1
+R0
+R27
+R28
+R29
+L0 1
+R4
+r1
+!s85 0
+31
+R13
+R30
+R31
+!i113 1
+R6
+R7
+R8
+n@register
+vRegister12
+R1
+R10
+!i10b 1
+!s100 09W]2j4@6hzblH8Kh75L=3
+IN^nJU_]U<j:lOIlW^<9CH3
+R3
+R26
+S1
+R0
+R27
+R28
+R29
+L0 21
+R4
+r1
+!s85 0
+31
+R13
+R30
+R31
+!i113 1
+R6
+R7
+R8
+n@register12
+vRegister3
+R1
+R10
+!i10b 1
+!s100 zP1[9jSe]7ENNN67FDSHO2
+I1L??ER6oFRg_joQmV?Fhe3
+R3
+R26
+S1
+R0
+R27
+R28
+R29
+L0 41
+R4
+r1
+!s85 0
+31
+R13
+R30
+R31
+!i113 1
+R6
+R7
+R8
+n@register3
+vRegister_file
+R1
+R10
+!i10b 1
+!s100 G6cX1_M3<44`ch]mZGUzQ2
+I^XRKaV_<>4mkGPXglj>BP3
+R3
+!s105 Register_file_sv_unit
+S1
+R0
+w1635957928
+8C:/Users/Howar/Desktop/ECE_385/LAB6_2/Register_file.sv
+FC:/Users/Howar/Desktop/ECE_385/LAB6_2/Register_file.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/Howar/Desktop/ECE_385/LAB6_2/Register_file.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE_385/LAB6_2|C:/Users/Howar/Desktop/ECE_385/LAB6_2/Register_file.sv|
+!i113 1
+R6
+R7
+R8
+n@register_file
+vSEXT10
+R1
+R10
+!i10b 1
+!s100 QW1@Z]VSV]niC[_K2>AjR0
+IcSAfVbnmGoDBCR]8SX6`93
+R3
+Z32 !s105 SEXT_sv_unit
+S1
+R0
+Z33 w1635949196
+Z34 8C:/Users/Howar/Desktop/ECE_385/LAB6_2/SEXT.sv
+Z35 FC:/Users/Howar/Desktop/ECE_385/LAB6_2/SEXT.sv
+L0 52
+R4
+r1
+!s85 0
+31
+R13
+Z36 !s107 C:/Users/Howar/Desktop/ECE_385/LAB6_2/SEXT.sv|
+Z37 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE_385/LAB6_2|C:/Users/Howar/Desktop/ECE_385/LAB6_2/SEXT.sv|
+!i113 1
+R6
+R7
+R8
+n@s@e@x@t10
+vSEXT4
+R1
+R10
+!i10b 1
+!s100 6mV97SWR_N4jeY@feK1E20
+IdX5Nhc<^d9BRjJfMe@PUc3
+R3
+R32
+S1
+R0
+R33
+R34
+R35
+L0 1
+R4
+r1
+!s85 0
+31
+R13
+R36
+R37
+!i113 1
+R6
+R7
+R8
+n@s@e@x@t4
+vSEXT5
+R1
+R10
+!i10b 1
+!s100 LYcmTWU1DaWMMXE9EzzeZ0
+IhP<NHI6^2W^LDkhFGNk]<2
+R3
+R32
+S1
+R0
+R33
+R34
+R35
+L0 18
+R4
+r1
+!s85 0
+31
+R13
+R36
+R37
+!i113 1
+R6
+R7
+R8
+n@s@e@x@t5
+vSEXT8
+R1
+R10
+!i10b 1
+!s100 03YYg@G[najbGLf_;1dC@0
+I4HWVm3Q>UC`Wd3IfkJlBl2
+R3
+R32
+S1
+R0
+R33
+R34
+R35
+L0 35
+R4
+r1
+!s85 0
+31
+R13
+R36
+R37
+!i113 1
+R6
+R7
+R8
+n@s@e@x@t8
+XSLC3_2
+R1
+R10
+!i10b 1
+!s100 Cz8_^@QRefP31?j=Zf>lj0
+IF^=U67^DTWZC@WCOge7;e0
+VF^=U67^DTWZC@WCOge7;e0
+S1
+R0
+R11
+8C:/Users/Howar/Desktop/ECE_385/LAB6_2/SLC3_2.sv
+FC:/Users/Howar/Desktop/ECE_385/LAB6_2/SLC3_2.sv
+L0 24
+R4
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/Howar/Desktop/ECE_385/LAB6_2/SLC3_2.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE_385/LAB6_2|C:/Users/Howar/Desktop/ECE_385/LAB6_2/SLC3_2.sv|
+!i113 1
+R6
+R7
+R8
+n@s@l@c3_2
+vtest_memory
+R1
+R10
+!i10b 1
+!s100 AZAU7PQT4]][EEHo>57W43
+I^:kJ;5PJ?kgcgXEKTAdKS2
+R3
+!s105 test_memory_sv_unit
+S1
+R0
+w1635261884
+8C:/Users/Howar/Desktop/ECE_385/LAB6_2/test_memory.sv
+FC:/Users/Howar/Desktop/ECE_385/LAB6_2/test_memory.sv
+L0 22
+R4
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/Howar/Desktop/ECE_385/LAB6_2/test_memory.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE_385/LAB6_2|C:/Users/Howar/Desktop/ECE_385/LAB6_2/test_memory.sv|
+!i113 1
+R6
+R7
+R8
+vtestbench_week2
+R1
+R2
+!i10b 1
+!s100 kL7L_K`472]O7Mf4Yf<M^3
+Ikde=k>gEI1ena376FFabD0
+R3
+!s105 testbench_week2_sv_unit
+S1
+R0
+w1636644384
+8C:/Users/Howar/Desktop/ECE_385/LAB6_2/testbench_week2.sv
+FC:/Users/Howar/Desktop/ECE_385/LAB6_2/testbench_week2.sv
+L0 43
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Howar/Desktop/ECE_385/LAB6_2/testbench_week2.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE_385/LAB6_2|C:/Users/Howar/Desktop/ECE_385/LAB6_2/testbench_week2.sv|
+!i113 1
+R6
+R7
+R8
+vtristate
+R1
+!s110 1636644494
+!i10b 1
+!s100 Akazoo=71mOgoH<gVR_UC0
+IVj@VIJ;b6>h]]82ngZVfO3
+R3
+!s105 tristate_sv_unit
+S1
+R0
+R11
+8C:/Users/Howar/Desktop/ECE_385/LAB6_2/tristate.sv
+FC:/Users/Howar/Desktop/ECE_385/LAB6_2/tristate.sv
+R12
+R4
+r1
+!s85 0
+31
+!s108 1636644494.000000
+!s107 C:/Users/Howar/Desktop/ECE_385/LAB6_2/tristate.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE_385/LAB6_2|C:/Users/Howar/Desktop/ECE_385/LAB6_2/tristate.sv|
+!i113 1
+R6
+R7
+R8

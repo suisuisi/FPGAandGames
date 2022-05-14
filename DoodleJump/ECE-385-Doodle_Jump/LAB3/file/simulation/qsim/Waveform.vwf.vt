@@ -1,0 +1,403 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "10/14/2021 17:43:25"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          lab3
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module lab3_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg CLK;
+reg D0;
+reg D1;
+reg D2;
+reg D3;
+reg EXECUTE;
+reg F0;
+reg F1;
+reg F2;
+reg LOAD_A;
+reg LOAD_B;
+reg R0;
+reg R1;
+// wires                                               
+wire QA;
+wire QB;
+wire RA0;
+wire RA1;
+wire RA2;
+wire RA3;
+wire RB0;
+wire RB1;
+wire RB2;
+wire RB3;
+wire shift;
+
+// assign statements (if any)                          
+lab3 i1 (
+// port map - connection between master ports and signals/registers   
+	.CLK(CLK),
+	.D0(D0),
+	.D1(D1),
+	.D2(D2),
+	.D3(D3),
+	.EXECUTE(EXECUTE),
+	.F0(F0),
+	.F1(F1),
+	.F2(F2),
+	.LOAD_A(LOAD_A),
+	.LOAD_B(LOAD_B),
+	.QA(QA),
+	.QB(QB),
+	.R0(R0),
+	.R1(R1),
+	.RA0(RA0),
+	.RA1(RA1),
+	.RA2(RA2),
+	.RA3(RA3),
+	.RB0(RB0),
+	.RB1(RB1),
+	.RB2(RB2),
+	.RB3(RB3),
+	.shift(shift)
+);
+initial 
+begin 
+#3000000 $finish;
+end 
+
+// CLK
+always
+begin
+	CLK = 1'b0;
+	CLK = #5000 1'b1;
+	#5000;
+end 
+
+// D3
+initial
+begin
+	D3 = 1'b0;
+	D3 = #70000 1'b1;
+	D3 = #40000 1'b0;
+	D3 = #140000 1'b1;
+	D3 = #40000 1'b0;
+	D3 = #110000 1'b1;
+	D3 = #40000 1'b0;
+	D3 = #160000 1'b1;
+	D3 = #40000 1'b0;
+	D3 = #160000 1'b1;
+	D3 = #40000 1'b0;
+	D3 = #160000 1'b1;
+	D3 = #40000 1'b0;
+	D3 = #160000 1'b1;
+	D3 = #40000 1'b0;
+	D3 = #160000 1'b1;
+	D3 = #40000 1'b0;
+	D3 = #160000 1'b1;
+	D3 = #40000 1'b0;
+	D3 = #160000 1'b1;
+	D3 = #40000 1'b0;
+	D3 = #160000 1'b1;
+	D3 = #40000 1'b0;
+	D3 = #160000 1'b1;
+	D3 = #40000 1'b0;
+	D3 = #160000 1'b1;
+	D3 = #40000 1'b0;
+	D3 = #160000 1'b1;
+	D3 = #40000 1'b0;
+	D3 = #160000 1'b1;
+	D3 = #40000 1'b0;
+end 
+
+// D2
+initial
+begin
+	D2 = 1'b0;
+	D2 = #70000 1'b1;
+	D2 = #40000 1'b0;
+	D2 = #140000 1'b1;
+	D2 = #40000 1'b0;
+	D2 = #110000 1'b1;
+	D2 = #80000 1'b0;
+	D2 = #120000 1'b1;
+	D2 = #80000 1'b0;
+	D2 = #120000 1'b1;
+	D2 = #80000 1'b0;
+	D2 = #120000 1'b1;
+	D2 = #80000 1'b0;
+	D2 = #160000 1'b1;
+	D2 = #40000 1'b0;
+	D2 = #160000 1'b1;
+	D2 = #40000 1'b0;
+	D2 = #160000 1'b1;
+	D2 = #40000 1'b0;
+	D2 = #160000 1'b1;
+	D2 = #40000 1'b0;
+	D2 = #160000 1'b1;
+	D2 = #40000 1'b0;
+	D2 = #160000 1'b1;
+	D2 = #40000 1'b0;
+	D2 = #160000 1'b1;
+	D2 = #40000 1'b0;
+	D2 = #160000 1'b1;
+	D2 = #40000 1'b0;
+	D2 = #160000 1'b1;
+	D2 = #40000 1'b0;
+end 
+
+// D1
+initial
+begin
+	D1 = 1'b0;
+	D1 = #10000 1'b1;
+	D1 = #40000 1'b0;
+	D1 = #140000 1'b1;
+	D1 = #40000 1'b0;
+	D1 = #170000 1'b1;
+	D1 = #80000 1'b0;
+	D1 = #120000 1'b1;
+	D1 = #80000 1'b0;
+	D1 = #120000 1'b1;
+	D1 = #80000 1'b0;
+	D1 = #120000 1'b1;
+	D1 = #80000 1'b0;
+	D1 = #120000 1'b1;
+	D1 = #80000 1'b0;
+	D1 = #120000 1'b1;
+	D1 = #80000 1'b0;
+	D1 = #120000 1'b1;
+	D1 = #80000 1'b0;
+	D1 = #120000 1'b1;
+	D1 = #80000 1'b0;
+	D1 = #120000 1'b1;
+	D1 = #80000 1'b0;
+	D1 = #120000 1'b1;
+	D1 = #80000 1'b0;
+	D1 = #120000 1'b1;
+	D1 = #80000 1'b0;
+	D1 = #120000 1'b1;
+	D1 = #80000 1'b0;
+	D1 = #120000 1'b1;
+	D1 = #80000 1'b0;
+end 
+
+// D0
+initial
+begin
+	D0 = 1'b0;
+	D0 = #10000 1'b1;
+	D0 = #40000 1'b0;
+	D0 = #140000 1'b1;
+	D0 = #40000 1'b0;
+	D0 = #210000 1'b1;
+	D0 = #40000 1'b0;
+	D0 = #160000 1'b1;
+	D0 = #40000 1'b0;
+	D0 = #160000 1'b1;
+	D0 = #40000 1'b0;
+	D0 = #160000 1'b1;
+	D0 = #40000 1'b0;
+	D0 = #160000 1'b1;
+	D0 = #40000 1'b0;
+	D0 = #160000 1'b1;
+	D0 = #40000 1'b0;
+	D0 = #160000 1'b1;
+	D0 = #40000 1'b0;
+	D0 = #160000 1'b1;
+	D0 = #40000 1'b0;
+	D0 = #160000 1'b1;
+	D0 = #40000 1'b0;
+	D0 = #160000 1'b1;
+	D0 = #40000 1'b0;
+	D0 = #160000 1'b1;
+	D0 = #40000 1'b0;
+	D0 = #160000 1'b1;
+	D0 = #40000 1'b0;
+	D0 = #160000 1'b1;
+	D0 = #40000 1'b0;
+end 
+
+// F2
+initial
+begin
+	F2 = 1'b0;
+	F2 = #1800000 1'b1;
+	F2 = #799000 1'b0;
+	F2 = #1000 1'b1;
+end 
+
+// F1
+initial
+begin
+	F1 = 1'b0;
+	F1 = #1400000 1'b1;
+	F1 = #400000 1'b0;
+	F1 = #400000 1'b1;
+	F1 = #399000 1'b0;
+	F1 = #1000 1'b1;
+end 
+
+// F0
+initial
+begin
+	F0 = 1'b0;
+	F0 = #1200000 1'b1;
+	F0 = #200000 1'b0;
+	F0 = #200000 1'b1;
+	F0 = #200000 1'b0;
+	F0 = #200000 1'b1;
+	F0 = #200000 1'b0;
+	F0 = #200000 1'b1;
+	F0 = #199000 1'b0;
+	F0 = #201000 1'b1;
+end 
+
+// R1
+initial
+begin
+	R1 = 1'b0;
+	R1 = #800000 1'b1;
+end 
+
+// R0
+initial
+begin
+	R0 = 1'b0;
+	R0 = #600000 1'b1;
+	R0 = #200000 1'b0;
+	R0 = #200000 1'b1;
+	R0 = #200000 1'b0;
+end 
+
+// EXECUTE
+initial
+begin
+	EXECUTE = 1'b0;
+	EXECUTE = #500000 1'b1;
+	EXECUTE = #100000 1'b0;
+	EXECUTE = #100000 1'b1;
+	EXECUTE = #100000 1'b0;
+	EXECUTE = #100000 1'b1;
+	EXECUTE = #100000 1'b0;
+	EXECUTE = #100000 1'b1;
+	EXECUTE = #100000 1'b0;
+	EXECUTE = #100000 1'b1;
+	EXECUTE = #100000 1'b0;
+	EXECUTE = #100000 1'b1;
+	EXECUTE = #100000 1'b0;
+	EXECUTE = #100000 1'b1;
+	EXECUTE = #100000 1'b0;
+	EXECUTE = #100000 1'b1;
+	EXECUTE = #100000 1'b0;
+	EXECUTE = #110000 1'b1;
+	EXECUTE = #90000 1'b0;
+	EXECUTE = #100000 1'b1;
+	EXECUTE = #100000 1'b0;
+	EXECUTE = #100000 1'b1;
+	EXECUTE = #99000 1'b0;
+	EXECUTE = #101000 1'b1;
+	EXECUTE = #10000 1'b0;
+	EXECUTE = #190000 1'b1;
+	EXECUTE = #10000 1'b0;
+end 
+
+// LOAD_A
+initial
+begin
+	LOAD_A = 1'b0;
+	LOAD_A = #30000 1'b1;
+	LOAD_A = #20000 1'b0;
+	LOAD_A = #40000 1'b1;
+	LOAD_A = #20000 1'b0;
+	LOAD_A = #40000 1'b1;
+	LOAD_A = #20000 1'b0;
+	LOAD_A = #250000 1'b1;
+	LOAD_A = #20000 1'b0;
+	LOAD_A = #180000 1'b1;
+	LOAD_A = #20000 1'b0;
+	LOAD_A = #180000 1'b1;
+	LOAD_A = #20000 1'b0;
+	LOAD_A = #180000 1'b1;
+	LOAD_A = #20000 1'b0;
+	LOAD_A = #180000 1'b1;
+	LOAD_A = #20000 1'b0;
+	LOAD_A = #180000 1'b1;
+	LOAD_A = #20000 1'b0;
+	LOAD_A = #180000 1'b1;
+	LOAD_A = #20000 1'b0;
+	LOAD_A = #180000 1'b1;
+	LOAD_A = #20000 1'b0;
+	LOAD_A = #180000 1'b1;
+	LOAD_A = #20000 1'b0;
+	LOAD_A = #180000 1'b1;
+	LOAD_A = #20000 1'b0;
+	LOAD_A = #180000 1'b1;
+	LOAD_A = #20000 1'b0;
+	LOAD_A = #180000 1'b1;
+	LOAD_A = #20000 1'b0;
+	LOAD_A = #180000 1'b1;
+	LOAD_A = #20000 1'b0;
+end 
+
+// LOAD_B
+initial
+begin
+	LOAD_B = 1'b0;
+	LOAD_B = #210000 1'b1;
+	LOAD_B = #20000 1'b0;
+	LOAD_B = #40000 1'b1;
+	LOAD_B = #20000 1'b0;
+	LOAD_B = #40000 1'b1;
+	LOAD_B = #20000 1'b0;
+	LOAD_B = #110000 1'b1;
+	LOAD_B = #20000 1'b0;
+	LOAD_B = #180000 1'b1;
+	LOAD_B = #20000 1'b0;
+	LOAD_B = #180000 1'b1;
+	LOAD_B = #20000 1'b0;
+	LOAD_B = #180000 1'b1;
+	LOAD_B = #20000 1'b0;
+	LOAD_B = #180000 1'b1;
+	LOAD_B = #20000 1'b0;
+	LOAD_B = #180000 1'b1;
+	LOAD_B = #20000 1'b0;
+	LOAD_B = #180000 1'b1;
+	LOAD_B = #20000 1'b0;
+	LOAD_B = #180000 1'b1;
+	LOAD_B = #20000 1'b0;
+	LOAD_B = #180000 1'b1;
+	LOAD_B = #20000 1'b0;
+	LOAD_B = #180000 1'b1;
+	LOAD_B = #20000 1'b0;
+	LOAD_B = #180000 1'b1;
+	LOAD_B = #20000 1'b0;
+	LOAD_B = #180000 1'b1;
+	LOAD_B = #20000 1'b0;
+	LOAD_B = #180000 1'b1;
+	LOAD_B = #20000 1'b0;
+end 
+endmodule
+

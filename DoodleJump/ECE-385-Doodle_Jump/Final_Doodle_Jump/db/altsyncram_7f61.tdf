@@ -1,0 +1,3988 @@
+--altsyncram ADDRESS_ACLR_A="NONE" CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" CYCLONEII_M4K_COMPATIBILITY="ON" DEVICE_FAMILY="Cyclone IV E" INDATA_ACLR_A="NONE" INIT_FILE="db/lab8.ram0_music_7054c3e.hdl.mif" LOW_POWER_MODE="AUTO" NUMWORDS_A=83466 OPERATION_MODE="ROM" OUTDATA_ACLR_A="NONE" OUTDATA_REG_A="UNREGISTERED" WIDTH_A=17 WIDTHAD_A=17 WRCONTROL_ACLR_A="NONE" address_a clock0 q_a CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48
+--VERSION_BEGIN 18.1 cbx_altera_syncram_nd_impl 2018:09:12:13:04:24:SJ cbx_altsyncram 2018:09:12:13:04:24:SJ cbx_cycloneii 2018:09:12:13:04:24:SJ cbx_lpm_add_sub 2018:09:12:13:04:24:SJ cbx_lpm_compare 2018:09:12:13:04:24:SJ cbx_lpm_decode 2018:09:12:13:04:24:SJ cbx_lpm_mux 2018:09:12:13:04:24:SJ cbx_mgl 2018:09:12:13:10:36:SJ cbx_nadder 2018:09:12:13:04:24:SJ cbx_stratix 2018:09:12:13:04:24:SJ cbx_stratixii 2018:09:12:13:04:24:SJ cbx_stratixiii 2018:09:12:13:04:24:SJ cbx_stratixv 2018:09:12:13:04:24:SJ cbx_util_mgl 2018:09:12:13:04:24:SJ  VERSION_END
+
+
+-- Copyright (C) 2018  Intel Corporation. All rights reserved.
+--  Your use of Intel Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Intel Program License 
+--  Subscription Agreement, the Intel Quartus Prime License Agreement,
+--  the Intel FPGA IP License Agreement, or other applicable license
+--  agreement, including, without limitation, that your use is for
+--  the sole purpose of programming logic devices manufactured by
+--  Intel and sold by Intel or its authorized distributors.  Please
+--  refer to the applicable agreement for further details.
+
+
+FUNCTION decode_v9a (data[3..0])
+RETURNS ( eq[10..0]);
+FUNCTION mux_6qb (data[186..0], sel[3..0])
+RETURNS ( result[16..0]);
+FUNCTION cycloneive_ram_block (clk0, clk1, clr0, clr1, ena0, ena1, ena2, ena3, portaaddr[PORT_A_ADDRESS_WIDTH-1..0], portaaddrstall, portabyteenamasks[PORT_A_BYTE_ENABLE_MASK_WIDTH-1..0], portadatain[PORT_A_DATA_WIDTH-1..0], portare, portawe, portbaddr[PORT_B_ADDRESS_WIDTH-1..0], portbaddrstall, portbbyteenamasks[PORT_B_BYTE_ENABLE_MASK_WIDTH-1..0], portbdatain[PORT_B_DATA_WIDTH-1..0], portbre, portbwe)
+WITH ( CLK0_CORE_CLOCK_ENABLE, CLK0_INPUT_CLOCK_ENABLE, CLK0_OUTPUT_CLOCK_ENABLE, CLK1_CORE_CLOCK_ENABLE, CLK1_INPUT_CLOCK_ENABLE, CLK1_OUTPUT_CLOCK_ENABLE, CONNECTIVITY_CHECKING, DATA_INTERLEAVE_OFFSET_IN_BITS, DATA_INTERLEAVE_WIDTH_IN_BITS, DONT_POWER_OPTIMIZE, INIT_FILE, INIT_FILE_LAYOUT, init_file_restructured, LOGICAL_RAM_NAME, mem_init0, mem_init1, mem_init2, mem_init3, mem_init4, MIXED_PORT_FEED_THROUGH_MODE, OPERATION_MODE, PORT_A_ADDRESS_CLEAR, PORT_A_ADDRESS_WIDTH = 1, PORT_A_BYTE_ENABLE_MASK_WIDTH = 1, PORT_A_BYTE_SIZE, PORT_A_DATA_OUT_CLEAR, PORT_A_DATA_OUT_CLOCK, PORT_A_DATA_WIDTH = 1, PORT_A_FIRST_ADDRESS, PORT_A_FIRST_BIT_NUMBER, PORT_A_LAST_ADDRESS, PORT_A_LOGICAL_RAM_DEPTH, PORT_A_LOGICAL_RAM_WIDTH, PORT_A_READ_DURING_WRITE_MODE, PORT_B_ADDRESS_CLEAR, PORT_B_ADDRESS_CLOCK, PORT_B_ADDRESS_WIDTH = 1, PORT_B_BYTE_ENABLE_CLOCK, PORT_B_BYTE_ENABLE_MASK_WIDTH = 1, PORT_B_BYTE_SIZE, PORT_B_DATA_IN_CLOCK, PORT_B_DATA_OUT_CLEAR, PORT_B_DATA_OUT_CLOCK, PORT_B_DATA_WIDTH = 1, PORT_B_FIRST_ADDRESS, PORT_B_FIRST_BIT_NUMBER, PORT_B_LAST_ADDRESS, PORT_B_LOGICAL_RAM_DEPTH, PORT_B_LOGICAL_RAM_WIDTH, PORT_B_READ_DURING_WRITE_MODE, PORT_B_READ_ENABLE_CLOCK, PORT_B_WRITE_ENABLE_CLOCK, POWER_UP_UNINITIALIZED, RAM_BLOCK_TYPE, SAFE_WRITE, WIDTH_ECCSTATUS)
+RETURNS ( portadataout[PORT_A_DATA_WIDTH-1..0], portbdataout[PORT_B_DATA_WIDTH-1..0]);
+
+--synthesis_resources = lut 186 M9K 5 M9K 170 reg 4 
+OPTIONS ALTERA_INTERNAL_OPTION = "OPTIMIZE_POWER_DURING_SYNTHESIS=NORMAL_COMPILATION";
+
+SUBDESIGN altsyncram_7f61
+( 
+	address_a[16..0]	:	input;
+	clock0	:	input;
+	q_a[16..0]	:	output;
+) 
+VARIABLE 
+	address_reg_a[3..0] : dffe;
+	rden_decode : decode_v9a;
+	mux2 : mux_6qb;
+	ram_block1a0 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 0,
+			PORT_A_LAST_ADDRESS = 8191,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a1 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 1,
+			PORT_A_LAST_ADDRESS = 8191,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a2 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 2,
+			PORT_A_LAST_ADDRESS = 8191,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a3 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 3,
+			PORT_A_LAST_ADDRESS = 8191,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a4 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 4,
+			PORT_A_LAST_ADDRESS = 8191,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a5 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 5,
+			PORT_A_LAST_ADDRESS = 8191,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a6 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 6,
+			PORT_A_LAST_ADDRESS = 8191,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a7 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 7,
+			PORT_A_LAST_ADDRESS = 8191,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a8 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 8,
+			PORT_A_LAST_ADDRESS = 8191,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a9 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 9,
+			PORT_A_LAST_ADDRESS = 8191,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a10 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 10,
+			PORT_A_LAST_ADDRESS = 8191,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a11 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 11,
+			PORT_A_LAST_ADDRESS = 8191,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a12 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 12,
+			PORT_A_LAST_ADDRESS = 8191,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a13 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 13,
+			PORT_A_LAST_ADDRESS = 8191,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a14 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 14,
+			PORT_A_LAST_ADDRESS = 8191,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a15 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 15,
+			PORT_A_LAST_ADDRESS = 8191,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a16 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 16,
+			PORT_A_LAST_ADDRESS = 8191,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a17 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 8192,
+			PORT_A_FIRST_BIT_NUMBER = 0,
+			PORT_A_LAST_ADDRESS = 16383,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a18 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 8192,
+			PORT_A_FIRST_BIT_NUMBER = 1,
+			PORT_A_LAST_ADDRESS = 16383,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a19 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 8192,
+			PORT_A_FIRST_BIT_NUMBER = 2,
+			PORT_A_LAST_ADDRESS = 16383,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a20 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 8192,
+			PORT_A_FIRST_BIT_NUMBER = 3,
+			PORT_A_LAST_ADDRESS = 16383,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a21 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 8192,
+			PORT_A_FIRST_BIT_NUMBER = 4,
+			PORT_A_LAST_ADDRESS = 16383,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a22 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 8192,
+			PORT_A_FIRST_BIT_NUMBER = 5,
+			PORT_A_LAST_ADDRESS = 16383,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a23 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 8192,
+			PORT_A_FIRST_BIT_NUMBER = 6,
+			PORT_A_LAST_ADDRESS = 16383,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a24 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 8192,
+			PORT_A_FIRST_BIT_NUMBER = 7,
+			PORT_A_LAST_ADDRESS = 16383,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a25 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 8192,
+			PORT_A_FIRST_BIT_NUMBER = 8,
+			PORT_A_LAST_ADDRESS = 16383,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a26 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 8192,
+			PORT_A_FIRST_BIT_NUMBER = 9,
+			PORT_A_LAST_ADDRESS = 16383,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a27 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 8192,
+			PORT_A_FIRST_BIT_NUMBER = 10,
+			PORT_A_LAST_ADDRESS = 16383,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a28 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 8192,
+			PORT_A_FIRST_BIT_NUMBER = 11,
+			PORT_A_LAST_ADDRESS = 16383,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a29 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 8192,
+			PORT_A_FIRST_BIT_NUMBER = 12,
+			PORT_A_LAST_ADDRESS = 16383,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a30 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 8192,
+			PORT_A_FIRST_BIT_NUMBER = 13,
+			PORT_A_LAST_ADDRESS = 16383,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a31 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 8192,
+			PORT_A_FIRST_BIT_NUMBER = 14,
+			PORT_A_LAST_ADDRESS = 16383,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a32 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 8192,
+			PORT_A_FIRST_BIT_NUMBER = 15,
+			PORT_A_LAST_ADDRESS = 16383,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a33 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 8192,
+			PORT_A_FIRST_BIT_NUMBER = 16,
+			PORT_A_LAST_ADDRESS = 16383,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a34 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 16384,
+			PORT_A_FIRST_BIT_NUMBER = 0,
+			PORT_A_LAST_ADDRESS = 24575,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a35 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 16384,
+			PORT_A_FIRST_BIT_NUMBER = 1,
+			PORT_A_LAST_ADDRESS = 24575,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a36 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 16384,
+			PORT_A_FIRST_BIT_NUMBER = 2,
+			PORT_A_LAST_ADDRESS = 24575,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a37 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 16384,
+			PORT_A_FIRST_BIT_NUMBER = 3,
+			PORT_A_LAST_ADDRESS = 24575,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a38 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 16384,
+			PORT_A_FIRST_BIT_NUMBER = 4,
+			PORT_A_LAST_ADDRESS = 24575,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a39 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 16384,
+			PORT_A_FIRST_BIT_NUMBER = 5,
+			PORT_A_LAST_ADDRESS = 24575,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a40 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 16384,
+			PORT_A_FIRST_BIT_NUMBER = 6,
+			PORT_A_LAST_ADDRESS = 24575,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a41 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 16384,
+			PORT_A_FIRST_BIT_NUMBER = 7,
+			PORT_A_LAST_ADDRESS = 24575,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a42 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 16384,
+			PORT_A_FIRST_BIT_NUMBER = 8,
+			PORT_A_LAST_ADDRESS = 24575,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a43 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 16384,
+			PORT_A_FIRST_BIT_NUMBER = 9,
+			PORT_A_LAST_ADDRESS = 24575,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a44 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 16384,
+			PORT_A_FIRST_BIT_NUMBER = 10,
+			PORT_A_LAST_ADDRESS = 24575,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a45 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 16384,
+			PORT_A_FIRST_BIT_NUMBER = 11,
+			PORT_A_LAST_ADDRESS = 24575,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a46 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 16384,
+			PORT_A_FIRST_BIT_NUMBER = 12,
+			PORT_A_LAST_ADDRESS = 24575,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a47 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 16384,
+			PORT_A_FIRST_BIT_NUMBER = 13,
+			PORT_A_LAST_ADDRESS = 24575,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a48 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 16384,
+			PORT_A_FIRST_BIT_NUMBER = 14,
+			PORT_A_LAST_ADDRESS = 24575,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a49 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 16384,
+			PORT_A_FIRST_BIT_NUMBER = 15,
+			PORT_A_LAST_ADDRESS = 24575,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a50 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 16384,
+			PORT_A_FIRST_BIT_NUMBER = 16,
+			PORT_A_LAST_ADDRESS = 24575,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a51 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 24576,
+			PORT_A_FIRST_BIT_NUMBER = 0,
+			PORT_A_LAST_ADDRESS = 32767,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a52 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 24576,
+			PORT_A_FIRST_BIT_NUMBER = 1,
+			PORT_A_LAST_ADDRESS = 32767,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a53 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 24576,
+			PORT_A_FIRST_BIT_NUMBER = 2,
+			PORT_A_LAST_ADDRESS = 32767,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a54 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 24576,
+			PORT_A_FIRST_BIT_NUMBER = 3,
+			PORT_A_LAST_ADDRESS = 32767,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a55 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 24576,
+			PORT_A_FIRST_BIT_NUMBER = 4,
+			PORT_A_LAST_ADDRESS = 32767,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a56 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 24576,
+			PORT_A_FIRST_BIT_NUMBER = 5,
+			PORT_A_LAST_ADDRESS = 32767,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a57 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 24576,
+			PORT_A_FIRST_BIT_NUMBER = 6,
+			PORT_A_LAST_ADDRESS = 32767,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a58 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 24576,
+			PORT_A_FIRST_BIT_NUMBER = 7,
+			PORT_A_LAST_ADDRESS = 32767,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a59 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 24576,
+			PORT_A_FIRST_BIT_NUMBER = 8,
+			PORT_A_LAST_ADDRESS = 32767,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a60 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 24576,
+			PORT_A_FIRST_BIT_NUMBER = 9,
+			PORT_A_LAST_ADDRESS = 32767,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a61 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 24576,
+			PORT_A_FIRST_BIT_NUMBER = 10,
+			PORT_A_LAST_ADDRESS = 32767,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a62 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 24576,
+			PORT_A_FIRST_BIT_NUMBER = 11,
+			PORT_A_LAST_ADDRESS = 32767,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a63 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 24576,
+			PORT_A_FIRST_BIT_NUMBER = 12,
+			PORT_A_LAST_ADDRESS = 32767,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a64 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 24576,
+			PORT_A_FIRST_BIT_NUMBER = 13,
+			PORT_A_LAST_ADDRESS = 32767,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a65 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 24576,
+			PORT_A_FIRST_BIT_NUMBER = 14,
+			PORT_A_LAST_ADDRESS = 32767,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a66 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 24576,
+			PORT_A_FIRST_BIT_NUMBER = 15,
+			PORT_A_LAST_ADDRESS = 32767,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a67 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 24576,
+			PORT_A_FIRST_BIT_NUMBER = 16,
+			PORT_A_LAST_ADDRESS = 32767,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a68 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 32768,
+			PORT_A_FIRST_BIT_NUMBER = 0,
+			PORT_A_LAST_ADDRESS = 40959,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a69 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 32768,
+			PORT_A_FIRST_BIT_NUMBER = 1,
+			PORT_A_LAST_ADDRESS = 40959,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a70 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 32768,
+			PORT_A_FIRST_BIT_NUMBER = 2,
+			PORT_A_LAST_ADDRESS = 40959,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a71 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 32768,
+			PORT_A_FIRST_BIT_NUMBER = 3,
+			PORT_A_LAST_ADDRESS = 40959,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a72 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 32768,
+			PORT_A_FIRST_BIT_NUMBER = 4,
+			PORT_A_LAST_ADDRESS = 40959,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a73 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 32768,
+			PORT_A_FIRST_BIT_NUMBER = 5,
+			PORT_A_LAST_ADDRESS = 40959,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a74 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 32768,
+			PORT_A_FIRST_BIT_NUMBER = 6,
+			PORT_A_LAST_ADDRESS = 40959,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a75 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 32768,
+			PORT_A_FIRST_BIT_NUMBER = 7,
+			PORT_A_LAST_ADDRESS = 40959,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a76 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 32768,
+			PORT_A_FIRST_BIT_NUMBER = 8,
+			PORT_A_LAST_ADDRESS = 40959,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a77 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 32768,
+			PORT_A_FIRST_BIT_NUMBER = 9,
+			PORT_A_LAST_ADDRESS = 40959,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a78 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 32768,
+			PORT_A_FIRST_BIT_NUMBER = 10,
+			PORT_A_LAST_ADDRESS = 40959,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a79 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 32768,
+			PORT_A_FIRST_BIT_NUMBER = 11,
+			PORT_A_LAST_ADDRESS = 40959,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a80 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 32768,
+			PORT_A_FIRST_BIT_NUMBER = 12,
+			PORT_A_LAST_ADDRESS = 40959,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a81 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 32768,
+			PORT_A_FIRST_BIT_NUMBER = 13,
+			PORT_A_LAST_ADDRESS = 40959,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a82 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 32768,
+			PORT_A_FIRST_BIT_NUMBER = 14,
+			PORT_A_LAST_ADDRESS = 40959,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a83 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 32768,
+			PORT_A_FIRST_BIT_NUMBER = 15,
+			PORT_A_LAST_ADDRESS = 40959,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a84 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 32768,
+			PORT_A_FIRST_BIT_NUMBER = 16,
+			PORT_A_LAST_ADDRESS = 40959,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a85 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 40960,
+			PORT_A_FIRST_BIT_NUMBER = 0,
+			PORT_A_LAST_ADDRESS = 49151,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a86 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 40960,
+			PORT_A_FIRST_BIT_NUMBER = 1,
+			PORT_A_LAST_ADDRESS = 49151,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a87 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 40960,
+			PORT_A_FIRST_BIT_NUMBER = 2,
+			PORT_A_LAST_ADDRESS = 49151,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a88 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 40960,
+			PORT_A_FIRST_BIT_NUMBER = 3,
+			PORT_A_LAST_ADDRESS = 49151,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a89 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 40960,
+			PORT_A_FIRST_BIT_NUMBER = 4,
+			PORT_A_LAST_ADDRESS = 49151,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a90 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 40960,
+			PORT_A_FIRST_BIT_NUMBER = 5,
+			PORT_A_LAST_ADDRESS = 49151,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a91 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 40960,
+			PORT_A_FIRST_BIT_NUMBER = 6,
+			PORT_A_LAST_ADDRESS = 49151,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a92 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 40960,
+			PORT_A_FIRST_BIT_NUMBER = 7,
+			PORT_A_LAST_ADDRESS = 49151,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a93 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 40960,
+			PORT_A_FIRST_BIT_NUMBER = 8,
+			PORT_A_LAST_ADDRESS = 49151,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a94 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 40960,
+			PORT_A_FIRST_BIT_NUMBER = 9,
+			PORT_A_LAST_ADDRESS = 49151,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a95 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 40960,
+			PORT_A_FIRST_BIT_NUMBER = 10,
+			PORT_A_LAST_ADDRESS = 49151,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a96 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 40960,
+			PORT_A_FIRST_BIT_NUMBER = 11,
+			PORT_A_LAST_ADDRESS = 49151,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a97 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 40960,
+			PORT_A_FIRST_BIT_NUMBER = 12,
+			PORT_A_LAST_ADDRESS = 49151,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a98 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 40960,
+			PORT_A_FIRST_BIT_NUMBER = 13,
+			PORT_A_LAST_ADDRESS = 49151,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a99 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 40960,
+			PORT_A_FIRST_BIT_NUMBER = 14,
+			PORT_A_LAST_ADDRESS = 49151,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a100 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 40960,
+			PORT_A_FIRST_BIT_NUMBER = 15,
+			PORT_A_LAST_ADDRESS = 49151,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a101 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 40960,
+			PORT_A_FIRST_BIT_NUMBER = 16,
+			PORT_A_LAST_ADDRESS = 49151,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a102 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 49152,
+			PORT_A_FIRST_BIT_NUMBER = 0,
+			PORT_A_LAST_ADDRESS = 57343,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a103 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 49152,
+			PORT_A_FIRST_BIT_NUMBER = 1,
+			PORT_A_LAST_ADDRESS = 57343,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a104 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 49152,
+			PORT_A_FIRST_BIT_NUMBER = 2,
+			PORT_A_LAST_ADDRESS = 57343,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a105 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 49152,
+			PORT_A_FIRST_BIT_NUMBER = 3,
+			PORT_A_LAST_ADDRESS = 57343,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a106 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 49152,
+			PORT_A_FIRST_BIT_NUMBER = 4,
+			PORT_A_LAST_ADDRESS = 57343,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a107 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 49152,
+			PORT_A_FIRST_BIT_NUMBER = 5,
+			PORT_A_LAST_ADDRESS = 57343,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a108 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 49152,
+			PORT_A_FIRST_BIT_NUMBER = 6,
+			PORT_A_LAST_ADDRESS = 57343,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a109 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 49152,
+			PORT_A_FIRST_BIT_NUMBER = 7,
+			PORT_A_LAST_ADDRESS = 57343,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a110 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 49152,
+			PORT_A_FIRST_BIT_NUMBER = 8,
+			PORT_A_LAST_ADDRESS = 57343,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a111 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 49152,
+			PORT_A_FIRST_BIT_NUMBER = 9,
+			PORT_A_LAST_ADDRESS = 57343,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a112 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 49152,
+			PORT_A_FIRST_BIT_NUMBER = 10,
+			PORT_A_LAST_ADDRESS = 57343,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a113 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 49152,
+			PORT_A_FIRST_BIT_NUMBER = 11,
+			PORT_A_LAST_ADDRESS = 57343,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a114 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 49152,
+			PORT_A_FIRST_BIT_NUMBER = 12,
+			PORT_A_LAST_ADDRESS = 57343,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a115 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 49152,
+			PORT_A_FIRST_BIT_NUMBER = 13,
+			PORT_A_LAST_ADDRESS = 57343,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a116 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 49152,
+			PORT_A_FIRST_BIT_NUMBER = 14,
+			PORT_A_LAST_ADDRESS = 57343,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a117 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 49152,
+			PORT_A_FIRST_BIT_NUMBER = 15,
+			PORT_A_LAST_ADDRESS = 57343,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a118 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 49152,
+			PORT_A_FIRST_BIT_NUMBER = 16,
+			PORT_A_LAST_ADDRESS = 57343,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a119 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 57344,
+			PORT_A_FIRST_BIT_NUMBER = 0,
+			PORT_A_LAST_ADDRESS = 65535,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a120 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 57344,
+			PORT_A_FIRST_BIT_NUMBER = 1,
+			PORT_A_LAST_ADDRESS = 65535,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a121 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 57344,
+			PORT_A_FIRST_BIT_NUMBER = 2,
+			PORT_A_LAST_ADDRESS = 65535,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a122 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 57344,
+			PORT_A_FIRST_BIT_NUMBER = 3,
+			PORT_A_LAST_ADDRESS = 65535,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a123 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 57344,
+			PORT_A_FIRST_BIT_NUMBER = 4,
+			PORT_A_LAST_ADDRESS = 65535,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a124 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 57344,
+			PORT_A_FIRST_BIT_NUMBER = 5,
+			PORT_A_LAST_ADDRESS = 65535,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a125 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 57344,
+			PORT_A_FIRST_BIT_NUMBER = 6,
+			PORT_A_LAST_ADDRESS = 65535,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a126 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 57344,
+			PORT_A_FIRST_BIT_NUMBER = 7,
+			PORT_A_LAST_ADDRESS = 65535,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a127 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 57344,
+			PORT_A_FIRST_BIT_NUMBER = 8,
+			PORT_A_LAST_ADDRESS = 65535,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a128 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 57344,
+			PORT_A_FIRST_BIT_NUMBER = 9,
+			PORT_A_LAST_ADDRESS = 65535,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a129 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 57344,
+			PORT_A_FIRST_BIT_NUMBER = 10,
+			PORT_A_LAST_ADDRESS = 65535,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a130 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 57344,
+			PORT_A_FIRST_BIT_NUMBER = 11,
+			PORT_A_LAST_ADDRESS = 65535,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a131 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 57344,
+			PORT_A_FIRST_BIT_NUMBER = 12,
+			PORT_A_LAST_ADDRESS = 65535,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a132 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 57344,
+			PORT_A_FIRST_BIT_NUMBER = 13,
+			PORT_A_LAST_ADDRESS = 65535,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a133 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 57344,
+			PORT_A_FIRST_BIT_NUMBER = 14,
+			PORT_A_LAST_ADDRESS = 65535,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a134 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 57344,
+			PORT_A_FIRST_BIT_NUMBER = 15,
+			PORT_A_LAST_ADDRESS = 65535,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a135 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 57344,
+			PORT_A_FIRST_BIT_NUMBER = 16,
+			PORT_A_LAST_ADDRESS = 65535,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a136 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 65536,
+			PORT_A_FIRST_BIT_NUMBER = 0,
+			PORT_A_LAST_ADDRESS = 73727,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a137 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 65536,
+			PORT_A_FIRST_BIT_NUMBER = 1,
+			PORT_A_LAST_ADDRESS = 73727,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a138 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 65536,
+			PORT_A_FIRST_BIT_NUMBER = 2,
+			PORT_A_LAST_ADDRESS = 73727,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a139 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 65536,
+			PORT_A_FIRST_BIT_NUMBER = 3,
+			PORT_A_LAST_ADDRESS = 73727,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a140 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 65536,
+			PORT_A_FIRST_BIT_NUMBER = 4,
+			PORT_A_LAST_ADDRESS = 73727,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a141 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 65536,
+			PORT_A_FIRST_BIT_NUMBER = 5,
+			PORT_A_LAST_ADDRESS = 73727,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a142 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 65536,
+			PORT_A_FIRST_BIT_NUMBER = 6,
+			PORT_A_LAST_ADDRESS = 73727,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a143 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 65536,
+			PORT_A_FIRST_BIT_NUMBER = 7,
+			PORT_A_LAST_ADDRESS = 73727,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a144 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 65536,
+			PORT_A_FIRST_BIT_NUMBER = 8,
+			PORT_A_LAST_ADDRESS = 73727,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a145 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 65536,
+			PORT_A_FIRST_BIT_NUMBER = 9,
+			PORT_A_LAST_ADDRESS = 73727,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a146 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 65536,
+			PORT_A_FIRST_BIT_NUMBER = 10,
+			PORT_A_LAST_ADDRESS = 73727,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a147 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 65536,
+			PORT_A_FIRST_BIT_NUMBER = 11,
+			PORT_A_LAST_ADDRESS = 73727,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a148 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 65536,
+			PORT_A_FIRST_BIT_NUMBER = 12,
+			PORT_A_LAST_ADDRESS = 73727,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a149 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 65536,
+			PORT_A_FIRST_BIT_NUMBER = 13,
+			PORT_A_LAST_ADDRESS = 73727,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a150 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 65536,
+			PORT_A_FIRST_BIT_NUMBER = 14,
+			PORT_A_LAST_ADDRESS = 73727,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a151 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 65536,
+			PORT_A_FIRST_BIT_NUMBER = 15,
+			PORT_A_LAST_ADDRESS = 73727,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a152 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 65536,
+			PORT_A_FIRST_BIT_NUMBER = 16,
+			PORT_A_LAST_ADDRESS = 73727,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a153 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 73728,
+			PORT_A_FIRST_BIT_NUMBER = 0,
+			PORT_A_LAST_ADDRESS = 81919,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a154 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 73728,
+			PORT_A_FIRST_BIT_NUMBER = 1,
+			PORT_A_LAST_ADDRESS = 81919,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a155 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 73728,
+			PORT_A_FIRST_BIT_NUMBER = 2,
+			PORT_A_LAST_ADDRESS = 81919,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a156 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 73728,
+			PORT_A_FIRST_BIT_NUMBER = 3,
+			PORT_A_LAST_ADDRESS = 81919,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a157 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 73728,
+			PORT_A_FIRST_BIT_NUMBER = 4,
+			PORT_A_LAST_ADDRESS = 81919,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a158 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 73728,
+			PORT_A_FIRST_BIT_NUMBER = 5,
+			PORT_A_LAST_ADDRESS = 81919,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a159 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 73728,
+			PORT_A_FIRST_BIT_NUMBER = 6,
+			PORT_A_LAST_ADDRESS = 81919,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a160 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 73728,
+			PORT_A_FIRST_BIT_NUMBER = 7,
+			PORT_A_LAST_ADDRESS = 81919,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a161 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 73728,
+			PORT_A_FIRST_BIT_NUMBER = 8,
+			PORT_A_LAST_ADDRESS = 81919,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a162 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 73728,
+			PORT_A_FIRST_BIT_NUMBER = 9,
+			PORT_A_LAST_ADDRESS = 81919,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a163 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 73728,
+			PORT_A_FIRST_BIT_NUMBER = 10,
+			PORT_A_LAST_ADDRESS = 81919,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a164 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 73728,
+			PORT_A_FIRST_BIT_NUMBER = 11,
+			PORT_A_LAST_ADDRESS = 81919,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a165 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 73728,
+			PORT_A_FIRST_BIT_NUMBER = 12,
+			PORT_A_LAST_ADDRESS = 81919,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a166 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 73728,
+			PORT_A_FIRST_BIT_NUMBER = 13,
+			PORT_A_LAST_ADDRESS = 81919,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a167 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 73728,
+			PORT_A_FIRST_BIT_NUMBER = 14,
+			PORT_A_LAST_ADDRESS = 81919,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a168 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 73728,
+			PORT_A_FIRST_BIT_NUMBER = 15,
+			PORT_A_LAST_ADDRESS = 81919,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a169 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 13,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 73728,
+			PORT_A_FIRST_BIT_NUMBER = 16,
+			PORT_A_LAST_ADDRESS = 81919,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a170 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 11,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 81920,
+			PORT_A_FIRST_BIT_NUMBER = 0,
+			PORT_A_LAST_ADDRESS = 83465,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a171 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 11,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 81920,
+			PORT_A_FIRST_BIT_NUMBER = 1,
+			PORT_A_LAST_ADDRESS = 83465,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a172 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 11,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 81920,
+			PORT_A_FIRST_BIT_NUMBER = 2,
+			PORT_A_LAST_ADDRESS = 83465,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a173 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 11,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 81920,
+			PORT_A_FIRST_BIT_NUMBER = 3,
+			PORT_A_LAST_ADDRESS = 83465,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a174 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 11,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 81920,
+			PORT_A_FIRST_BIT_NUMBER = 4,
+			PORT_A_LAST_ADDRESS = 83465,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a175 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 11,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 81920,
+			PORT_A_FIRST_BIT_NUMBER = 5,
+			PORT_A_LAST_ADDRESS = 83465,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a176 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 11,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 81920,
+			PORT_A_FIRST_BIT_NUMBER = 6,
+			PORT_A_LAST_ADDRESS = 83465,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a177 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 11,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 81920,
+			PORT_A_FIRST_BIT_NUMBER = 7,
+			PORT_A_LAST_ADDRESS = 83465,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a178 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 11,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 81920,
+			PORT_A_FIRST_BIT_NUMBER = 8,
+			PORT_A_LAST_ADDRESS = 83465,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a179 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 11,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 81920,
+			PORT_A_FIRST_BIT_NUMBER = 9,
+			PORT_A_LAST_ADDRESS = 83465,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a180 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 11,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 81920,
+			PORT_A_FIRST_BIT_NUMBER = 10,
+			PORT_A_LAST_ADDRESS = 83465,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a181 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 11,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 81920,
+			PORT_A_FIRST_BIT_NUMBER = 11,
+			PORT_A_LAST_ADDRESS = 83465,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a182 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 11,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 81920,
+			PORT_A_FIRST_BIT_NUMBER = 12,
+			PORT_A_LAST_ADDRESS = 83465,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a183 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 11,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 81920,
+			PORT_A_FIRST_BIT_NUMBER = 13,
+			PORT_A_LAST_ADDRESS = 83465,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a184 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 11,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 81920,
+			PORT_A_FIRST_BIT_NUMBER = 14,
+			PORT_A_LAST_ADDRESS = 83465,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a185 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 11,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 81920,
+			PORT_A_FIRST_BIT_NUMBER = 15,
+			PORT_A_LAST_ADDRESS = 83465,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	ram_block1a186 : cycloneive_ram_block
+		WITH (
+			CLK0_CORE_CLOCK_ENABLE = "ena0",
+			CLK0_INPUT_CLOCK_ENABLE = "none",
+			CONNECTIVITY_CHECKING = "OFF",
+			INIT_FILE = "db/lab8.ram0_music_7054c3e.hdl.mif",
+			INIT_FILE_LAYOUT = "port_a",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "rom",
+			PORT_A_ADDRESS_CLEAR = "none",
+			PORT_A_ADDRESS_WIDTH = 11,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 1,
+			PORT_A_FIRST_ADDRESS = 81920,
+			PORT_A_FIRST_BIT_NUMBER = 16,
+			PORT_A_LAST_ADDRESS = 83465,
+			PORT_A_LOGICAL_RAM_DEPTH = 83466,
+			PORT_A_LOGICAL_RAM_WIDTH = 17,
+			RAM_BLOCK_TYPE = "AUTO"
+		);
+	address_a_sel[3..0]	: WIRE;
+	address_a_wire[16..0]	: WIRE;
+	rden_decode_addr_sel_a[3..0]	: WIRE;
+
+BEGIN 
+	address_reg_a[].clk = clock0;
+	address_reg_a[].d = address_a_sel[];
+	rden_decode.data[] = rden_decode_addr_sel_a[];
+	mux2.data[] = ( ram_block1a[186..0].portadataout[0..0]);
+	mux2.sel[] = address_reg_a[].q;
+	ram_block1a[186..0].clk0 = clock0;
+	ram_block1a[186..0].ena0 = ( rden_decode.eq[10..10], rden_decode.eq[10..10], rden_decode.eq[10..10], rden_decode.eq[10..10], rden_decode.eq[10..10], rden_decode.eq[10..10], rden_decode.eq[10..10], rden_decode.eq[10..10], rden_decode.eq[10..10], rden_decode.eq[10..10], rden_decode.eq[10..10], rden_decode.eq[10..10], rden_decode.eq[10..10], rden_decode.eq[10..10], rden_decode.eq[10..10], rden_decode.eq[10..10], rden_decode.eq[10..9], rden_decode.eq[9..9], rden_decode.eq[9..9], rden_decode.eq[9..9], rden_decode.eq[9..9], rden_decode.eq[9..9], rden_decode.eq[9..9], rden_decode.eq[9..9], rden_decode.eq[9..9], rden_decode.eq[9..9], rden_decode.eq[9..9], rden_decode.eq[9..9], rden_decode.eq[9..9], rden_decode.eq[9..9], rden_decode.eq[9..9], rden_decode.eq[9..9], rden_decode.eq[9..8], rden_decode.eq[8..8], rden_decode.eq[8..8], rden_decode.eq[8..8], rden_decode.eq[8..8], rden_decode.eq[8..8], rden_decode.eq[8..8], rden_decode.eq[8..8], rden_decode.eq[8..8], rden_decode.eq[8..8], rden_decode.eq[8..8], rden_decode.eq[8..8], rden_decode.eq[8..8], rden_decode.eq[8..8], rden_decode.eq[8..8], rden_decode.eq[8..8], rden_decode.eq[8..7], rden_decode.eq[7..7], rden_decode.eq[7..7], rden_decode.eq[7..7], rden_decode.eq[7..7], rden_decode.eq[7..7], rden_decode.eq[7..7], rden_decode.eq[7..7], rden_decode.eq[7..7], rden_decode.eq[7..7], rden_decode.eq[7..7], rden_decode.eq[7..7], rden_decode.eq[7..7], rden_decode.eq[7..7], rden_decode.eq[7..7], rden_decode.eq[7..7], rden_decode.eq[7..6], rden_decode.eq[6..6], rden_decode.eq[6..6], rden_decode.eq[6..6], rden_decode.eq[6..6], rden_decode.eq[6..6], rden_decode.eq[6..6], rden_decode.eq[6..6], rden_decode.eq[6..6], rden_decode.eq[6..6], rden_decode.eq[6..6], rden_decode.eq[6..6], rden_decode.eq[6..6], rden_decode.eq[6..6], rden_decode.eq[6..6], rden_decode.eq[6..6], rden_decode.eq[6..5], rden_decode.eq[5..5], rden_decode.eq[5..5], rden_decode.eq[5..5], rden_decode.eq[5..5], rden_decode.eq[5..5], rden_decode.eq[5..5], rden_decode.eq[5..5], rden_decode.eq[5..5], rden_decode.eq[5..5], rden_decode.eq[5..5], rden_decode.eq[5..5], rden_decode.eq[5..5], rden_decode.eq[5..5], rden_decode.eq[5..5], rden_decode.eq[5..5], rden_decode.eq[5..4], rden_decode.eq[4..4], rden_decode.eq[4..4], rden_decode.eq[4..4], rden_decode.eq[4..4], rden_decode.eq[4..4], rden_decode.eq[4..4], rden_decode.eq[4..4], rden_decode.eq[4..4], rden_decode.eq[4..4], rden_decode.eq[4..4], rden_decode.eq[4..4], rden_decode.eq[4..4], rden_decode.eq[4..4], rden_decode.eq[4..4], rden_decode.eq[4..4], rden_decode.eq[4..3], rden_decode.eq[3..3], rden_decode.eq[3..3], rden_decode.eq[3..3], rden_decode.eq[3..3], rden_decode.eq[3..3], rden_decode.eq[3..3], rden_decode.eq[3..3], rden_decode.eq[3..3], rden_decode.eq[3..3], rden_decode.eq[3..3], rden_decode.eq[3..3], rden_decode.eq[3..3], rden_decode.eq[3..3], rden_decode.eq[3..3], rden_decode.eq[3..3], rden_decode.eq[3..2], rden_decode.eq[2..2], rden_decode.eq[2..2], rden_decode.eq[2..2], rden_decode.eq[2..2], rden_decode.eq[2..2], rden_decode.eq[2..2], rden_decode.eq[2..2], rden_decode.eq[2..2], rden_decode.eq[2..2], rden_decode.eq[2..2], rden_decode.eq[2..2], rden_decode.eq[2..2], rden_decode.eq[2..2], rden_decode.eq[2..2], rden_decode.eq[2..2], rden_decode.eq[2..1], rden_decode.eq[1..1], rden_decode.eq[1..1], rden_decode.eq[1..1], rden_decode.eq[1..1], rden_decode.eq[1..1], rden_decode.eq[1..1], rden_decode.eq[1..1], rden_decode.eq[1..1], rden_decode.eq[1..1], rden_decode.eq[1..1], rden_decode.eq[1..1], rden_decode.eq[1..1], rden_decode.eq[1..1], rden_decode.eq[1..1], rden_decode.eq[1..1], rden_decode.eq[1..0], rden_decode.eq[0..0], rden_decode.eq[0..0], rden_decode.eq[0..0], rden_decode.eq[0..0], rden_decode.eq[0..0], rden_decode.eq[0..0], rden_decode.eq[0..0], rden_decode.eq[0..0], rden_decode.eq[0..0], rden_decode.eq[0..0], rden_decode.eq[0..0], rden_decode.eq[0..0], rden_decode.eq[0..0], rden_decode.eq[0..0], rden_decode.eq[0..0], rden_decode.eq[0..0]);
+	ram_block1a[169..0].portaaddr[] = ( address_a_wire[12..0]);
+	ram_block1a[186..170].portaaddr[] = ( address_a_wire[10..0]);
+	ram_block1a[186..0].portare = B"1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111";
+	address_a_sel[3..0] = address_a[16..13];
+	address_a_wire[] = address_a[];
+	q_a[] = mux2.result[];
+	rden_decode_addr_sel_a[3..0] = address_a_wire[16..13];
+END;
+--VALID FILE

@@ -1,0 +1,106 @@
+/*
+ * ECE385-HelperTools/PNG-To-Txt
+ * Author: Rishi Thakkar
+ *
+ */
+
+module  backgroundRAM
+(
+		input [18:0] read_address,
+		input Clk,
+
+		output logic [3:0] data_Out
+);
+
+// mem has width of 3 bits and a total of 400 addresses
+logic [3:0] mem [0:12000];
+
+initial
+begin
+	 $readmemh("background.txt", mem);
+end
+
+
+always_ff @ (posedge Clk) begin
+	
+	data_Out<= mem[read_address];
+end
+
+endmodule
+
+
+
+module  doodleRAM
+(
+		input [10:0] read_address,
+		input Clk,
+
+		output logic [3:0] data_Out
+);
+
+// mem has width of 3 bits and a total of 400 addresses
+logic [3:0] memdoodle [0:1296];
+
+initial
+begin
+	 $readmemh("doodle.txt", memdoodle);
+end
+
+
+always_ff @ (posedge Clk) begin
+	
+	data_Out<= memdoodle[read_address];
+end
+
+endmodule
+
+module  doodleleftRAM
+(
+		input [10:0] read_address,
+		input Clk,
+
+		output logic [3:0] data_Out
+);
+
+// mem has width of 3 bits and a total of 400 addresses
+logic [3:0] memdoodleleft [0:1296];
+
+initial
+begin
+	 $readmemh("doodlel.txt", memdoodleleft);
+end
+
+
+always_ff @ (posedge Clk) begin
+	
+	data_Out<= memdoodleleft[read_address];
+end
+
+endmodule
+
+
+
+
+module  stairRAM
+(
+		input [9:0] read_address,
+		input Clk,
+
+		output logic [3:0] data_Out
+);
+
+// mem has width of 3 bits and a total of 400 addresses
+logic [3:0] memstair [0:512];
+
+initial
+begin
+	 $readmemh("stair.txt", memstair);
+end
+
+
+always_ff @ (posedge Clk) begin
+	
+	data_Out<= memstair[read_address];
+end
+
+endmodule

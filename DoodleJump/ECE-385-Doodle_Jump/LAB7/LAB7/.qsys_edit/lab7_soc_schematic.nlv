@@ -1,0 +1,24 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst lab7_soc.nios2_gen2_0.cpu -pg 1
+preplace inst lab7_soc.sdram -pg 1 -lvl 3 -y 30
+preplace inst lab7_soc.sysid_qsys_0 -pg 1 -lvl 3 -y 410
+preplace inst lab7_soc.nios2_gen2_0.reset_bridge -pg 1
+preplace inst lab7_soc.nios2_gen2_0.clock_bridge -pg 1
+preplace inst lab7_soc.sdram_pll -pg 1 -lvl 3 -y 150
+preplace inst lab7_soc.nios2_gen2_0 -pg 1 -lvl 2 -y 300
+preplace inst lab7_soc.clk_0 -pg 1 -lvl 1 -y 340
+preplace inst lab7_soc.onchip_memory2_0 -pg 1 -lvl 3 -y 230
+preplace inst lab7_soc -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst lab7_soc.led -pg 1 -lvl 3 -y 310
+preplace netloc EXPORT<net_container>lab7_soc</net_container>(MASTER)sdram_pll.c1,(MASTER)lab7_soc.sdram_clk) 1 3 1 N
+preplace netloc POINT_TO_POINT<net_container>lab7_soc</net_container>(MASTER)sdram_pll.c0,(SLAVE)sdram.clk) 1 2 2 750 140 1010
+preplace netloc INTERCONNECT<net_container>lab7_soc</net_container>(MASTER)nios2_gen2_0.data_master,(MASTER)nios2_gen2_0.instruction_master,(SLAVE)nios2_gen2_0.debug_mem_slave,(SLAVE)sdram.s1,(SLAVE)led.s1,(SLAVE)onchip_memory2_0.s1,(SLAVE)sdram_pll.pll_slave,(SLAVE)sysid_qsys_0.control_slave) 1 1 2 330 480 690
+preplace netloc EXPORT<net_container>lab7_soc</net_container>(SLAVE)lab7_soc.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>lab7_soc</net_container>(SLAVE)clk_0.clk_in,(SLAVE)lab7_soc.clk) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>lab7_soc</net_container>(SLAVE)onchip_memory2_0.clk1,(MASTER)clk_0.clk,(SLAVE)sysid_qsys_0.clk,(SLAVE)led.clk,(SLAVE)sdram_pll.inclk_interface,(SLAVE)nios2_gen2_0.clk) 1 1 2 310 440 710
+preplace netloc INTERCONNECT<net_container>lab7_soc</net_container>(SLAVE)sdram_pll.inclk_interface_reset,(MASTER)nios2_gen2_0.debug_reset_request,(MASTER)clk_0.clk_reset,(SLAVE)sysid_qsys_0.reset,(SLAVE)onchip_memory2_0.reset1,(SLAVE)nios2_gen2_0.reset,(SLAVE)led.reset,(SLAVE)sdram.reset) 1 1 2 290 460 730
+preplace netloc EXPORT<net_container>lab7_soc</net_container>(SLAVE)sdram.wire,(SLAVE)lab7_soc.sdram_wire) 1 0 3 NJ 100 NJ 100 NJ
+preplace netloc EXPORT<net_container>lab7_soc</net_container>(SLAVE)led.external_connection,(SLAVE)lab7_soc.led_wire) 1 0 3 NJ 500 NJ 500 NJ
+levelinfo -pg 1 0 80 1120
+levelinfo -hier lab7_soc 90 120 450 820 1030

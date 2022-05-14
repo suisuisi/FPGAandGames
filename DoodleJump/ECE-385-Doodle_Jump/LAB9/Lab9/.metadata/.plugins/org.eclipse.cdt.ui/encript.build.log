@@ -1,0 +1,9 @@
+20:14:46 **** Incremental Build of configuration Nios II for project encript ****
+make all 
+Info: Building ../encript_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../encript_bsp/
+[BSP build complete]
+[encript build complete]
+
+20:14:47 Build Finished (took 803ms)
+

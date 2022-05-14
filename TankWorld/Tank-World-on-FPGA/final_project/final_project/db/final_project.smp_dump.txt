@@ -1,0 +1,69 @@
+
+State Machine - |lab8|State
+Name State.END State.GAME State.GAME_RST State.EN_WAIT State.EN State.BG_WAIT State.BG 
+State.BG 0 0 0 0 0 0 0 
+State.BG_WAIT 0 0 0 0 0 1 1 
+State.EN 0 0 0 0 1 0 1 
+State.EN_WAIT 0 0 0 1 0 0 1 
+State.GAME_RST 0 0 1 0 0 0 1 
+State.GAME 0 1 0 0 0 0 1 
+State.END 1 0 0 0 0 0 1 
+
+State Machine - |lab8|tanks:tank_instance|State
+Name State.FIRST State.OTHER State.FIRST_WAIT 
+State.FIRST 0 0 0 
+State.FIRST_WAIT 1 0 1 
+State.OTHER 1 1 0 
+
+State Machine - |lab8|tanks_selector:ts|State
+Name State.TPM_DONE State.OPM_DONE State.TPM_WAIT State.OPM_WAIT State.TPM State.OPM 
+State.OPM 0 0 0 0 0 0 
+State.TPM 0 0 0 0 1 1 
+State.OPM_WAIT 0 0 0 1 0 1 
+State.TPM_WAIT 0 0 1 0 0 1 
+State.OPM_DONE 0 1 0 0 0 1 
+State.TPM_DONE 1 0 0 0 0 1 
+
+State Machine - |lab8|final_soc:nios_system|final_soc_sdram:sdram|m_next
+Name m_next.010000000 m_next.000010000 m_next.000001000 m_next.000000001 
+m_next.000000001 0 0 0 0 
+m_next.000001000 0 0 1 1 
+m_next.000010000 0 1 0 1 
+m_next.010000000 1 0 0 1 
+
+State Machine - |lab8|final_soc:nios_system|final_soc_sdram:sdram|m_state
+Name m_state.100000000 m_state.010000000 m_state.001000000 m_state.000100000 m_state.000010000 m_state.000001000 m_state.000000100 m_state.000000010 m_state.000000001 
+m_state.000000001 0 0 0 0 0 0 0 0 0 
+m_state.000000010 0 0 0 0 0 0 0 1 1 
+m_state.000000100 0 0 0 0 0 0 1 0 1 
+m_state.000001000 0 0 0 0 0 1 0 0 1 
+m_state.000010000 0 0 0 0 1 0 0 0 1 
+m_state.000100000 0 0 0 1 0 0 0 0 1 
+m_state.001000000 0 0 1 0 0 0 0 0 1 
+m_state.010000000 0 1 0 0 0 0 0 0 1 
+m_state.100000000 1 0 0 0 0 0 0 0 1 
+
+State Machine - |lab8|final_soc:nios_system|final_soc_sdram:sdram|i_next
+Name i_next.111 i_next.101 i_next.010 i_next.000 
+i_next.000 0 0 0 0 
+i_next.010 0 0 1 1 
+i_next.101 0 1 0 1 
+i_next.111 1 0 0 1 
+
+State Machine - |lab8|final_soc:nios_system|final_soc_sdram:sdram|i_state
+Name i_state.111 i_state.101 i_state.011 i_state.010 i_state.001 i_state.000 
+i_state.000 0 0 0 0 0 0 
+i_state.001 0 0 0 0 1 1 
+i_state.010 0 0 0 1 0 1 
+i_state.011 0 0 1 0 0 1 
+i_state.101 0 1 0 0 0 1 
+i_state.111 1 0 0 0 0 1 
+
+State Machine - |lab8|final_soc:nios_system|final_soc_nios2_gen2_0:nios2_gen2_0|final_soc_nios2_gen2_0_cpu:cpu|final_soc_nios2_gen2_0_cpu_nios2_oci:the_final_soc_nios2_gen2_0_cpu_nios2_oci|final_soc_nios2_gen2_0_cpu_debug_slave_wrapper:the_final_soc_nios2_gen2_0_cpu_debug_slave_wrapper|final_soc_nios2_gen2_0_cpu_debug_slave_tck:the_final_soc_nios2_gen2_0_cpu_debug_slave_tck|DRsize
+Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
+DRsize.000 0 0 0 0 0 0 
+DRsize.001 0 0 0 0 1 1 
+DRsize.010 0 0 0 1 0 1 
+DRsize.011 0 0 1 0 0 1 
+DRsize.100 0 1 0 0 0 1 
+DRsize.101 1 0 0 0 0 1 

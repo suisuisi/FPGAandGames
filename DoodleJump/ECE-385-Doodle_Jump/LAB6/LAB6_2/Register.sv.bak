@@ -1,0 +1,19 @@
+module Resigter (
+    input [15:0] Din,
+    input Load,
+    input Reset,
+    input clk,
+    output [15:0] Dout
+);
+    always_ff @( posedge clk ) 
+    begin:
+        if (Reset)
+            Dout <= 16'b0;
+        else
+            if (Load) 
+                Dout <= Din;
+            else
+                Dout <= Dout;
+    end
+        
+endmodule

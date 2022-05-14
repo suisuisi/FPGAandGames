@@ -1,0 +1,178 @@
+set_location_assignment PIN_AC4 -to UB
+set_location_assignment PIN_AE8 -to WE
+set_location_assignment PIN_AF8 -to CE
+set_location_assignment PIN_AD4 -to LB
+set_location_assignment PIN_AD5 -to OE
+set_location_assignment PIN_AB7 -to ADDR[0]
+set_location_assignment PIN_AD7 -to ADDR[1]
+set_location_assignment PIN_AE7 -to ADDR[2]
+set_location_assignment PIN_AC7 -to ADDR[3]
+set_location_assignment PIN_AB6 -to ADDR[4]
+set_location_assignment PIN_AE6 -to ADDR[5]
+set_location_assignment PIN_AB5 -to ADDR[6]
+set_location_assignment PIN_AC5 -to ADDR[7]
+set_location_assignment PIN_AF5 -to ADDR[8]
+set_location_assignment PIN_T7 -to ADDR[9]
+set_location_assignment PIN_AF2 -to ADDR[10]
+set_location_assignment PIN_AD3 -to ADDR[11]
+set_location_assignment PIN_AB4 -to ADDR[12]
+set_location_assignment PIN_AC3 -to ADDR[13]
+set_location_assignment PIN_AA4 -to ADDR[14]
+set_location_assignment PIN_AB11 -to ADDR[15]
+set_location_assignment PIN_AC11 -to ADDR[16]
+set_location_assignment PIN_AB9 -to ADDR[17]
+set_location_assignment PIN_AB8 -to ADDR[18]
+set_location_assignment PIN_T8 -to ADDR[19]
+set_location_assignment PIN_Y2 -to Clk
+set_location_assignment PIN_N21 -to Continue
+set_location_assignment PIN_AH3 -to Data[0]
+set_location_assignment PIN_AF4 -to Data[1]
+set_location_assignment PIN_AG4 -to Data[2]
+set_location_assignment PIN_AH4 -to Data[3]
+set_location_assignment PIN_AF6 -to Data[4]
+set_location_assignment PIN_AG6 -to Data[5]
+set_location_assignment PIN_AH6 -to Data[6]
+set_location_assignment PIN_AF7 -to Data[7]
+set_location_assignment PIN_AD1 -to Data[8]
+set_location_assignment PIN_AD2 -to Data[9]
+set_location_assignment PIN_AE2 -to Data[10]
+set_location_assignment PIN_AE1 -to Data[11]
+set_location_assignment PIN_AE3 -to Data[12]
+set_location_assignment PIN_AE4 -to Data[13]
+set_location_assignment PIN_AF3 -to Data[14]
+set_location_assignment PIN_AG3 -to Data[15]
+set_location_assignment PIN_G18 -to HEX0[0]
+set_location_assignment PIN_F22 -to HEX0[1]
+set_location_assignment PIN_E17 -to HEX0[2]
+set_location_assignment PIN_L26 -to HEX0[3]
+set_location_assignment PIN_L25 -to HEX0[4]
+set_location_assignment PIN_J22 -to HEX0[5]
+set_location_assignment PIN_H22 -to HEX0[6]
+set_location_assignment PIN_M24 -to HEX1[0]
+set_location_assignment PIN_Y22 -to HEX1[1]
+set_location_assignment PIN_W21 -to HEX1[2]
+set_location_assignment PIN_W22 -to HEX1[3]
+set_location_assignment PIN_W25 -to HEX1[4]
+set_location_assignment PIN_U23 -to HEX1[5]
+set_location_assignment PIN_U24 -to HEX1[6]
+set_location_assignment PIN_AA25 -to HEX2[0]
+set_location_assignment PIN_AA26 -to HEX2[1]
+set_location_assignment PIN_Y25 -to HEX2[2]
+set_location_assignment PIN_W26 -to HEX2[3]
+set_location_assignment PIN_Y26 -to HEX2[4]
+set_location_assignment PIN_W27 -to HEX2[5]
+set_location_assignment PIN_W28 -to HEX2[6]
+set_location_assignment PIN_V21 -to HEX3[0]
+set_location_assignment PIN_U21 -to HEX3[1]
+set_location_assignment PIN_AB20 -to HEX3[2]
+set_location_assignment PIN_AA21 -to HEX3[3]
+set_location_assignment PIN_AD24 -to HEX3[4]
+set_location_assignment PIN_AF23 -to HEX3[5]
+set_location_assignment PIN_Y19 -to HEX3[6]
+set_location_assignment PIN_G19 -to LED[0]
+set_location_assignment PIN_F19 -to LED[1]
+set_location_assignment PIN_E19 -to LED[2]
+set_location_assignment PIN_F21 -to LED[3]
+set_location_assignment PIN_F18 -to LED[4]
+set_location_assignment PIN_E18 -to LED[5]
+set_location_assignment PIN_J19 -to LED[6]
+set_location_assignment PIN_H19 -to LED[7]
+set_location_assignment PIN_J17 -to LED[8]
+set_location_assignment PIN_G17 -to LED[9]
+set_location_assignment PIN_J15 -to LED[10]
+set_location_assignment PIN_H16 -to LED[11]
+set_location_assignment PIN_M23 -to Reset
+set_location_assignment PIN_R24 -to Run
+set_location_assignment PIN_AB28 -to S[0]
+set_location_assignment PIN_AC28 -to S[1]
+set_location_assignment PIN_AC27 -to S[2]
+set_location_assignment PIN_AD27 -to S[3]
+set_location_assignment PIN_AB27 -to S[4]
+set_location_assignment PIN_AC26 -to S[5]
+set_location_assignment PIN_AD26 -to S[6]
+set_location_assignment PIN_AB26 -to S[7]
+set_location_assignment PIN_AC25 -to S[8]
+set_location_assignment PIN_AB25 -to S[9]
+set_location_assignment PIN_AC24 -to S[10]
+set_location_assignment PIN_AB24 -to S[11]
+set_location_assignment PIN_AB23 -to S[12]
+set_location_assignment PIN_AA24 -to S[13]
+set_location_assignment PIN_AA23 -to S[14]
+set_location_assignment PIN_AA22 -to S[15]
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity LC3_Processor -section_id Top
+set_location_assignment PIN_AE18 -to HEX4[6]
+set_location_assignment PIN_AF19 -to HEX4[5]
+set_location_assignment PIN_AE19 -to HEX4[4]
+set_location_assignment PIN_AH21 -to HEX4[3]
+set_location_assignment PIN_AG21 -to HEX4[2]
+set_location_assignment PIN_AA19 -to HEX4[1]
+set_location_assignment PIN_AB19 -to HEX4[0]
+set_location_assignment PIN_AH18 -to HEX5[6]
+set_location_assignment PIN_AF18 -to HEX5[5]
+set_location_assignment PIN_AG19 -to HEX5[4]
+set_location_assignment PIN_AH19 -to HEX5[3]
+set_location_assignment PIN_AB18 -to HEX5[2]
+set_location_assignment PIN_AC18 -to HEX5[1]
+set_location_assignment PIN_AD18 -to HEX5[0]
+set_location_assignment PIN_AC17 -to HEX6[6]
+set_location_assignment PIN_AA15 -to HEX6[5]
+set_location_assignment PIN_AB15 -to HEX6[4]
+set_location_assignment PIN_AB17 -to HEX6[3]
+set_location_assignment PIN_AA16 -to HEX6[2]
+set_location_assignment PIN_AB16 -to HEX6[1]
+set_location_assignment PIN_AA17 -to HEX6[0]
+set_location_assignment PIN_AA14 -to HEX7[6]
+set_location_assignment PIN_AG18 -to HEX7[5]
+set_location_assignment PIN_AF17 -to HEX7[4]
+set_location_assignment PIN_AH17 -to HEX7[3]
+set_location_assignment PIN_AG17 -to HEX7[2]
+set_location_assignment PIN_AE17 -to HEX7[1]
+set_location_assignment PIN_AD17 -to HEX7[0]
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE115F29C7
+set_global_assignment -name TOP_LEVEL_ENTITY lab6_toplevel
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:16:50  OCTOBER 26, 2021"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Standard Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (SystemVerilog)"
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "SYSTEMVERILOG HDL" -section_id eda_simulation
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity LC3_Processor -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity LC3_Processor -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -entity LC3_Processor -section_id Top
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH testbench_week1 -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME testbench_week1 -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id testbench_week1
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME testbench_week1 -section_id testbench_week1
+set_global_assignment -name SDC_FILE Constraint.sdc
+set_global_assignment -name SYSTEMVERILOG_FILE tristate.sv
+set_global_assignment -name SYSTEMVERILOG_FILE testbench_week1.sv
+set_global_assignment -name SYSTEMVERILOG_FILE test_memory.sv
+set_global_assignment -name SYSTEMVERILOG_FILE SLC3_2.sv
+set_global_assignment -name SYSTEMVERILOG_FILE slc3.sv
+set_global_assignment -name SYSTEMVERILOG_FILE memory_contents.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Mem2IO.sv
+set_global_assignment -name SYSTEMVERILOG_FILE lab6_toplevel.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ISDU.sv
+set_global_assignment -name SYSTEMVERILOG_FILE comp_sync.sv
+set_global_assignment -name SYSTEMVERILOG_FILE comp_register.sv
+set_global_assignment -name SYSTEMVERILOG_FILE comp_MUX.sv
+set_global_assignment -name SYSTEMVERILOG_FILE comp_hexdriver.sv
+set_global_assignment -name SYSTEMVERILOG_FILE comp_databus.sv
+set_global_assignment -name SYSTEMVERILOG_FILE comp_benreg.sv
+set_global_assignment -name SYSTEMVERILOG_FILE comp_ALU.sv
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "1 us" -section_id testbench_week1
+set_global_assignment -name EDA_TEST_BENCH_FILE testbench_week1.sv -section_id testbench_week1
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

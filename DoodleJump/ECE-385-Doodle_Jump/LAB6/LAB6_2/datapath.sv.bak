@@ -1,0 +1,92 @@
+module datapath (
+                input logic         Clk, 
+									Reset,
+
+				// input logic BEN,
+                input logic LD_MAR, LD_MDR, LD_IR, LD_BEN, LD_CC, LD_REG, LD_PC, LD_LED,
+                input logic GatePC, GateMDR, GateALU, GateMARMUX,
+                input logic [1:0] PCMUX, ADDR2MUX, ALUK,
+                // input logic DRMUX, SR1MUX, SR2MUX, ADDR1MUX,
+                input logic MIO_EN,
+
+                output logic [15:0] MAR, MDR, IR, PC,                               
+                );
+
+
+logic [15:0] PC_MUX_OUT, PC_OUT, MDR_MUX_OUT, MDR_OUT, IR_OUT, MAR_OUT, ALU_OUT;
+logic [15:0] BUS;                      
+
+assign MAR = MAR_OUT;
+assign PC = PC_OUT;
+assign IR = IR_OUT;
+assign MDR = MDR_OUT;
+
+
+Resigter MAR(
+    .Din(BUS),
+    .Load(LD_MAR),
+    .Reset(Reset),
+    .clk,
+    .Dout(MAR_OUT)
+);
+
+Resigter MDR(
+    .Din(MDR_MUX_OUT),
+    .Load(LD_MDR),
+    .Reset(Reset),
+    .clk,
+    .Dout(MDR_OUT)
+);
+
+Resigter IR(
+    .Din(BUS),
+    .Load(LD_IR),
+    .Reset(Reset),
+    .clk,
+    .Dout(IR_OUT)
+);
+
+
+up_counter_load PC(
+    .data(PC_MUX_OUT),
+    .load(LD_PC),         //not sure
+    .clk,
+    .reset(Reset),
+    .out(PC_OUT)
+);
+
+// Resigter PC(
+//     .Din(),
+//     .Load(),
+//     .Reset(Reset),
+//     .clk,
+//     .Dout()
+// );
+
+
+MUX3_1 PC_MUX(
+	.A(PC_OUT),
+    .B(),
+    .C(),
+	.sel(PCMUX),
+	.out(PC_MUX_OUT)
+	);
+
+MUX2_1 MDR_MUX(
+	.A(MDR_In),
+    .B(BUS),
+	.sel(MIO_EN),
+	.out(MDR_MUX_OUT)
+	);
+
+
+MUX4_1 Bus_Gate(
+    .A(PC_MUX_OUT),
+    .B(MDR_OUT),
+    .C(ALU_OUT),
+    .D(MAR_OUT),
+    .sel({GatePC,GateMDR,GateALU,GateMARMUX}),
+    .out(BUS)
+)
+
+endmodule

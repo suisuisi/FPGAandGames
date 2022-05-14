@@ -1,0 +1,9 @@
+23:32:00 **** Incremental Build of configuration Nios II for project usb_kb1 ****
+make all 
+Info: Building ../usb_kb1_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../usb_kb1_bsp/
+[BSP build complete]
+[usb_kb1 build complete]
+
+23:32:01 Build Finished (took 793ms)
+

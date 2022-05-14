@@ -1,0 +1,108 @@
+EDA Netlist Writer report for Lab9
+Wed Dec 08 16:29:10 2021
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. EDA Netlist Writer Summary
+  3. Simulation Settings
+  4. Simulation Generated Files
+  5. EDA Netlist Writer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------+
+; EDA Netlist Writer Summary                                        ;
++---------------------------+---------------------------------------+
+; EDA Netlist Writer Status ; Successful - Wed Dec 08 16:29:10 2021 ;
+; Revision Name             ; Lab9                                  ;
+; Top-level Entity Name     ; lab9_top                              ;
+; Family                    ; Cyclone IV E                          ;
+; Simulation Files Creation ; Successful                            ;
++---------------------------+---------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Settings                                                                                                                 ;
++---------------------------------------------------------------------------------------------------+---------------------------------+
+; Option                                                                                            ; Setting                         ;
++---------------------------------------------------------------------------------------------------+---------------------------------+
+; Tool Name                                                                                         ; ModelSim-Altera (SystemVerilog) ;
+; Generate functional simulation netlist                                                            ; Off                             ;
+; Time scale                                                                                        ; 1 ps                            ;
+; Truncate long hierarchy paths                                                                     ; Off                             ;
+; Map illegal HDL characters                                                                        ; Off                             ;
+; Flatten buses into individual nodes                                                               ; Off                             ;
+; Maintain hierarchy                                                                                ; Off                             ;
+; Bring out device-wide set/reset signals as ports                                                  ; Off                             ;
+; Enable glitch filtering                                                                           ; Off                             ;
+; Do not write top level VHDL entity                                                                ; Off                             ;
+; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                             ;
+; Architecture name in VHDL output netlist                                                          ; structure                       ;
+; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                             ;
+; Generate third-party EDA tool command script for gate-level simulation                            ; Off                             ;
++---------------------------------------------------------------------------------------------------+---------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Simulation Generated Files                                               ;
++--------------------------------------------------------------------------+
+; Generated Files                                                          ;
++--------------------------------------------------------------------------+
+; D:/quartus/ECE385/Lab9/simulation/modelsim/Lab9_7_1200mv_85c_slow.svo    ;
+; D:/quartus/ECE385/Lab9/simulation/modelsim/Lab9_7_1200mv_0c_slow.svo     ;
+; D:/quartus/ECE385/Lab9/simulation/modelsim/Lab9_min_1200mv_0c_fast.svo   ;
+; D:/quartus/ECE385/Lab9/simulation/modelsim/Lab9.svo                      ;
+; D:/quartus/ECE385/Lab9/simulation/modelsim/Lab9_7_1200mv_85c_v_slow.sdo  ;
+; D:/quartus/ECE385/Lab9/simulation/modelsim/Lab9_7_1200mv_0c_v_slow.sdo   ;
+; D:/quartus/ECE385/Lab9/simulation/modelsim/Lab9_min_1200mv_0c_v_fast.sdo ;
+; D:/quartus/ECE385/Lab9/simulation/modelsim/Lab9_v.sdo                    ;
++--------------------------------------------------------------------------+
+
+
++-----------------------------+
+; EDA Netlist Writer Messages ;
++-----------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime EDA Netlist Writer
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Wed Dec 08 16:28:57 2021
+Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off Lab9 -c Lab9
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (204019): Generated file Lab9_7_1200mv_85c_slow.svo in folder "D:/quartus/ECE385/Lab9/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Lab9_7_1200mv_0c_slow.svo in folder "D:/quartus/ECE385/Lab9/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Lab9_min_1200mv_0c_fast.svo in folder "D:/quartus/ECE385/Lab9/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Lab9.svo in folder "D:/quartus/ECE385/Lab9/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Lab9_7_1200mv_85c_v_slow.sdo in folder "D:/quartus/ECE385/Lab9/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Lab9_7_1200mv_0c_v_slow.sdo in folder "D:/quartus/ECE385/Lab9/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Lab9_min_1200mv_0c_v_fast.sdo in folder "D:/quartus/ECE385/Lab9/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Lab9_v.sdo in folder "D:/quartus/ECE385/Lab9/simulation/modelsim/" for EDA simulation tool
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4742 megabytes
+    Info: Processing ended: Wed Dec 08 16:29:10 2021
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:13
+
+

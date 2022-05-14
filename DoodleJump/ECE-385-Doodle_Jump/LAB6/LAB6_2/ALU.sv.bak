@@ -1,0 +1,42 @@
+module ALU
+(
+        input SEL,
+        input [2:0] ALUK,
+		input [15:0] SR1OUT,SR2OUT,IR40,
+		output logic [15:0] ALUOUT
+	);
+		
+    logic ALUMUXOUT;
+
+    MUX2_1 ALUMUX(
+        .A(SR2OUT),
+        .B(IR40),
+        .sel(SEK),
+        .out(ALUMUXOUT)
+        );
+
+    always_comb
+        begin
+            case (ALUK)
+                2'b00 : 
+                    begin
+                        ALUOUT = ALUMUXOUT + SR1OUT;
+                    end
+                2'b01 :
+                    begin
+                        ALUOUT = ALUMUXOUT & SR1OUT;
+                    end
+                2'b10 :
+                    begin
+                        ALUOUT = SR1OUT;
+                    end
+                2'b11 :
+                    begin
+                        ALUOUT = - SR1OUT;
+                    end
+                default : ALUOUT = 16'b0;
+            endcase
+        end
+
+endmodule
+

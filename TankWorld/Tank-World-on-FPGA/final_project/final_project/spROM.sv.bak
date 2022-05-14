@@ -1,0 +1,5 @@
+module spROM (
+						input [19:0] read_address,
+						input Clk, 
+						output logic [11:0] data_Out
+				  )

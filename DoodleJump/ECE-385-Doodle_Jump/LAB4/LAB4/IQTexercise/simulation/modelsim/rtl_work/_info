@@ -1,0 +1,287 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/simulation/modelsim
+vcompute
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1634736794
+!i10b 1
+!s100 i=]6932U1_OWO<5E?3HbR1
+II^RID?=TKePb;L<`VV4DM2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 compute_sv_unit
+S1
+R0
+w1473975283
+8C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/compute.sv
+FC:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/compute.sv
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1634736794.000000
+!s107 C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/compute.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise|C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/compute.sv|
+!i113 1
+Z6 o-sv -work work
+Z7 !s92 -sv -work work {+incdir+C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise}
+Z8 tCvgOpt 0
+vcontrol
+R1
+R2
+!i10b 1
+!s100 Bz7IcI7VzV6Ti_2hC9_QA0
+ImCGz>4hDJH>8`VUOKYH_]2
+R3
+!s105 Control_sv_unit
+S1
+R0
+w1633894030
+8C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/Control.sv
+FC:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/Control.sv
+L0 3
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/Control.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise|C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/Control.sv|
+!i113 1
+R6
+R7
+R8
+vHexDriver
+R1
+R2
+!i10b 1
+!s100 ^DddjRd7Wla]U<SlP;mT@0
+I4DVihllA=9:PioMkEih^00
+R3
+!s105 HexDriver_sv_unit
+S1
+R0
+w1472679712
+8C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/HexDriver.sv
+FC:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/HexDriver.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/HexDriver.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise|C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/HexDriver.sv|
+!i113 1
+R6
+R7
+R8
+n@hex@driver
+vProcessor
+R1
+R2
+!i10b 1
+!s100 V>d?Ti8Dc4?RS0;B3ef>M0
+INR[`3`8nPmJbWMzZOIDh]2
+R3
+!s105 Processor_sv_unit
+S1
+R0
+w1633891537
+8C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/Processor.sv
+FC:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/Processor.sv
+L0 8
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/Processor.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise|C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/Processor.sv|
+!i113 1
+R6
+R7
+R8
+n@processor
+vreg_4
+R1
+R2
+!i10b 1
+!s100 9Q;M_bZYcOBn:M<I6<c8k0
+Ifml0o:Nl819e2FFTiXVGb1
+R3
+!s105 Reg_4_sv_unit
+S1
+R0
+w1633892479
+8C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/Reg_4.sv
+FC:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/Reg_4.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z9 !s108 1634736793.000000
+!s107 C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/Reg_4.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise|C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/Reg_4.sv|
+!i113 1
+R6
+R7
+R8
+vregister_unit
+R1
+R2
+!i10b 1
+!s100 c?`W04Obk>`oYn_UgA>oj0
+I7YDg4K1S9bLb892kM4E=41
+R3
+!s105 Register_unit_sv_unit
+S1
+R0
+w1633892487
+8C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/Register_unit.sv
+FC:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/Register_unit.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/Register_unit.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise|C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/Register_unit.sv|
+!i113 1
+R6
+R7
+R8
+vrouter
+R1
+Z10 !s110 1634736793
+!i10b 1
+!s100 lIdD9@`9>^lYia[Dkg2aV0
+ICFJmX_j4i4T21c;BWg@6n3
+R3
+!s105 Router_sv_unit
+S1
+R0
+w1472679706
+8C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/Router.sv
+FC:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/Router.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/Router.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise|C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/Router.sv|
+!i113 1
+R6
+R7
+R8
+vsync
+R1
+R10
+!i10b 1
+!s100 2W5Vz0:F6ckE2`eJOTK5l1
+I[[_A<6<FG4K=CWPlE=0Ke2
+R3
+Z11 !s105 Synchronizers_sv_unit
+S1
+R0
+Z12 w1473642985
+Z13 8C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/Synchronizers.sv
+Z14 FC:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/Synchronizers.sv
+L0 4
+R4
+r1
+!s85 0
+31
+R9
+Z15 !s107 C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/Synchronizers.sv|
+Z16 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise|C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/Synchronizers.sv|
+!i113 1
+R6
+R7
+R8
+vsync_r0
+R1
+R10
+!i10b 1
+!s100 IGd9f_F;JNjVBLQ@DAnD10
+I>[5XDU8<FP_<:1eWRlRUX2
+R3
+R11
+S1
+R0
+R12
+R13
+R14
+L0 18
+R4
+r1
+!s85 0
+31
+R9
+R15
+R16
+!i113 1
+R6
+R7
+R8
+vsync_r1
+R1
+R10
+!i10b 1
+!s100 1CXiH1DYDbAUS69Ee2j060
+IC@BVLW@X0iY;lBLF3:bge2
+R3
+R11
+S1
+R0
+R12
+R13
+R14
+L0 39
+R4
+r1
+!s85 0
+31
+R9
+R15
+R16
+!i113 1
+R6
+R7
+R8
+vtestbench
+R1
+R2
+!i10b 1
+!s100 ;J9O9OfMjMmYJ>Z^?Wd]Z1
+I6VT03jd=OHb1@?C?:JT9U3
+R3
+!s105 testbench_8_sv_unit
+S1
+R0
+w1410636164
+8C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/testbench_8.sv
+FC:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/testbench_8.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/testbench_8.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise|C:/Users/Howar/Desktop/ECE 385/LAB4/IQTexercise/testbench_8.sv|
+!i113 1
+R6
+R7
+R8

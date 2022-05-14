@@ -1,0 +1,105 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "RA0",
+					"strict" : false
+				},
+				{
+					"name" : "RA1",
+					"strict" : false
+				},
+				{
+					"name" : "RA2",
+					"strict" : false
+				},
+				{
+					"name" : "RA3",
+					"strict" : false
+				},
+				{
+					"name" : "RB0",
+					"strict" : false
+				},
+				{
+					"name" : "RB1",
+					"strict" : false
+				},
+				{
+					"name" : "RB2",
+					"strict" : false
+				},
+				{
+					"name" : "RB3",
+					"strict" : false
+				},
+				{
+					"name" : "shift",
+					"strict" : false
+				},
+				{
+					"name" : "QA",
+					"strict" : false
+				},
+				{
+					"name" : "QB",
+					"strict" : false
+				},
+				{
+					"name" : "EXECUTE",
+					"strict" : false
+				},
+				{
+					"name" : "D0",
+					"strict" : false
+				},
+				{
+					"name" : "LOAD_A",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "D1",
+					"strict" : false
+				},
+				{
+					"name" : "D2",
+					"strict" : false
+				},
+				{
+					"name" : "R1",
+					"strict" : false
+				},
+				{
+					"name" : "R0",
+					"strict" : false
+				},
+				{
+					"name" : "F2",
+					"strict" : false
+				},
+				{
+					"name" : "F1",
+					"strict" : false
+				},
+				{
+					"name" : "F0",
+					"strict" : false
+				},
+				{
+					"name" : "D3",
+					"strict" : false
+				},
+				{
+					"name" : "LOAD_B",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

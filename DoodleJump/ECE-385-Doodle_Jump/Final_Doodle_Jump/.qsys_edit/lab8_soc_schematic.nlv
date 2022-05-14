@@ -1,0 +1,50 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst lab8_soc.otg_hpi_cs -pg 1 -lvl 3 -y 990
+preplace inst lab8_soc.otg_hpi_address -pg 1 -lvl 3 -y 1490
+preplace inst lab8_soc -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst lab8_soc.nios2_gen2_0.reset_bridge -pg 1
+preplace inst lab8_soc.nios2_gen2_0 -pg 1 -lvl 2 -y 240
+preplace inst lab8_soc.otg_hpi_r -pg 1 -lvl 3 -y 1190
+preplace inst lab8_soc.active_message -pg 1 -lvl 3 -y 30
+preplace inst lab8_soc.keycode -pg 1 -lvl 3 -y 130
+preplace inst lab8_soc.tot_distance -pg 1 -lvl 3 -y 230
+preplace inst lab8_soc.nios2_gen2_0.cpu -pg 1
+preplace inst lab8_soc.otg_hpi_data -pg 1 -lvl 3 -y 1090
+preplace inst lab8_soc.otg_hpi_w -pg 1 -lvl 3 -y 1390
+preplace inst lab8_soc.sdram_pll -pg 1 -lvl 3 -y 630
+preplace inst lab8_soc.nios2_gen2_0.clock_bridge -pg 1
+preplace inst lab8_soc.jtag_uart_0 -pg 1 -lvl 3 -y 530
+preplace inst lab8_soc.tool -pg 1 -lvl 3 -y 330
+preplace inst lab8_soc.move_message -pg 1 -lvl 3 -y 1690
+preplace inst lab8_soc.monster -pg 1 -lvl 3 -y 430
+preplace inst lab8_soc.sdram -pg 1 -lvl 3 -y 710
+preplace inst lab8_soc.otg_hpi_reset -pg 1 -lvl 3 -y 1290
+preplace inst lab8_soc.onchip_memory2_0 -pg 1 -lvl 3 -y 830
+preplace inst lab8_soc.sysid_qsys_0 -pg 1 -lvl 3 -y 910
+preplace inst lab8_soc.random_num -pg 1 -lvl 3 -y 1590
+preplace inst lab8_soc.clk_0 -pg 1 -lvl 1 -y 220
+preplace netloc POINT_TO_POINT<net_container>lab8_soc</net_container>(MASTER)sdram_pll.c0,(SLAVE)sdram.clk) 1 2 2 860 820 1120
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)lab8_soc.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)lab8_soc.reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)lab8_soc.otg_hpi_reset,(SLAVE)otg_hpi_reset.external_connection) 1 0 3 NJ 1320 NJ 1320 NJ
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)otg_hpi_data.external_connection,(SLAVE)lab8_soc.otg_hpi_data) 1 0 3 NJ 1120 NJ 1120 NJ
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)otg_hpi_cs.external_connection,(SLAVE)lab8_soc.otg_hpi_cs) 1 0 3 NJ 1020 NJ 1020 NJ
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)lab8_soc.tot_distance,(SLAVE)tot_distance.external_connection) 1 0 3 NJ 180 NJ 180 NJ
+preplace netloc FAN_OUT<net_container>lab8_soc</net_container>(SLAVE)active_message.clk,(MASTER)clk_0.clk,(SLAVE)sysid_qsys_0.clk,(SLAVE)otg_hpi_data.clk,(SLAVE)sdram_pll.inclk_interface,(SLAVE)tot_distance.clk,(SLAVE)nios2_gen2_0.clk,(SLAVE)tool.clk,(SLAVE)monster.clk,(SLAVE)jtag_uart_0.clk,(SLAVE)otg_hpi_cs.clk,(SLAVE)onchip_memory2_0.clk1,(SLAVE)otg_hpi_address.clk,(SLAVE)random_num.clk,(SLAVE)move_message.clk,(SLAVE)otg_hpi_reset.clk,(SLAVE)otg_hpi_w.clk,(SLAVE)keycode.clk,(SLAVE)otg_hpi_r.clk) 1 1 2 340 200 760
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)keycode.external_connection,(SLAVE)lab8_soc.keycode) 1 0 3 NJ 140 NJ 140 NJ
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)tool.external_connection,(SLAVE)lab8_soc.tool_message) 1 0 3 NJ 380 NJ 380 NJ
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)lab8_soc.otg_hpi_address,(SLAVE)otg_hpi_address.external_connection) 1 0 3 NJ 1520 NJ 1520 NJ
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)lab8_soc.otg_hpi_r,(SLAVE)otg_hpi_r.external_connection) 1 0 3 NJ 1220 NJ 1220 NJ
+preplace netloc POINT_TO_POINT<net_container>lab8_soc</net_container>(MASTER)nios2_gen2_0.irq,(SLAVE)jtag_uart_0.irq) 1 2 1 740
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(MASTER)lab8_soc.sdram_clk,(MASTER)sdram_pll.c1) 1 3 1 N
+preplace netloc INTERCONNECT<net_container>lab8_soc</net_container>(SLAVE)sdram_pll.inclk_interface_reset,(SLAVE)keycode.reset,(SLAVE)otg_hpi_r.reset,(SLAVE)move_message.reset,(SLAVE)monster.reset,(SLAVE)otg_hpi_reset.reset,(MASTER)nios2_gen2_0.debug_reset_request,(SLAVE)otg_hpi_data.reset,(SLAVE)jtag_uart_0.reset,(SLAVE)tool.reset,(SLAVE)tot_distance.reset,(SLAVE)nios2_gen2_0.reset,(MASTER)clk_0.clk_reset,(SLAVE)sysid_qsys_0.reset,(SLAVE)otg_hpi_cs.reset,(SLAVE)sdram.reset,(SLAVE)otg_hpi_w.reset,(SLAVE)otg_hpi_address.reset,(SLAVE)random_num.reset,(SLAVE)onchip_memory2_0.reset1,(SLAVE)active_message.reset) 1 1 2 320 1740 840
+preplace netloc INTERCONNECT<net_container>lab8_soc</net_container>(SLAVE)random_num.s1,(SLAVE)tot_distance.s1,(SLAVE)sysid_qsys_0.control_slave,(SLAVE)sdram_pll.pll_slave,(SLAVE)sdram.s1,(SLAVE)tool.s1,(SLAVE)active_message.s1,(SLAVE)move_message.s1,(MASTER)nios2_gen2_0.data_master,(SLAVE)otg_hpi_data.s1,(SLAVE)nios2_gen2_0.debug_mem_slave,(SLAVE)monster.s1,(SLAVE)keycode.s1,(SLAVE)otg_hpi_address.s1,(MASTER)nios2_gen2_0.instruction_master,(SLAVE)otg_hpi_reset.s1,(SLAVE)otg_hpi_r.s1,(SLAVE)otg_hpi_w.s1,(SLAVE)onchip_memory2_0.s1,(SLAVE)otg_hpi_cs.s1,(SLAVE)jtag_uart_0.avalon_jtag_slave) 1 1 2 340 1760 800
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)otg_hpi_w.external_connection,(SLAVE)lab8_soc.otg_hpi_w) 1 0 3 NJ 1420 NJ 1420 NJ
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)active_message.external_connection,(SLAVE)lab8_soc.active_message) 1 0 3 NJ 60 NJ 60 NJ
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)lab8_soc.sdram_wire,(SLAVE)sdram.wire) 1 0 3 NJ 780 NJ 780 NJ
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)random_num.external_connection,(SLAVE)lab8_soc.random) 1 0 3 NJ 1620 NJ 1620 NJ
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)lab8_soc.move_message,(SLAVE)move_message.external_connection) 1 0 3 NJ 1720 NJ 1720 NJ
+preplace netloc EXPORT<net_container>lab8_soc</net_container>(SLAVE)monster.external_connection,(SLAVE)lab8_soc.gene) 1 0 3 NJ 460 NJ 460 NJ
+levelinfo -pg 1 0 110 1230
+levelinfo -hier lab8_soc 120 150 500 930 1140

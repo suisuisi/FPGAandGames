@@ -1,0 +1,544 @@
+Analysis & Synthesis report for LAB6
+Wed Oct 27 09:29:01 2021
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |lab6_toplevel|my_slc:my_slc|ISDU:state_controller|State
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: my_slc:my_slc|tristate:tr0
+ 13. Parameter Settings for User Entity Instance: test_memory:my_test_memory
+ 14. Parameter Settings for User Entity Instance: test_memory:my_test_memory|memory_parser:parser
+ 15. Port Connectivity Checks: "my_slc:my_slc|ISDU:state_controller"
+ 16. Port Connectivity Checks: "my_slc:my_slc|Mem2IO:memory_subsystem"
+ 17. Port Connectivity Checks: "my_slc:my_slc|datapath:d0|MUX2_1:MDR_MUX"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
+ 21. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Oct 27 09:29:01 2021       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; LAB6                                        ;
+; Top-level Entity Name              ; lab6_toplevel                               ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 186                                         ;
+;     Total combinational functions  ; 138                                         ;
+;     Dedicated logic registers      ; 103                                         ;
+; Total registers                    ; 103                                         ;
+; Total pins                         ; 129                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; lab6_toplevel      ; LAB6               ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                   ;
++-------------------------------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                            ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                    ; Library ;
++-------------------------------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------+---------+
+; Updated_ECE385_lab6_provided_Spring_2018/HexDriver.sv       ; yes             ; User SystemVerilog HDL File  ; C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/HexDriver.sv       ;         ;
+; Updated_ECE385_lab6_provided_Spring_2018/tristate.sv        ; yes             ; User SystemVerilog HDL File  ; C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/tristate.sv        ;         ;
+; Updated_ECE385_lab6_provided_Spring_2018/test_memory.sv     ; yes             ; User SystemVerilog HDL File  ; C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/test_memory.sv     ;         ;
+; Updated_ECE385_lab6_provided_Spring_2018/SLC3_2.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/SLC3_2.sv          ;         ;
+; Updated_ECE385_lab6_provided_Spring_2018/slc3.sv            ; yes             ; User SystemVerilog HDL File  ; C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/slc3.sv            ;         ;
+; Updated_ECE385_lab6_provided_Spring_2018/Register.sv        ; yes             ; User SystemVerilog HDL File  ; C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/Register.sv        ;         ;
+; Updated_ECE385_lab6_provided_Spring_2018/Mux.sv             ; yes             ; User SystemVerilog HDL File  ; C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/Mux.sv             ;         ;
+; Updated_ECE385_lab6_provided_Spring_2018/memory_contents.sv ; yes             ; User SystemVerilog HDL File  ; C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/memory_contents.sv ;         ;
+; Updated_ECE385_lab6_provided_Spring_2018/Mem2IO.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/Mem2IO.sv          ;         ;
+; Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv   ; yes             ; User SystemVerilog HDL File  ; C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv   ;         ;
+; Updated_ECE385_lab6_provided_Spring_2018/ISDU.sv            ; yes             ; User SystemVerilog HDL File  ; C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/ISDU.sv            ;         ;
+; Updated_ECE385_lab6_provided_Spring_2018/datapath.sv        ; yes             ; User SystemVerilog HDL File  ; C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/datapath.sv        ;         ;
+; Updated_ECE385_lab6_provided_Spring_2018/counter.sv         ; yes             ; User SystemVerilog HDL File  ; C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/counter.sv         ;         ;
++-------------------------------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 186       ;
+;                                             ;           ;
+; Total combinational functions               ; 138       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 97        ;
+;     -- 3 input functions                    ; 18        ;
+;     -- <=2 input functions                  ; 23        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 123       ;
+;     -- arithmetic mode                      ; 15        ;
+;                                             ;           ;
+; Total registers                             ; 103       ;
+;     -- Dedicated logic registers            ; 103       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 129       ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; Clk~input ;
+; Maximum fan-out                             ; 103       ;
+; Total fan-out                               ; 1009      ;
+; Average fan-out                             ; 1.96      ;
++---------------------------------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                               ;
++------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                              ; Entity Name     ; Library Name ;
++------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+-----------------+--------------+
+; |lab6_toplevel                     ; 138 (0)             ; 103 (0)                   ; 0           ; 0            ; 0       ; 0         ; 129  ; 0            ; |lab6_toplevel                                                   ; lab6_toplevel   ; work         ;
+;    |my_slc:my_slc|                 ; 138 (0)             ; 103 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|my_slc:my_slc                                     ; my_slc          ; work         ;
+;       |HexDriver:hex_driver0|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|my_slc:my_slc|HexDriver:hex_driver0               ; HexDriver       ; work         ;
+;       |HexDriver:hex_driver1|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|my_slc:my_slc|HexDriver:hex_driver1               ; HexDriver       ; work         ;
+;       |HexDriver:hex_driver2|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|my_slc:my_slc|HexDriver:hex_driver2               ; HexDriver       ; work         ;
+;       |HexDriver:hex_driver3|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|my_slc:my_slc|HexDriver:hex_driver3               ; HexDriver       ; work         ;
+;       |HexDriver:hex_driver4|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|my_slc:my_slc|HexDriver:hex_driver4               ; HexDriver       ; work         ;
+;       |HexDriver:hex_driver5|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|my_slc:my_slc|HexDriver:hex_driver5               ; HexDriver       ; work         ;
+;       |HexDriver:hex_driver6|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|my_slc:my_slc|HexDriver:hex_driver6               ; HexDriver       ; work         ;
+;       |HexDriver:hex_driver7|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|my_slc:my_slc|HexDriver:hex_driver7               ; HexDriver       ; work         ;
+;       |ISDU:state_controller|      ; 8 (8)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|my_slc:my_slc|ISDU:state_controller               ; ISDU            ; work         ;
+;       |Mem2IO:memory_subsystem|    ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|my_slc:my_slc|Mem2IO:memory_subsystem             ; Mem2IO          ; work         ;
+;       |datapath:d0|                ; 69 (0)              ; 64 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|my_slc:my_slc|datapath:d0                         ; datapath        ; work         ;
+;          |Resigter:IR_RE|          ; 34 (34)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|my_slc:my_slc|datapath:d0|Resigter:IR_RE          ; Resigter        ; work         ;
+;          |Resigter:MAR_RE|         ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|my_slc:my_slc|datapath:d0|Resigter:MAR_RE         ; Resigter        ; work         ;
+;          |Resigter:MDR_RE|         ; 19 (19)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|my_slc:my_slc|datapath:d0|Resigter:MDR_RE         ; Resigter        ; work         ;
+;          |up_counter_load:PC_COUN| ; 16 (16)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|my_slc:my_slc|datapath:d0|up_counter_load:PC_COUN ; up_counter_load ; work         ;
+;       |tristate:tr0|               ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab6_toplevel|my_slc:my_slc|tristate:tr0                        ; tristate        ; work         ;
++------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |lab6_toplevel|my_slc:my_slc|ISDU:state_controller|State                                                                          ;
++----------------+------------+------------+--------------+--------------+------------+----------------+----------------+--------------+------------+
+; Name           ; State.S_32 ; State.S_35 ; State.S_33_2 ; State.S_33_1 ; State.S_18 ; State.PauseIR2 ; State.PauseIR1 ; State.Halted ; State.S_01 ;
++----------------+------------+------------+--------------+--------------+------------+----------------+----------------+--------------+------------+
+; State.Halted   ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 0            ; 0          ;
+; State.PauseIR1 ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 1              ; 1            ; 0          ;
+; State.PauseIR2 ; 0          ; 0          ; 0            ; 0            ; 0          ; 1              ; 0              ; 1            ; 0          ;
+; State.S_18     ; 0          ; 0          ; 0            ; 0            ; 1          ; 0              ; 0              ; 1            ; 0          ;
+; State.S_33_1   ; 0          ; 0          ; 0            ; 1            ; 0          ; 0              ; 0              ; 1            ; 0          ;
+; State.S_33_2   ; 0          ; 0          ; 1            ; 0            ; 0          ; 0              ; 0              ; 1            ; 0          ;
+; State.S_35     ; 0          ; 1          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ; 0          ;
+; State.S_32     ; 1          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ; 0          ;
+; State.S_01     ; 0          ; 0          ; 0            ; 0            ; 0          ; 0              ; 0              ; 1            ; 1          ;
++----------------+------------+------------+--------------+--------------+------------+----------------+----------------+--------------+------------+
+
+
++---------------------------------------------------------------------+
+; Registers Removed During Synthesis                                  ;
++------------------------------------------------+--------------------+
+; Register name                                  ; Reason for Removal ;
++------------------------------------------------+--------------------+
+; my_slc:my_slc|ISDU:state_controller|State.S_32 ; Lost fanout        ;
+; my_slc:my_slc|ISDU:state_controller|State.S_01 ; Lost fanout        ;
+; my_slc:my_slc|ISDU:state_controller|State~2    ; Lost fanout        ;
+; my_slc:my_slc|ISDU:state_controller|State~3    ; Lost fanout        ;
+; my_slc:my_slc|ISDU:state_controller|State~4    ; Lost fanout        ;
+; Total Number of Removed Registers = 5          ;                    ;
++------------------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 103   ;
+; Number of registers using Synchronous Clear  ; 18    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 64    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |lab6_toplevel|my_slc:my_slc|datapath:d0|Resigter:MAR_RE|Dout[0] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |lab6_toplevel|my_slc:my_slc|datapath:d0|Resigter:IR_RE|Dout[10] ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |lab6_toplevel|my_slc:my_slc|datapath:d0|Resigter:MDR_RE|Dout[3] ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |lab6_toplevel|my_slc:my_slc|datapath:d0|MUX4_1:Bus_Gate|Mux12   ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |lab6_toplevel|my_slc:my_slc|ISDU:state_controller|State         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: my_slc:my_slc|tristate:tr0 ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; N              ; 16    ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: test_memory:my_test_memory ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; size           ; 256   ; Signed Integer                                 ;
+; init_external  ; 0     ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: test_memory:my_test_memory|memory_parser:parser ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; size           ; 256   ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "my_slc:my_slc|ISDU:state_controller"                                                    ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; BEN      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; LD_BEN   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; LD_CC    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; LD_REG   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; LD_LED   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; DRMUX    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; SR1MUX   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; SR2MUX   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ADDR1MUX ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ADDR2MUX ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ALUK     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "my_slc:my_slc|Mem2IO:memory_subsystem"                                                      ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; ADDR[19..16] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; HEX0         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; HEX1         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; HEX2         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; HEX3         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "my_slc:my_slc|datapath:d0|MUX2_1:MDR_MUX"                                                                                                  ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; A    ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (16 bits) it drives.  Extra input bit(s) "A[15..1]" will be connected to GND. ;
++------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 129                         ;
+; cycloneiii_ff         ; 103                         ;
+;     ENA               ; 48                          ;
+;     ENA SCLR          ; 16                          ;
+;     SCLR              ; 2                           ;
+;     plain             ; 37                          ;
+; cycloneiii_io_obuf    ; 16                          ;
+; cycloneiii_lcell_comb ; 149                         ;
+;     arith             ; 15                          ;
+;         2 data inputs ; 15                          ;
+;     normal            ; 134                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 10                          ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 18                          ;
+;         4 data inputs ; 97                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 1.65                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Wed Oct 27 09:28:52 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LAB6 -c LAB6
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file updated_ece385_lab6_provided_spring_2018/testbench_week1(1).sv
+    Info (12023): Found entity 1: testbench File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/testbench_week1(1).sv Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file updated_ece385_lab6_provided_spring_2018/hexdriver.sv
+    Info (12023): Found entity 1: HexDriver File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/HexDriver.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file updated_ece385_lab6_provided_spring_2018/tristate.sv
+    Info (12023): Found entity 1: tristate File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/tristate.sv Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file updated_ece385_lab6_provided_spring_2018/test_memory.sv
+    Info (12023): Found entity 1: test_memory File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/test_memory.sv Line: 22
+Info (12021): Found 1 design units, including 0 entities, in source file updated_ece385_lab6_provided_spring_2018/slc3_2.sv
+    Info (12022): Found design unit 1: SLC3_2 (SystemVerilog) File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/SLC3_2.sv Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file updated_ece385_lab6_provided_spring_2018/slc3.sv
+    Info (12023): Found entity 1: my_slc File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/slc3.sv Line: 19
+Info (12021): Found 1 design units, including 1 entities, in source file updated_ece385_lab6_provided_spring_2018/register.sv
+    Info (12023): Found entity 1: Resigter File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/Register.sv Line: 1
+Info (12021): Found 3 design units, including 3 entities, in source file updated_ece385_lab6_provided_spring_2018/mux.sv
+    Info (12023): Found entity 1: MUX2_1 File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/Mux.sv Line: 1
+    Info (12023): Found entity 2: MUX3_1 File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/Mux.sv Line: 17
+    Info (12023): Found entity 3: MUX4_1 File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/Mux.sv Line: 34
+Info (12021): Found 1 design units, including 1 entities, in source file updated_ece385_lab6_provided_spring_2018/memory_contents.sv
+    Info (12023): Found entity 1: memory_parser File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/memory_contents.sv Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file updated_ece385_lab6_provided_spring_2018/mem2io.sv
+    Info (12023): Found entity 1: Mem2IO File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/Mem2IO.sv Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file updated_ece385_lab6_provided_spring_2018/lab6_toplevel.sv
+    Info (12023): Found entity 1: lab6_toplevel File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file updated_ece385_lab6_provided_spring_2018/isdu.sv
+    Info (12023): Found entity 1: ISDU File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/ISDU.sv Line: 19
+Info (12021): Found 1 design units, including 1 entities, in source file updated_ece385_lab6_provided_spring_2018/datapath.sv
+    Info (12023): Found entity 1: datapath File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/datapath.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file updated_ece385_lab6_provided_spring_2018/counter.sv
+    Info (12023): Found entity 1: up_counter_load File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/counter.sv Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at datapath.sv(77): created implicit net for "bus" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/datapath.sv Line: 77
+Info (12127): Elaborating entity "lab6_toplevel" for the top level hierarchy
+Info (12128): Elaborating entity "my_slc" for hierarchy "my_slc:my_slc" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv Line: 18
+Warning (10030): Net "BEN" at slc3.sv(37) has no driver or initial value, using a default initial value '0' File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/slc3.sv Line: 37
+Warning (10034): Output port "LED" at slc3.sv(22) has no driver File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/slc3.sv Line: 22
+Info (12128): Elaborating entity "HexDriver" for hierarchy "my_slc:my_slc|HexDriver:hex_driver3" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/slc3.sv Line: 52
+Info (12128): Elaborating entity "datapath" for hierarchy "my_slc:my_slc|datapath:d0" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/slc3.sv Line: 79
+Info (12128): Elaborating entity "Resigter" for hierarchy "my_slc:my_slc|datapath:d0|Resigter:MAR_RE" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/datapath.sv Line: 32
+Info (12128): Elaborating entity "up_counter_load" for hierarchy "my_slc:my_slc|datapath:d0|up_counter_load:PC_COUN" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/datapath.sv Line: 57
+Warning (10230): Verilog HDL assignment warning at counter.sv(16): truncated value with size 32 to match size of target (16) File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/counter.sv Line: 16
+Info (12128): Elaborating entity "MUX3_1" for hierarchy "my_slc:my_slc|datapath:d0|MUX3_1:PC_MUX" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/datapath.sv Line: 74
+Info (12128): Elaborating entity "MUX2_1" for hierarchy "my_slc:my_slc|datapath:d0|MUX2_1:MDR_MUX" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/datapath.sv Line: 81
+Info (12128): Elaborating entity "MUX4_1" for hierarchy "my_slc:my_slc|datapath:d0|MUX4_1:Bus_Gate" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/datapath.sv Line: 91
+Info (10264): Verilog HDL Case Statement information at Mux.sv(42): all case item expressions in this case statement are onehot File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/Mux.sv Line: 42
+Info (12128): Elaborating entity "Mem2IO" for hierarchy "my_slc:my_slc|Mem2IO:memory_subsystem" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/slc3.sv Line: 89
+Info (12128): Elaborating entity "tristate" for hierarchy "my_slc:my_slc|tristate:tr0" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/slc3.sv Line: 94
+Info (12128): Elaborating entity "ISDU" for hierarchy "my_slc:my_slc|ISDU:state_controller" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/slc3.sv Line: 101
+Info (12128): Elaborating entity "test_memory" for hierarchy "test_memory:my_test_memory" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv Line: 22
+Warning (10036): Verilog HDL or VHDL warning at test_memory.sv(42): object "actual_address" assigned a value but never read File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/test_memory.sv Line: 42
+Info (12128): Elaborating entity "memory_parser" for hierarchy "test_memory:my_test_memory|memory_parser:parser" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/test_memory.sv Line: 48
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13008): TRI or OPNDRN buffers permanently disabled
+    Warning (13010): Node "my_slc:my_slc|tristate:tr0|Data[0]~synth" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/tristate.sv Line: 22
+    Warning (13010): Node "my_slc:my_slc|tristate:tr0|Data[1]~synth" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/tristate.sv Line: 22
+    Warning (13010): Node "my_slc:my_slc|tristate:tr0|Data[2]~synth" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/tristate.sv Line: 22
+    Warning (13010): Node "my_slc:my_slc|tristate:tr0|Data[3]~synth" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/tristate.sv Line: 22
+    Warning (13010): Node "my_slc:my_slc|tristate:tr0|Data[4]~synth" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/tristate.sv Line: 22
+    Warning (13010): Node "my_slc:my_slc|tristate:tr0|Data[5]~synth" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/tristate.sv Line: 22
+    Warning (13010): Node "my_slc:my_slc|tristate:tr0|Data[6]~synth" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/tristate.sv Line: 22
+    Warning (13010): Node "my_slc:my_slc|tristate:tr0|Data[7]~synth" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/tristate.sv Line: 22
+    Warning (13010): Node "my_slc:my_slc|tristate:tr0|Data[8]~synth" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/tristate.sv Line: 22
+    Warning (13010): Node "my_slc:my_slc|tristate:tr0|Data[9]~synth" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/tristate.sv Line: 22
+    Warning (13010): Node "my_slc:my_slc|tristate:tr0|Data[10]~synth" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/tristate.sv Line: 22
+    Warning (13010): Node "my_slc:my_slc|tristate:tr0|Data[11]~synth" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/tristate.sv Line: 22
+    Warning (13010): Node "my_slc:my_slc|tristate:tr0|Data[12]~synth" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/tristate.sv Line: 22
+    Warning (13010): Node "my_slc:my_slc|tristate:tr0|Data[13]~synth" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/tristate.sv Line: 22
+    Warning (13010): Node "my_slc:my_slc|tristate:tr0|Data[14]~synth" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/tristate.sv Line: 22
+    Warning (13010): Node "my_slc:my_slc|tristate:tr0|Data[15]~synth" File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/tristate.sv Line: 22
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LED[0]" is stuck at GND File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv Line: 12
+    Warning (13410): Pin "LED[1]" is stuck at GND File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv Line: 12
+    Warning (13410): Pin "LED[2]" is stuck at GND File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv Line: 12
+    Warning (13410): Pin "LED[3]" is stuck at GND File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv Line: 12
+    Warning (13410): Pin "LED[4]" is stuck at GND File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv Line: 12
+    Warning (13410): Pin "LED[5]" is stuck at GND File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv Line: 12
+    Warning (13410): Pin "LED[6]" is stuck at GND File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv Line: 12
+    Warning (13410): Pin "LED[7]" is stuck at GND File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv Line: 12
+    Warning (13410): Pin "LED[8]" is stuck at GND File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv Line: 12
+    Warning (13410): Pin "LED[9]" is stuck at GND File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv Line: 12
+    Warning (13410): Pin "LED[10]" is stuck at GND File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv Line: 12
+    Warning (13410): Pin "LED[11]" is stuck at GND File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv Line: 12
+    Warning (13410): Pin "CE" is stuck at GND File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv Line: 14
+    Warning (13410): Pin "UB" is stuck at GND File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv Line: 14
+    Warning (13410): Pin "LB" is stuck at GND File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv Line: 14
+    Warning (13410): Pin "WE" is stuck at VCC File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv Line: 14
+    Warning (13410): Pin "ADDR[16]" is stuck at GND File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv Line: 15
+    Warning (13410): Pin "ADDR[17]" is stuck at GND File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv Line: 15
+    Warning (13410): Pin "ADDR[18]" is stuck at GND File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv Line: 15
+    Warning (13410): Pin "ADDR[19]" is stuck at GND File: C:/Users/Howar/Desktop/ECE 385/LAB6/Updated_ECE385_lab6_provided_Spring_2018/lab6_toplevel.sv Line: 15
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 5 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/Howar/Desktop/ECE 385/LAB6/output_files/LAB6.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 332 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 20 input pins
+    Info (21059): Implemented 93 output pins
+    Info (21060): Implemented 16 bidirectional pins
+    Info (21061): Implemented 203 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 45 warnings
+    Info: Peak virtual memory: 4824 megabytes
+    Info: Processing ended: Wed Oct 27 09:29:01 2021
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:18
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Howar/Desktop/ECE 385/LAB6/output_files/LAB6.map.smsg.
+
+

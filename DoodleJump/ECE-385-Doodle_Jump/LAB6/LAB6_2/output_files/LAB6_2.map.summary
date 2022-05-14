@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Nov 11 23:26:35 2021
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : LAB6_2
+Top-level Entity Name : lab6_toplevel
+Family : Cyclone IV E
+Total logic elements : 628
+    Total combinational functions : 451
+    Dedicated logic registers : 280
+Total registers : 280
+Total pins : 129
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/quartus/lab2final/simulation/qsim
+vlab2final
+!s110 1632360778
+!i10b 1
+!s100 Q?:c^E1h@o7_Ab@`F;hE50
+InBiZRXl;8<_RKU:iZlFDk2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1632360775
+8lab2final.vo
+Flab2final.vo
+L0 31
+Z2 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1632360778.000000
+!s107 lab2final.vo|
+!s90 -work|work|lab2final.vo|
+!i113 1
+Z3 o-work work
+Z4 tCvgOpt 0
+vlab2final_vlg_vec_tst
+!s110 1632360779
+!i10b 1
+!s100 <2JiHkK@S]`L4`Q3V56F@1
+IiSE3ei8@I8?jLaeVgcnOk0
+R1
+R0
+w1632360773
+8Waveform2.vwf.vt
+FWaveform2.vwf.vt
+L0 29
+R2
+r1
+!s85 0
+31
+!s108 1632360779.000000
+!s107 Waveform2.vwf.vt|
+!s90 -work|work|Waveform2.vwf.vt|
+!i113 1
+R3
+R4

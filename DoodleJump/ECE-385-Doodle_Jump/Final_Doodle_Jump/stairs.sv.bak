@@ -1,0 +1,11 @@
+
+// This module is used to generate stairs
+module stair ( 
+					output logic [9:0]  stair_x,stair_y            
+					);	
+	
+	assign stiar_x = 10'd320;;
+	assign stiar_y = 10'd340;
+	
+
+endmodule

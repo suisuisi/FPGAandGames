@@ -1,0 +1,12 @@
+module  tot_distance ( input         Clk,Reset,              // Active-high reset signal
+							  input   [9:0] distance,
+							  output logic [9:0] total
+              );
+				  
+				  
+				  
+				  
+				  
+				  
+endmodule
+

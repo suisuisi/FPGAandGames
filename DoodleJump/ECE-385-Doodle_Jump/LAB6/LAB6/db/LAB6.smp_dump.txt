@@ -1,0 +1,12 @@
+
+State Machine - |lab6_toplevel|my_slc:my_slc|ISDU:state_controller|State
+Name State.S_32 State.S_35 State.S_33_2 State.S_33_1 State.S_18 State.PauseIR2 State.PauseIR1 State.Halted State.S_01 
+State.Halted 0 0 0 0 0 0 0 0 0 
+State.PauseIR1 0 0 0 0 0 0 1 1 0 
+State.PauseIR2 0 0 0 0 0 1 0 1 0 
+State.S_18 0 0 0 0 1 0 0 1 0 
+State.S_33_1 0 0 0 1 0 0 0 1 0 
+State.S_33_2 0 0 1 0 0 0 0 1 0 
+State.S_35 0 1 0 0 0 0 0 1 0 
+State.S_32 1 0 0 0 0 0 0 1 0 
+State.S_01 0 0 0 0 0 0 0 1 1 

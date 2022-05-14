@@ -1,0 +1,127 @@
+Flow report for final_project
+Wed Apr 15 03:52:55 2020
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Flow Summary                                                                     ;
++------------------------------------+---------------------------------------------+
+; Flow Status                        ; Flow Failed - Wed Apr 15 03:52:55 2020      ;
+; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
+; Revision Name                      ; final_project                               ;
+; Top-level Entity Name              ; lab8                                        ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 3,632 / 6,272 ( 58 % )                      ;
+;     Total combinational functions  ; 2,638 / 6,272 ( 42 % )                      ;
+;     Dedicated logic registers      ; 2,177 / 6,272 ( 35 % )                      ;
+; Total registers                    ; 2177                                        ;
+; Total pins                         ; 128 / 180 ( 71 % )                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 11,392 / 276,480 ( 4 % )                    ;
+; Embedded Multiplier 9-bit elements ; 4 / 30 ( 13 % )                             ;
+; Total PLLs                         ; 2 / 2 ( 100 % )                             ;
+; Device                             ; EP4CE6F17C6                                 ;
+; Timing Models                      ; Final                                       ;
++------------------------------------+---------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 04/15/2020 03:52:16 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; final_project       ;
++-------------------+---------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                 ;
++-------------------------------------+-------------------------------------------------------------+---------------+-----------------+------------+
+; Assignment Name                     ; Value                                                       ; Default Value ; Entity Name     ; Section Id ;
++-------------------------------------+-------------------------------------------------------------+---------------+-----------------+------------+
+; COMPILER_SIGNATURE_ID               ; 57353105070043.158694073607056                              ; --            ; --              ; --         ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)                             ; <None>        ; --              ; --         ;
+; MISC_FILE                           ; vga_clk.ppf                                                 ; --            ; --              ; --         ;
+; MISC_FILE                           ; final_soc/synthesis/../final_soc.cmp                        ; --            ; --              ; --         ;
+; MISC_FILE                           ; final_soc/synthesis/../../final_soc.qsys                    ; --            ; --              ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family)                      ; --            ; DE2_115_Default ; Top        ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family)                      ; --            ; lab8            ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                      ; --            ; DE2_115_Default ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                      ; --            ; lab8            ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                      ; --            ; DE2_115_Default ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                      ; --            ; lab8            ; Top        ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                ; --            ; --              ; --         ;
+; SLD_FILE                            ; final_soc/synthesis/final_soc.regmap                        ; --            ; --              ; --         ;
+; SLD_FILE                            ; final_soc/synthesis/final_soc.debuginfo                     ; --            ; --              ; --         ;
+; SLD_INFO                            ; QSYS_NAME final_soc HAS_SOPCINFO 1 GENERATION_ID 1586938339 ; --            ; final_soc       ; --         ;
+; SOPCINFO_FILE                       ; final_soc/synthesis/../../final_soc.sopcinfo                ; --            ; --              ; --         ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                          ; --            ; --              ; --         ;
+; TOP_LEVEL_ENTITY                    ; lab8                                                        ; final_project ; --              ; --         ;
++-------------------------------------+-------------------------------------------------------------+---------------+-----------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:33     ; 1.0                     ; 4964 MB             ; 00:00:50                           ;
+; Fitter               ; 00:00:03     ; 1.0                     ; 4943 MB             ; 00:00:03                           ;
+; Total                ; 00:00:36     ; --                      ; --                  ; 00:00:53                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; DESKTOP-TAPTTF9  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-TAPTTF9  ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off final_project -c final_project
+quartus_fit --read_settings_files=off --write_settings_files=off final_project -c final_project
+
+
+

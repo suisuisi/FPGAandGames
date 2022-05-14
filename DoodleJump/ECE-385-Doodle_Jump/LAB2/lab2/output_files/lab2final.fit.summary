@@ -1,0 +1,20 @@
+Fitter Status : Successful - Thu Sep 23 09:31:54 2021
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : lab2final
+Top-level Entity Name : lab2final
+Family : Cyclone V
+Device : 5CGXFC7C7F23C8
+Timing Models : Final
+Logic utilization (in ALMs) : 5 / 56,480 ( < 1 % )
+Total registers : 17
+Total pins : 20 / 268 ( 7 % )
+Total virtual pins : 0
+Total block memory bits : 0 / 7,024,640 ( 0 % )
+Total RAM Blocks : 0 / 686 ( 0 % )
+Total DSP Blocks : 0 / 156 ( 0 % )
+Total HSSI RX PCSs : 0 / 6 ( 0 % )
+Total HSSI PMA RX Deserializers : 0 / 6 ( 0 % )
+Total HSSI TX PCSs : 0 / 6 ( 0 % )
+Total HSSI PMA TX Serializers : 0 / 6 ( 0 % )
+Total PLLs : 0 / 13 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )

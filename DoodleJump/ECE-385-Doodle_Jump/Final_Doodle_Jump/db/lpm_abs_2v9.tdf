@@ -1,0 +1,41 @@
+--lpm_abs CARRY_CHAIN="MANUAL" DEVICE_FAMILY="Cyclone IV E" IGNORE_CARRY_BUFFERS="OFF" LPM_WIDTH=5 data result
+--VERSION_BEGIN 18.1 cbx_cycloneii 2018:09:12:13:04:24:SJ cbx_lpm_abs 2018:09:12:13:04:24:SJ cbx_lpm_add_sub 2018:09:12:13:04:24:SJ cbx_mgl 2018:09:12:13:10:36:SJ cbx_nadder 2018:09:12:13:04:24:SJ cbx_stratix 2018:09:12:13:04:24:SJ cbx_stratixii 2018:09:12:13:04:24:SJ cbx_util_mgl 2018:09:12:13:04:24:SJ  VERSION_END
+
+
+-- Copyright (C) 2018  Intel Corporation. All rights reserved.
+--  Your use of Intel Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Intel Program License 
+--  Subscription Agreement, the Intel Quartus Prime License Agreement,
+--  the Intel FPGA IP License Agreement, or other applicable license
+--  agreement, including, without limitation, that your use is for
+--  the sole purpose of programming logic devices manufactured by
+--  Intel and sold by Intel or its authorized distributors.  Please
+--  refer to the applicable agreement for further details.
+
+
+FUNCTION carry_sum (cin, sin)
+RETURNS ( cout, sout);
+
+--synthesis_resources = lut 5 
+SUBDESIGN lpm_abs_2v9
+( 
+	data[4..0]	:	input;
+	overflow	:	output;
+	result[4..0]	:	output;
+) 
+VARIABLE 
+	cs1a[4..0] : carry_sum;
+	result_tmp[4..0]	: WIRE;
+
+BEGIN 
+	cs1a[].cin = ( ((data[4..4] $ data[4..1]) & cs1a[3..0].cout), ((! data[0..0]) & data[4..4]));
+	cs1a[].sin = ( ((data[4..4] $ data[4..1]) $ cs1a[3..0].cout), data[0..0]);
+	overflow = (result_tmp[4..4] & data[4..4]);
+	result[] = result_tmp[];
+	result_tmp[] = ( cs1a[4..1].sout, data[0..0]);
+END;
+--VALID FILE

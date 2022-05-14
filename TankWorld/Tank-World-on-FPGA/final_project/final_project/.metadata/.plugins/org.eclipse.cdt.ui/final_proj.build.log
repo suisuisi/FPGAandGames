@@ -1,0 +1,9 @@
+21:21:51 **** Incremental Build of configuration Nios II for project final_proj ****
+make all 
+Info: Building ../final_proj_bsp/
+C:/Quartusprime/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../final_proj_bsp/
+[BSP build complete]
+[final_proj build complete]
+
+21:21:53 Build Finished (took 1s.545ms)
+

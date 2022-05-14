@@ -1,0 +1,306 @@
+# Reading C:/intelFPGA/18.0/modelsim_ase/tcl/vsim/pref.tcl
+# do final_project_run_msim_rtl_systemverilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA/18.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/vga_clk.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:57 on Apr 16,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project" C:/Users/hz13/Desktop/ECE_385/385_final/final_project/vga_clk.v 
+# -- Compiling module vga_clk
+# 
+# Top level modules:
+# 	vga_clk
+# End time: 19:35:57 on Apr 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/db {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/db/vga_clk_altpll.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:57 on Apr 16,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/db" C:/Users/hz13/Desktop/ECE_385/385_final/final_project/db/vga_clk_altpll.v 
+# -- Compiling module vga_clk_altpll
+# 
+# Top level modules:
+# 	vga_clk_altpll
+# End time: 19:35:57 on Apr 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlib final_soc
+# ** Warning: (vlib-34) Library already exists at "final_soc".
+# vmap final_soc final_soc
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap final_soc final_soc 
+# Modifying modelsim.ini
+# vlog -vlog01compat -work final_soc +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/final_soc.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:57 on Apr 16,2020
+# vlog -reportprogress 300 -vlog01compat -work final_soc "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis" C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/final_soc.v 
+# -- Compiling module final_soc
+# 
+# Top level modules:
+# 	final_soc
+# End time: 19:35:57 on Apr 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work final_soc +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/altera_reset_controller.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:57 on Apr 16,2020
+# vlog -reportprogress 300 -vlog01compat -work final_soc "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules" C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/altera_reset_controller.v 
+# -- Compiling module altera_reset_controller
+# 
+# Top level modules:
+# 	altera_reset_controller
+# End time: 19:35:58 on Apr 16,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work final_soc +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/altera_reset_synchronizer.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:58 on Apr 16,2020
+# vlog -reportprogress 300 -vlog01compat -work final_soc "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules" C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/altera_reset_synchronizer.v 
+# -- Compiling module altera_reset_synchronizer
+# 
+# Top level modules:
+# 	altera_reset_synchronizer
+# End time: 19:35:58 on Apr 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work final_soc +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_mm_interconnect_0.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:58 on Apr 16,2020
+# vlog -reportprogress 300 -vlog01compat -work final_soc "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules" C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_mm_interconnect_0.v 
+# -- Compiling module final_soc_mm_interconnect_0
+# 
+# Top level modules:
+# 	final_soc_mm_interconnect_0
+# End time: 19:35:58 on Apr 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work final_soc +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_mm_interconnect_0_avalon_st_adapter.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:58 on Apr 16,2020
+# vlog -reportprogress 300 -vlog01compat -work final_soc "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules" C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_mm_interconnect_0_avalon_st_adapter.v 
+# -- Compiling module final_soc_mm_interconnect_0_avalon_st_adapter
+# 
+# Top level modules:
+# 	final_soc_mm_interconnect_0_avalon_st_adapter
+# End time: 19:35:58 on Apr 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work final_soc +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/altera_avalon_sc_fifo.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:58 on Apr 16,2020
+# vlog -reportprogress 300 -vlog01compat -work final_soc "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules" C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/altera_avalon_sc_fifo.v 
+# -- Compiling module altera_avalon_sc_fifo
+# 
+# Top level modules:
+# 	altera_avalon_sc_fifo
+# End time: 19:35:58 on Apr 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work final_soc +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_sysid_qsys_0.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:58 on Apr 16,2020
+# vlog -reportprogress 300 -vlog01compat -work final_soc "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules" C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_sysid_qsys_0.v 
+# -- Compiling module final_soc_sysid_qsys_0
+# 
+# Top level modules:
+# 	final_soc_sysid_qsys_0
+# End time: 19:35:58 on Apr 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work final_soc +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_sdram_pll.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:58 on Apr 16,2020
+# vlog -reportprogress 300 -vlog01compat -work final_soc "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules" C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_sdram_pll.v 
+# -- Compiling module final_soc_sdram_pll_dffpipe_l2c
+# -- Compiling module final_soc_sdram_pll_stdsync_sv6
+# -- Compiling module final_soc_sdram_pll_altpll_l0b2
+# -- Compiling module final_soc_sdram_pll
+# 
+# Top level modules:
+# 	final_soc_sdram_pll
+# End time: 19:35:58 on Apr 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work final_soc +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_sdram.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:58 on Apr 16,2020
+# vlog -reportprogress 300 -vlog01compat -work final_soc "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules" C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_sdram.v 
+# -- Compiling module final_soc_sdram_input_efifo_module
+# -- Compiling module final_soc_sdram
+# 
+# Top level modules:
+# 	final_soc_sdram
+# End time: 19:35:58 on Apr 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work final_soc +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_otg_hpi_data.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:58 on Apr 16,2020
+# vlog -reportprogress 300 -vlog01compat -work final_soc "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules" C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_otg_hpi_data.v 
+# -- Compiling module final_soc_otg_hpi_data
+# 
+# Top level modules:
+# 	final_soc_otg_hpi_data
+# End time: 19:35:58 on Apr 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work final_soc +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_otg_hpi_cs.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:58 on Apr 16,2020
+# vlog -reportprogress 300 -vlog01compat -work final_soc "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules" C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_otg_hpi_cs.v 
+# -- Compiling module final_soc_otg_hpi_cs
+# 
+# Top level modules:
+# 	final_soc_otg_hpi_cs
+# End time: 19:35:59 on Apr 16,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work final_soc +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_otg_hpi_address.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:59 on Apr 16,2020
+# vlog -reportprogress 300 -vlog01compat -work final_soc "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules" C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_otg_hpi_address.v 
+# -- Compiling module final_soc_otg_hpi_address
+# 
+# Top level modules:
+# 	final_soc_otg_hpi_address
+# End time: 19:35:59 on Apr 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work final_soc +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_onchip_memory2_0.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:59 on Apr 16,2020
+# vlog -reportprogress 300 -vlog01compat -work final_soc "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules" C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_onchip_memory2_0.v 
+# -- Compiling module final_soc_onchip_memory2_0
+# 
+# Top level modules:
+# 	final_soc_onchip_memory2_0
+# End time: 19:35:59 on Apr 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work final_soc +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_nios2_gen2_0.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:59 on Apr 16,2020
+# vlog -reportprogress 300 -vlog01compat -work final_soc "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules" C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_nios2_gen2_0.v 
+# -- Compiling module final_soc_nios2_gen2_0
+# 
+# Top level modules:
+# 	final_soc_nios2_gen2_0
+# End time: 19:35:59 on Apr 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work final_soc +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_nios2_gen2_0_cpu.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:59 on Apr 16,2020
+# vlog -reportprogress 300 -vlog01compat -work final_soc "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules" C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_nios2_gen2_0_cpu.v 
+# -- Compiling module final_soc_nios2_gen2_0_cpu_register_bank_a_module
+# -- Compiling module final_soc_nios2_gen2_0_cpu_register_bank_b_module
+# -- Compiling module final_soc_nios2_gen2_0_cpu_nios2_oci_debug
+# -- Compiling module final_soc_nios2_gen2_0_cpu_nios2_oci_break
+# -- Compiling module final_soc_nios2_gen2_0_cpu_nios2_oci_xbrk
+# -- Compiling module final_soc_nios2_gen2_0_cpu_nios2_oci_dbrk
+# -- Compiling module final_soc_nios2_gen2_0_cpu_nios2_oci_itrace
+# -- Compiling module final_soc_nios2_gen2_0_cpu_nios2_oci_td_mode
+# -- Compiling module final_soc_nios2_gen2_0_cpu_nios2_oci_dtrace
+# -- Compiling module final_soc_nios2_gen2_0_cpu_nios2_oci_compute_input_tm_cnt
+# -- Compiling module final_soc_nios2_gen2_0_cpu_nios2_oci_fifo_wrptr_inc
+# -- Compiling module final_soc_nios2_gen2_0_cpu_nios2_oci_fifo_cnt_inc
+# -- Compiling module final_soc_nios2_gen2_0_cpu_nios2_oci_fifo
+# -- Compiling module final_soc_nios2_gen2_0_cpu_nios2_oci_pib
+# -- Compiling module final_soc_nios2_gen2_0_cpu_nios2_oci_im
+# -- Compiling module final_soc_nios2_gen2_0_cpu_nios2_performance_monitors
+# -- Compiling module final_soc_nios2_gen2_0_cpu_nios2_avalon_reg
+# -- Compiling module final_soc_nios2_gen2_0_cpu_ociram_sp_ram_module
+# -- Compiling module final_soc_nios2_gen2_0_cpu_nios2_ocimem
+# -- Compiling module final_soc_nios2_gen2_0_cpu_nios2_oci
+# -- Compiling module final_soc_nios2_gen2_0_cpu
+# 
+# Top level modules:
+# 	final_soc_nios2_gen2_0_cpu_nios2_performance_monitors
+# 	final_soc_nios2_gen2_0_cpu
+# End time: 19:35:59 on Apr 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work final_soc +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_nios2_gen2_0_cpu_debug_slave_sysclk.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:59 on Apr 16,2020
+# vlog -reportprogress 300 -vlog01compat -work final_soc "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules" C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_nios2_gen2_0_cpu_debug_slave_sysclk.v 
+# -- Compiling module final_soc_nios2_gen2_0_cpu_debug_slave_sysclk
+# 
+# Top level modules:
+# 	final_soc_nios2_gen2_0_cpu_debug_slave_sysclk
+# End time: 19:35:59 on Apr 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work final_soc +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_nios2_gen2_0_cpu_debug_slave_tck.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:59 on Apr 16,2020
+# vlog -reportprogress 300 -vlog01compat -work final_soc "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules" C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_nios2_gen2_0_cpu_debug_slave_tck.v 
+# -- Compiling module final_soc_nios2_gen2_0_cpu_debug_slave_tck
+# 
+# Top level modules:
+# 	final_soc_nios2_gen2_0_cpu_debug_slave_tck
+# End time: 19:35:59 on Apr 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work final_soc +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_nios2_gen2_0_cpu_debug_slave_wrapper.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:59 on Apr 16,2020
+# vlog -reportprogress 300 -vlog01compat -work final_soc "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules" C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_nios2_gen2_0_cpu_debug_slave_wrapper.v 
+# -- Compiling module final_soc_nios2_gen2_0_cpu_debug_slave_wrapper
+# 
+# Top level modules:
+# 	final_soc_nios2_gen2_0_cpu_debug_slave_wrapper
+# End time: 19:35:59 on Apr 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work final_soc +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_nios2_gen2_0_cpu_test_bench.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:59 on Apr 16,2020
+# vlog -reportprogress 300 -vlog01compat -work final_soc "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules" C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_nios2_gen2_0_cpu_test_bench.v 
+# -- Compiling module final_soc_nios2_gen2_0_cpu_test_bench
+# 
+# Top level modules:
+# 	final_soc_nios2_gen2_0_cpu_test_bench
+# End time: 19:35:59 on Apr 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work final_soc +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_keycode.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:59 on Apr 16,2020
+# vlog -reportprogress 300 -vlog01compat -work final_soc "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules" C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_keycode.v 
+# -- Compiling module final_soc_keycode
+# 
+# Top level modules:
+# 	final_soc_keycode
+# End time: 19:35:59 on Apr 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work final_soc +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_jtag_uart_0.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:59 on Apr 16,2020
+# vlog -reportprogress 300 -vlog01compat -work final_soc "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules" C:/Users/hz13/Desktop/ECE_385/385_final/final_project/final_soc/synthesis/submodules/final_soc_jtag_uart_0.v 
+# -- Compiling module final_soc_jtag_uart_0_sim_scfifo_w
+# -- Compiling module final_soc_jtag_uart_0_scfifo_w
+# -- Compiling module final_soc_jtag_uart_0_sim_scfifo_r
+# -- Compiling module final_soc_jtag_uart_0_scfifo_r
+# -- Compiling module final_soc_jtag_uart_0
+# 
+# Top level modules:
+# 	final_soc_jtag_uart_0
+# End time: 19:35:59 on Apr 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/385_final {C:/Users/hz13/Desktop/ECE_385/385_final/385_final/palette.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:59 on Apr 16,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/385_final" C:/Users/hz13/Desktop/ECE_385/385_final/385_final/palette.sv 
+# -- Compiling module palette
+# 
+# Top level modules:
+# 	palette
+# End time: 19:35:59 on Apr 16,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/hpi_io_intf.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:35:59 on Apr 16,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project" C:/Users/hz13/Desktop/ECE_385/385_final/final_project/hpi_io_intf.sv 
+# -- Compiling module hpi_io_intf
+# ** Error: C:/Users/hz13/Desktop/ECE_385/385_final/final_project/hpi_io_intf.sv(32): (vlog-2110) Illegal reference to net "OTG_ADDR".
+# ** Error: C:/Users/hz13/Desktop/ECE_385/385_final/final_project/hpi_io_intf.sv(33): (vlog-2110) Illegal reference to net "OTG_RD_N".
+# ** Error: C:/Users/hz13/Desktop/ECE_385/385_final/final_project/hpi_io_intf.sv(34): (vlog-2110) Illegal reference to net "OTG_WR_N".
+# ** Error: C:/Users/hz13/Desktop/ECE_385/385_final/final_project/hpi_io_intf.sv(35): (vlog-2110) Illegal reference to net "OTG_CS_N".
+# ** Error: C:/Users/hz13/Desktop/ECE_385/385_final/final_project/hpi_io_intf.sv(36): (vlog-2110) Illegal reference to net "OTG_RST_N".
+# ** Error: C:/Users/hz13/Desktop/ECE_385/385_final/final_project/hpi_io_intf.sv(37): (vlog-2110) Illegal reference to net "from_sw_data_in".
+# End time: 19:35:59 on Apr 16,2020, Elapsed time: 0:00:00
+# Errors: 6, Warnings: 0
+# ** Error: C:/intelFPGA/18.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./final_project_run_msim_rtl_systemverilog.do line 34
+# C:/intelFPGA/18.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -sv -work work +incdir+C:/Users/hz13/Desktop/ECE_385/385_final/final_project {C:/Users/hz13/Desktop/ECE_385/385_final/final_project/hpi_io_intf.s..."
+# Load canceled

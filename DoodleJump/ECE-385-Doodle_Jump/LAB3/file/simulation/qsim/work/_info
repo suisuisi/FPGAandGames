@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/quartus/lab3/simulation/qsim
+vlab3
+Z0 !s110 1634204608
+!i10b 1
+!s100 NO:4mknh3;oo`[k;UzP>N1
+Iz4FN2:FnZ9ijB^O0nl2Wc1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/Howar/Desktop/ECE 385/LAB3/simulation/qsim
+w1634204607
+8lab3.vo
+Flab3.vo
+L0 31
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1634204608.000000
+!s107 lab3.vo|
+!s90 -work|work|lab3.vo|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vlab3_vlg_vec_tst
+R0
+!i10b 1
+!s100 HSceolWIJ1N=UWdGJ]l<S2
+IIVbB`h[=<Y9HzJ<?a8RZV3
+R1
+R2
+w1634204606
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 29
+R3
+r1
+!s85 0
+31
+R4
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R5
+R6

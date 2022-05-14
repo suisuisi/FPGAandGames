@@ -1,0 +1,56 @@
+
+module testbench();
+
+	// Half clock cycle at 50 MHz
+	// This is the amount of time represented by #1
+	timeunit 10ns;
+	timeprecision 1ns;
+
+	// Internal variables
+	logic Clk;
+	logic spike_in, Reset;
+	logic polarity = 1;
+	logic [15:0] weight = 10;
+	logic [15:0] threshold = 15;
+	logic spike_out;
+	logic [1:0] curr_state, next_state;
+	logic acc, leak, fire;
+	logic [15:0] Mvalue;
+	
+	// initialize the toplevel entity
+	neuron myneuron(.*);
+	
+	//	connect variables to signals
+	always begin
+	#1	curr_state = myneuron.curr_state;
+		next_state = myneuron.next_state;
+		acc = myneuron.acc;
+		leak = myneuron.leak;
+		fire = myneuron.fire;
+		Mvalue = myneuron.Mvalue;
+	end
+	
+	// set clock rule
+   always begin : CLOCK_GENERATION 
+	#1 Clk = ~Clk;
+   end
+
+	// initialize clock signal 
+	initial begin: CLOCK_INITIALIZATION 
+		Clk = 0;
+   end
+	
+	// begin testing
+	initial begin: TEST_VECTORS
+		Reset = 1;
+		spike_in = 0;
+	#2 Reset = 0;
+	#2 spike_in = 1;
+	#2 spike_in = 0;
+	#30 spike_in = 1;
+	#2 spike_in = 0;
+	#8 spike_in = 1;
+	#2 spike_in = 0;
+	end
+
+endmodule

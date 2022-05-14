@@ -1,0 +1,19 @@
+rai:
+  version: 0.2
+  image: weiren2/ece408-sp20:topic-3-raytracing-test
+resources:
+  cpu:
+    architecture: amd64 # use amd64 unless your project requires running on a different architecture
+  gpu:
+    count: 1
+  limits:
+    network: true
+commands:
+  build: # commands in the following seciton are executed sequentially
+    - /bin/bash -c "cp -r /src/* ."
+    - make smallpt
+    - ./smallpt
+    - nvcc -o ray_tracing ray_tracing.cu
+    - ./ray_tracing
+    #- ./cuda-program ...
+    #- Evaluate accelerated version ...

@@ -1,0 +1,161 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Howar/Desktop/ECE 385/LAB4/LAB4_final/simulation/modelsim
+vcarry_lookahead_adder
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1634736725
+!i10b 1
+!s100 PfNATjQ33NMd^Z8NmAb4M3
+I;2LOUVMem18[aB0MW[Fo<0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 carry_lookahead_adder_sv_unit
+S1
+R0
+Z5 w1633875197
+Z6 8C:/Users/Howar/Desktop/ECE 385/LAB4/LAB4_final/carry_lookahead_adder.sv
+Z7 FC:/Users/Howar/Desktop/ECE 385/LAB4/LAB4_final/carry_lookahead_adder.sv
+L0 1
+Z8 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z9 !s108 1634736725.000000
+Z10 !s107 C:/Users/Howar/Desktop/ECE 385/LAB4/LAB4_final/carry_lookahead_adder.sv|
+Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE 385/LAB4/LAB4_final|C:/Users/Howar/Desktop/ECE 385/LAB4/LAB4_final/carry_lookahead_adder.sv|
+!i113 1
+Z12 o-sv -work work
+Z13 !s92 -sv -work work {+incdir+C:/Users/Howar/Desktop/ECE 385/LAB4/LAB4_final}
+Z14 tCvgOpt 0
+vHexDriver
+R1
+R2
+!i10b 1
+!s100 =R2i165HPJgkY;aA[TRmG3
+IFMadN18M]aK61z?HdgN=G0
+R3
+!s105 HexDriver_sv_unit
+S1
+R0
+w1453932322
+8C:/Users/Howar/Desktop/ECE 385/LAB4/LAB4_final/HexDriver.sv
+FC:/Users/Howar/Desktop/ECE 385/LAB4/LAB4_final/HexDriver.sv
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/Howar/Desktop/ECE 385/LAB4/LAB4_final/HexDriver.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE 385/LAB4/LAB4_final|C:/Users/Howar/Desktop/ECE 385/LAB4/LAB4_final/HexDriver.sv|
+!i113 1
+R12
+R13
+R14
+n@hex@driver
+vlab4_adders_toplevel
+R1
+Z15 !s110 1634736726
+!i10b 1
+!s100 Ff0C^ZK^zfkDz504]X;SI2
+I]8z@4eVAG;^Ua=QH9haan1
+R3
+!s105 lab4_adders_toplevel_sv_unit
+S1
+R0
+w1634133615
+8C:/Users/Howar/Desktop/ECE 385/LAB4/LAB4_final/lab4_adders_toplevel.sv
+FC:/Users/Howar/Desktop/ECE 385/LAB4/LAB4_final/lab4_adders_toplevel.sv
+L0 17
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/Howar/Desktop/ECE 385/LAB4/LAB4_final/lab4_adders_toplevel.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE 385/LAB4/LAB4_final|C:/Users/Howar/Desktop/ECE 385/LAB4/LAB4_final/lab4_adders_toplevel.sv|
+!i113 1
+R12
+R13
+R14
+vtestbench
+R1
+R15
+!i10b 1
+!s100 cHn3>7M4Azd4N4L[hSH[D1
+IPYzEcTczd2Y=[XzUkP[oe3
+R3
+!s105 testbench_adder_sv_unit
+S1
+R0
+w1633847722
+8C:/Users/Howar/Desktop/ECE 385/LAB4/LAB4_final/testbench_adder.sv
+FC:/Users/Howar/Desktop/ECE 385/LAB4/LAB4_final/testbench_adder.sv
+L0 5
+R8
+r1
+!s85 0
+31
+!s108 1634736726.000000
+!s107 C:/Users/Howar/Desktop/ECE 385/LAB4/LAB4_final/testbench_adder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE 385/LAB4/LAB4_final|C:/Users/Howar/Desktop/ECE 385/LAB4/LAB4_final/testbench_adder.sv|
+!i113 1
+R12
+R13
+R14
+vunit_adder
+R1
+R2
+!i10b 1
+!s100 GzzJ81ImJ:;`F0GUB7TAo3
+I[`zzl@NVd^6kk?f=cJkzK3
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 39
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+vunit_adder4
+R1
+R2
+!i10b 1
+!s100 BN2DT;<0>zo8C4BRJKEoF0
+IY:?N0AD3<XR1aEZElN20?2
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 56
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14

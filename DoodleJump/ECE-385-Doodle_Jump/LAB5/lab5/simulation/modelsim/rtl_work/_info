@@ -1,0 +1,212 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Howar/Desktop/ECE 385/LAB5/lab5final/simulation/modelsim
+vADD_SUB9
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1635423828
+!i10b 1
+!s100 I743YC436M[M<hL`<ImIX1
+I`9Om8UT:C<NMLe2PmQ2KP0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 ripple_adder_sv_unit
+S1
+R0
+Z5 w1634647207
+Z6 8C:/Users/Howar/Desktop/ECE 385/LAB5/lab5final/ripple_adder.sv
+Z7 FC:/Users/Howar/Desktop/ECE 385/LAB5/lab5final/ripple_adder.sv
+L0 1
+Z8 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z9 !s108 1635423828.000000
+Z10 !s107 C:/Users/Howar/Desktop/ECE 385/LAB5/lab5final/ripple_adder.sv|
+Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE 385/LAB5/lab5final|C:/Users/Howar/Desktop/ECE 385/LAB5/lab5final/ripple_adder.sv|
+!i113 1
+Z12 o-sv -work work
+Z13 !s92 -sv -work work {+incdir+C:/Users/Howar/Desktop/ECE 385/LAB5/lab5final}
+Z14 tCvgOpt 0
+n@a@d@d_@s@u@b9
+vadder4
+R1
+R2
+!i10b 1
+!s100 aVKd?fo1U=K;hT]D@cl452
+I<E7?Da0IRLjUai<PATacf2
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 47
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+vDreg
+R1
+R2
+!i10b 1
+!s100 GNV_iK=dJa2B@3cSfiNDe2
+IQ17WPDPPBVeJV0;2`RHV<0
+R3
+Z15 !s105 Register_unit_sv_unit
+S1
+R0
+Z16 w1634647226
+Z17 8C:/Users/Howar/Desktop/ECE 385/LAB5/lab5final/Register_unit.sv
+Z18 FC:/Users/Howar/Desktop/ECE 385/LAB5/lab5final/Register_unit.sv
+L0 25
+R8
+r1
+!s85 0
+31
+R9
+Z19 !s107 C:/Users/Howar/Desktop/ECE 385/LAB5/lab5final/Register_unit.sv|
+Z20 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE 385/LAB5/lab5final|C:/Users/Howar/Desktop/ECE 385/LAB5/lab5final/Register_unit.sv|
+!i113 1
+R12
+R13
+R14
+n@dreg
+vfull_adder
+R1
+R2
+!i10b 1
+!s100 InOF?2M8ZMhZ_QbU^b3G10
+IB]34GTh]o@;bd>>P4S4lT1
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 34
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+vreg_8
+R1
+R2
+!i10b 1
+!s100 AXDzj?_?eZ4hKcKof@=bm2
+I]F=MUe3c`MLH>Eaib`h1f2
+R3
+R15
+S1
+R0
+R16
+R17
+R18
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R19
+R20
+!i113 1
+R12
+R13
+R14
+vsync
+R1
+R2
+!i10b 1
+!s100 2W5Vz0:F6ckE2`eJOTK5l1
+IaV`5UAjjjoE1:09EKQ@lz0
+R3
+Z21 !s105 Synchronizers_sv_unit
+S1
+R0
+Z22 w1473642985
+Z23 8C:/Users/Howar/Desktop/ECE 385/LAB5/lab5final/Synchronizers.sv
+Z24 FC:/Users/Howar/Desktop/ECE 385/LAB5/lab5final/Synchronizers.sv
+L0 4
+R8
+r1
+!s85 0
+31
+R9
+Z25 !s107 C:/Users/Howar/Desktop/ECE 385/LAB5/lab5final/Synchronizers.sv|
+Z26 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Howar/Desktop/ECE 385/LAB5/lab5final|C:/Users/Howar/Desktop/ECE 385/LAB5/lab5final/Synchronizers.sv|
+!i113 1
+R12
+R13
+R14
+vsync_r0
+R1
+R2
+!i10b 1
+!s100 IGd9f_F;JNjVBLQ@DAnD10
+I3K2Y7_4S@IGi<3Mb_JijW1
+R3
+R21
+S1
+R0
+R22
+R23
+R24
+L0 18
+R8
+r1
+!s85 0
+31
+R9
+R25
+R26
+!i113 1
+R12
+R13
+R14
+vsync_r1
+R1
+R2
+!i10b 1
+!s100 1CXiH1DYDbAUS69Ee2j060
+IK`gZEaQ3W=F8nI?EBclCE2
+R3
+R21
+S1
+R0
+R22
+R23
+R24
+L0 39
+R8
+r1
+!s85 0
+31
+R9
+R25
+R26
+!i113 1
+R12
+R13
+R14

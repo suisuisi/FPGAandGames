@@ -1,0 +1,189 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "09/23/2021 09:32:53"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          lab2final
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module lab2final_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg CLOCK;
+reg DIN0;
+reg DIN1;
+reg FETCH;
+reg LDSBR;
+reg SAR0;
+reg SAR1;
+reg STORE;
+// wires                                               
+wire Q0;
+wire Q00;
+wire Q1;
+wire Q01;
+wire Q02;
+wire Q03;
+wire Q10;
+wire Q11;
+wire Q12;
+wire Q13;
+wire SBR0;
+wire SBR1;
+
+// assign statements (if any)                          
+lab2final i1 (
+// port map - connection between master ports and signals/registers   
+	.CLOCK(CLOCK),
+	.DIN0(DIN0),
+	.DIN1(DIN1),
+	.FETCH(FETCH),
+	.LDSBR(LDSBR),
+	.Q0(Q0),
+	.Q00(Q00),
+	.Q1(Q1),
+	.Q01(Q01),
+	.Q02(Q02),
+	.Q03(Q03),
+	.Q10(Q10),
+	.Q11(Q11),
+	.Q12(Q12),
+	.Q13(Q13),
+	.SAR0(SAR0),
+	.SAR1(SAR1),
+	.SBR0(SBR0),
+	.SBR1(SBR1),
+	.STORE(STORE)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+
+// CLOCK
+initial
+begin
+	CLOCK = 1'b1;
+	# 5000;
+	repeat(99)
+	begin
+		CLOCK = 1'b0;
+		CLOCK = #5000 1'b1;
+		# 5000;
+	end
+	CLOCK = 1'b0;
+end 
+
+// DIN0
+initial
+begin
+	DIN0 = 1'b0;
+	DIN0 = #80000 1'b1;
+	DIN0 = #80000 1'b0;
+	DIN0 = #90000 1'b1;
+	DIN0 = #40000 1'b0;
+end 
+
+// DIN1
+initial
+begin
+	DIN1 = 1'b1;
+	DIN1 = #40000 1'b0;
+	DIN1 = #80000 1'b1;
+	DIN1 = #40000 1'b0;
+	DIN1 = #270000 1'b1;
+	DIN1 = #40000 1'b0;
+end 
+
+// SAR0
+initial
+begin
+	SAR0 = 1'b0;
+	SAR0 = #190000 1'b1;
+	SAR0 = #180000 1'b0;
+	SAR0 = #260000 1'b1;
+	SAR0 = #100000 1'b0;
+end 
+
+// SAR1
+initial
+begin
+	SAR1 = 1'b0;
+	SAR1 = #190000 1'b1;
+	SAR1 = #90000 1'b0;
+	SAR1 = #180000 1'b1;
+	SAR1 = #90000 1'b0;
+	SAR1 = #80000 1'b1;
+	SAR1 = #50000 1'b0;
+	SAR1 = #100000 1'b1;
+	SAR1 = #50000 1'b0;
+end 
+
+// LDSBR
+initial
+begin
+	LDSBR = 1'b1;
+	LDSBR = #30000 1'b0;
+	LDSBR = #10000 1'b1;
+	LDSBR = #30000 1'b0;
+	LDSBR = #10000 1'b1;
+	LDSBR = #30000 1'b0;
+	LDSBR = #10000 1'b1;
+	LDSBR = #30000 1'b0;
+	LDSBR = #100000 1'b1;
+	LDSBR = #30000 1'b0;
+	LDSBR = #60000 1'b1;
+	LDSBR = #30000 1'b0;
+	LDSBR = #60000 1'b1;
+	LDSBR = #30000 1'b0;
+end 
+
+// FETCH
+initial
+begin
+	FETCH = 1'b0;
+	FETCH = #640000 1'b1;
+	FETCH = #40000 1'b0;
+	FETCH = #10000 1'b1;
+	FETCH = #40000 1'b0;
+	FETCH = #10000 1'b1;
+	FETCH = #40000 1'b0;
+	FETCH = #10000 1'b1;
+	FETCH = #40000 1'b0;
+end 
+
+// STORE
+initial
+begin
+	STORE = 1'b0;
+	STORE = #200000 1'b1;
+	STORE = #40000 1'b0;
+	STORE = #50000 1'b1;
+	STORE = #40000 1'b0;
+	STORE = #50000 1'b1;
+	STORE = #40000 1'b0;
+	STORE = #50000 1'b1;
+	STORE = #40000 1'b0;
+end 
+endmodule
+

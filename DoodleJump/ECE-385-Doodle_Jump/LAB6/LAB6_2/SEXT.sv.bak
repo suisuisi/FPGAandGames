@@ -1,0 +1,15 @@
+module SEXT #(N = 6) (
+    input logic [N-1:0] IR,
+    output logic [15:0] OUT
+);
+    if (IR[N-1]==0)
+        begin
+            assign OUT = {(16-N)'b0, IR};
+        end
+    else
+        begin
+            assign OUT = {(16-N)'b1, IR};
+        end
+
+endmodule
+        

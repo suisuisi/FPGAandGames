@@ -1,0 +1,23 @@
+IP Ports Diff Report for final_soc
+Sat May 14 17:49:19 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. IP Information
+
+
+
++--------------------------------------------------------+
+; IP Information                                         ;
++----------------------+---------------------------------+
+; IP Variation Name    ; final_soc                       ;
+; Prior Version        ; ACDS_v18.0                      ;
+; New Version          ; ACDS_v20.1                      ;
+; New File             ; final_soc/synthesis/final_soc.v ;
+; Has Port Differences ; No                              ;
++----------------------+---------------------------------+
+
+

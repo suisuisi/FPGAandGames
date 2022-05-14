@@ -1,0 +1,41 @@
+
+// This module is used to detect if a ball touch a stair
+module collision ( input     Clk,                // 50 MHz clock
+                             Reset,              // Active-high reset signal
+                             frame_clk,          // The clock indicating a new frame (~60Hz)
+						input [9:0]   Ball_X_Pos, Ball_Y_Pos, Ball_Size, Ball_Y_Step,       // Current ball's coordinates
+						input [13:0][9:0]	  stair_x, stair_y, 
+						input [9:0]  stair_size,
+						output logic  collision            
+					  );	
+	 logic[13:0] check;
+
+//	 logic frame_clk_delayed, frame_clk_rising_edge;
+//	 always_ff @ (posedge Clk) begin
+//		  frame_clk_delayed <= frame_clk;
+//		  frame_clk_rising_edge <= (frame_clk == 1'b1) && (frame_clk_delayed == 1'b0);
+//	 end
+	 
+	 always_comb 
+	 begin
+		 for(int j=0; j<14; j++)
+			begin
+				check[j] = (Ball_Y_Step < 10'd100) && (Ball_X_Pos + Ball_Size - 7 >= stair_x[j] + ~stair_size + 10'b1) && (Ball_X_Pos - Ball_Size <= stair_x[j] + stair_size) && (Ball_Y_Pos + Ball_Size + Ball_Y_Step >= stair_y[j]) && (Ball_Y_Pos + Ball_Size + Ball_Y_Step<= stair_y[j] + 10'd8) ;
+			end
+	 end	
+	 
+	always_ff @ (posedge Clk)
+	begin
+		if (Reset == 1'b1)
+			collision <= 1'b0;
+		else// if ((frame_clk_rising_edge == 1'b1))
+			begin
+				if (check[0] || check[1] || check[2] || check[3] || check[4] || check[5] || check[6] || check[7] || check[8] || check[9] || check[10] || check[11] || check[12] || check[13] )
+					begin
+						collision <= 1'b1;
+					end
+				else
+					collision <= 1'b0;
+			end
+	end		
+endmodule

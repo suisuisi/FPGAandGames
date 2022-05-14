@@ -1,0 +1,85 @@
+module controller(
+    input logic Reset,Clk,frame_clk,
+    input logic[15:0] keycode,
+    input logic death,
+    output logic[2:0] show,
+    output logic restart
+);
+
+
+
+logic frame_clk_delayed, frame_clk_rising_edge;
+logic [6:0] delay,next_delay;
+always_ff @ (posedge Clk) begin
+    frame_clk_delayed <= frame_clk;
+    frame_clk_rising_edge <= (frame_clk == 1'b1) && (frame_clk_delayed == 1'b0);
+end
+
+
+
+enum logic [1:0]{
+				start,
+                play,
+                pause,
+                dead
+} state, next_state;
+
+
+
+always_ff @ (posedge frame_clk_rising_edge)
+	begin
+		if (Reset) 
+			begin
+				state <= start;
+                delay <= 7'd0;
+			end			
+		else 
+			begin
+			state <= next_state;
+            delay <= next_delay;
+			end
+	end
+always_comb 
+begin 
+    show = 3'd1;
+    restart = 1'b0;
+    next_delay = 7'd0;
+    next_state = state;
+    case(state)
+        start:
+        begin
+            restart = 1'b1;
+            show = 3'd1;
+            if ((keycode & 16'hff) == 16'd40) //press enter then start
+                next_state = play;  
+        end          
+        play:
+        begin
+            show = 3'd0;
+            if ((keycode & 16'hff) == 16'd44)//press space then pause
+                next_state = pause;
+            else if(death)  
+                next_state = dead;
+        end
+        
+        pause:
+        begin
+            show = 3'd2;
+            if ((keycode & 16'hff) == 16'd40)
+            next_state = play;           
+        end
+                   
+        dead:
+        begin
+            show = 3'd3;
+            if ((keycode & 16'hff) == 16'd40)
+            next_state = start;            
+        end
+               
+        default: next_state = start;
+    endcase
+    
+end
+
+
+endmodule
