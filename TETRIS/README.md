@@ -51,7 +51,7 @@ ZEDBOARD（纯逻辑设计，没使用ARM） 其他板卡也可以
 
 原理图+PCB地址：
 
-> https://gitee.com/openfpga/FPGAandGames/tree/main/hardware/PMOD_PS2
+> https://github.com/suisuisi/FPGAandGames/tree/main/hardware/PMOD_PS2
 
 注意：PS2不一定用5V供电，亲测3.3V也可以。
 
@@ -81,7 +81,14 @@ FSM如下：
 
 # 开源链接
 
->https://github.com/suisuisi/FPGAandGames/tree/main/TETRIS/fpgatetris
+Altera/Intel版本
+
+https://github.com/suisuisi/FPGAandGames/tree/main/TETRIS/fpgatetris_altera
+
+Xilinx/AMD版本
+
+https://github.com/suisuisi/FPGAandGames/tree/main/TETRIS/fpgatetris_xilinx/tetris
+
 
 下载后可以直接进行综合，使用JTAG下载到FPGA中，就能看到VGA显示画面如下：
 
@@ -94,7 +101,9 @@ FSM如下：
 
 # 视频演示
 
+[![FPGA比较完美的复现俄罗斯方块](https://github.com/suisuisi/FPGAandGames/blob/main/TETRIS/image/%E8%BF%90%E8%A1%8C%E7%94%BB%E9%9D%A2%20(3).jpg?raw=true)](https://www.bilibili.com/video/BV1FL4y1F7Yb/)
 
+https://www.bilibili.com/video/BV1FL4y1F7Yb/
 
 
 
