@@ -1,0 +1,684 @@
+
+*** Running vivado
+    with args -log tetris.vds -m64 -mode batch -messageDb vivado.pb -notrace -source tetris.tcl
+
+
+****** Vivado v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source tetris.tcl -notrace
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at C:/Xilinx/Vivado/2016.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+Command: synth_design -top tetris -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 8696 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 284.461 ; gain = 77.141
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'tetris' [C:/Vivado/Tetris/Tetris.srcs/sources_1/imports/Tetris_Zedboard/tetris.v:23]
+	Parameter ROW bound to: 20 - type: integer 
+	Parameter COL bound to: 10 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'key' [C:/Vivado/Tetris/Tetris.srcs/sources_1/imports/Tetris_Zedboard/key.v:21]
+INFO: [Synth 8-256] done synthesizing module 'key' (1#1) [C:/Vivado/Tetris/Tetris.srcs/sources_1/imports/Tetris_Zedboard/key.v:21]
+INFO: [Synth 8-638] synthesizing module 'game_control_unit' [C:/Vivado/Tetris/Tetris.srcs/sources_1/imports/Tetris_Zedboard/game_control_unit.v:1]
+	Parameter time_val bound to: 26'b01011111010111100001000001 
+	Parameter S_idle bound to: 4'b0000 
+	Parameter S_new bound to: 4'b0001 
+	Parameter S_hold bound to: 4'b0010 
+	Parameter S_move bound to: 4'b0011 
+	Parameter S_shift bound to: 4'b0100 
+	Parameter S_down bound to: 4'b0101 
+	Parameter S_remove_1 bound to: 4'b0110 
+	Parameter S_remove_2 bound to: 4'b0111 
+	Parameter S_isdie bound to: 4'b1000 
+	Parameter S_stop bound to: 4'b1001 
+INFO: [Synth 8-256] done synthesizing module 'game_control_unit' (2#1) [C:/Vivado/Tetris/Tetris.srcs/sources_1/imports/Tetris_Zedboard/game_control_unit.v:1]
+INFO: [Synth 8-638] synthesizing module 'Datapath_Unit' [C:/Vivado/Tetris/Tetris.srcs/sources_1/imports/Tetris_Zedboard/Tetris_Datapath.v:1]
+	Parameter A_1 bound to: 7'b0001000 
+	Parameter B_1 bound to: 7'b0011000 
+	Parameter B_2 bound to: 7'b0010100 
+	Parameter B_3 bound to: 7'b0010010 
+	Parameter B_4 bound to: 7'b0010001 
+	Parameter C_1 bound to: 7'b0101000 
+	Parameter C_2 bound to: 7'b0100100 
+	Parameter C_3 bound to: 7'b0100010 
+	Parameter C_4 bound to: 7'b0100001 
+	Parameter D_1 bound to: 7'b0111000 
+	Parameter D_2 bound to: 7'b0110100 
+	Parameter E_1 bound to: 7'b1001000 
+	Parameter E_2 bound to: 7'b1000100 
+	Parameter E_3 bound to: 7'b1000010 
+	Parameter E_4 bound to: 7'b1000001 
+	Parameter F_1 bound to: 7'b1011000 
+	Parameter F_2 bound to: 7'b1010100 
+	Parameter G_1 bound to: 7'b1101000 
+	Parameter G_2 bound to: 7'b1100100 
+WARNING: [Synth 8-5788] Register REMOVE_2_S_reg in module Datapath_Unit is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Vivado/Tetris/Tetris.srcs/sources_1/imports/Tetris_Zedboard/Tetris_Datapath.v:198]
+WARNING: [Synth 8-5788] Register REMOVE_2_C_reg in module Datapath_Unit is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Vivado/Tetris/Tetris.srcs/sources_1/imports/Tetris_Zedboard/Tetris_Datapath.v:222]
+WARNING: [Synth 8-5788] Register SIG_reg in module Datapath_Unit is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Vivado/Tetris/Tetris.srcs/sources_1/imports/Tetris_Zedboard/Tetris_Datapath.v:220]
+INFO: [Synth 8-256] done synthesizing module 'Datapath_Unit' (3#1) [C:/Vivado/Tetris/Tetris.srcs/sources_1/imports/Tetris_Zedboard/Tetris_Datapath.v:1]
+INFO: [Synth 8-638] synthesizing module 'merge' [C:/Vivado/Tetris/Tetris.srcs/sources_1/imports/Tetris_Zedboard/merge.v:1]
+	Parameter ROW bound to: 20 - type: integer 
+	Parameter COL bound to: 10 - type: integer 
+	Parameter A1 bound to: 7'b0001000 
+	Parameter B1 bound to: 7'b0011000 
+	Parameter B2 bound to: 7'b0010100 
+	Parameter B3 bound to: 7'b0010010 
+	Parameter B4 bound to: 7'b0010001 
+	Parameter C1 bound to: 7'b0101000 
+	Parameter C2 bound to: 7'b0100100 
+	Parameter C3 bound to: 7'b0100010 
+	Parameter C4 bound to: 7'b0100001 
+	Parameter D1 bound to: 7'b0111000 
+	Parameter D2 bound to: 7'b0110100 
+	Parameter E1 bound to: 7'b1001000 
+	Parameter E2 bound to: 7'b1000100 
+	Parameter E3 bound to: 7'b1000010 
+	Parameter E4 bound to: 7'b1000001 
+	Parameter F1 bound to: 7'b1011000 
+	Parameter F2 bound to: 7'b1010100 
+	Parameter G1 bound to: 7'b1101000 
+	Parameter G2 bound to: 7'b1100100 
+INFO: [Synth 8-256] done synthesizing module 'merge' (4#1) [C:/Vivado/Tetris/Tetris.srcs/sources_1/imports/Tetris_Zedboard/merge.v:1]
+INFO: [Synth 8-638] synthesizing module 'top' [C:/Vivado/Tetris/Tetris.srcs/sources_1/imports/Tetris_Zedboard/vag_top.v:1]
+INFO: [Synth 8-638] synthesizing module 'clk_unit' [C:/Vivado/Tetris/Tetris.srcs/sources_1/imports/Tetris_Zedboard/clk_unit.v:1]
+INFO: [Synth 8-256] done synthesizing module 'clk_unit' (5#1) [C:/Vivado/Tetris/Tetris.srcs/sources_1/imports/Tetris_Zedboard/clk_unit.v:1]
+INFO: [Synth 8-638] synthesizing module 'VGA' [C:/Vivado/Tetris/Tetris.srcs/sources_1/imports/Tetris_Zedboard/vga.v:1]
+	Parameter high bound to: 12'b111111111111 
+INFO: [Synth 8-256] done synthesizing module 'VGA' (6#1) [C:/Vivado/Tetris/Tetris.srcs/sources_1/imports/Tetris_Zedboard/vga.v:1]
+INFO: [Synth 8-256] done synthesizing module 'top' (7#1) [C:/Vivado/Tetris/Tetris.srcs/sources_1/imports/Tetris_Zedboard/vag_top.v:1]
+INFO: [Synth 8-256] done synthesizing module 'tetris' (8#1) [C:/Vivado/Tetris/Tetris.srcs/sources_1/imports/Tetris_Zedboard/tetris.v:23]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[39]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[38]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[37]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[36]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[35]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[34]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[33]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[32]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[31]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[30]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[29]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[28]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[27]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[26]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[25]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[24]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[23]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[22]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[21]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[20]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[19]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[18]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[17]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[16]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[15]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[14]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[13]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[12]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[11]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[10]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[9]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[8]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[7]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[6]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[5]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[4]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[3]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[2]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[1]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[0]
+WARNING: [Synth 8-3331] design game_control_unit has unconnected port shift_finish
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 467.496 ; gain = 260.176
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 467.496 ; gain = 260.176
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Vivado/Tetris/Tetris.srcs/constrs_1/new/tetris_basys3.xdc]
+Finished Parsing XDC File [C:/Vivado/Tetris/Tetris.srcs/constrs_1/new/tetris_basys3.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Vivado/Tetris/Tetris.srcs/constrs_1/new/tetris_basys3.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/tetris_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/tetris_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 753.863 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 753.863 ; gain = 546.543
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 753.863 ; gain = 546.543
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 753.863 ; gain = 546.543
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'game_control_unit'
+INFO: [Synth 8-5545] ROM "auto_down_reg" won't be mapped to RAM because address size (26) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "isdie" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "move" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "stop" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "remove_2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "remove_1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "move_down" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "shift" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "hold" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gen_random" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "R_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "BLOCK_P" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "ysync" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "hsync_r" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "vsync_r" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ysync" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "hsync_r" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "vsync_r" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_idle |                             0000 |                             0000
+                   S_new |                             0001 |                             0001
+                  S_hold |                             0010 |                             0010
+                  S_down |                             0011 |                             0101
+              S_remove_1 |                             0100 |                             0110
+              S_remove_2 |                             0101 |                             0111
+                 S_isdie |                             0110 |                             1000
+                  S_stop |                             0111 |                             1001
+                  S_move |                             1000 |                             0011
+                 S_shift |                             1001 |                             0100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'game_control_unit'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:50 ; elapsed = 00:00:57 . Memory (MB): peak = 753.863 ; gain = 546.543
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+-------------------+------------+----------+
+|      |RTL Partition      |Replication |Instances |
++------+-------------------+------------+----------+
+|1     |Datapath_Unit__GB0 |           1|     33495|
+|2     |Datapath_Unit__GB1 |           1|     14508|
+|3     |Datapath_Unit__GB2 |           1|     14939|
+|4     |Datapath_Unit__GB3 |           1|     17899|
+|5     |Datapath_Unit__GB4 |           1|     29397|
+|6     |tetris__GC0        |           1|     24171|
++------+-------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 6     
+	   2 Input      9 Bit       Adders := 8     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 8     
+	   2 Input      4 Bit       Adders := 5     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	              200 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
+	               10 Bit    Registers := 26    
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 8     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 18    
++---Muxes : 
+	 203 Input     12 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1530  
+	  20 Input     10 Bit        Muxes := 24    
+	   2 Input      8 Bit        Muxes := 1     
+	  10 Input      7 Bit        Muxes := 1     
+	  20 Input      7 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 8     
+	  20 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 22    
+	  19 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 34    
+	  20 Input      1 Bit        Muxes := 4     
+	  10 Input      1 Bit        Muxes := 9     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Datapath_Unit 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 8     
+	   2 Input      4 Bit       Adders := 5     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 24    
+	                7 Bit    Registers := 1     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 1530  
+	  20 Input     10 Bit        Muxes := 24    
+	  10 Input      7 Bit        Muxes := 1     
+	  20 Input      7 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 8     
+	  20 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 22    
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 26    
+	  20 Input      1 Bit        Muxes := 4     
+Module key 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 4     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+Module game_control_unit 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	  19 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+	  10 Input      1 Bit        Muxes := 9     
+Module merge 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 8     
++---Registers : 
+	              200 Bit    Registers := 1     
+Module clk_unit 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
+Module VGA 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 4     
++---Registers : 
+	               12 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	 203 Input     12 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
+ERROR: [Common 17-354] Could not open 'C' for writing.
+ERROR: [Common 17-356] Failed to install all user apps.
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "R_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "R_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "BLOCK_P" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5545] ROM "u_Controller/auto_down_reg" won't be mapped to RAM because address size (26) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "hsync_r0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "u_VGA/myvga/hsync_r" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "u_VGA/myvga/ysync" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "u_VGA/myvga/vsync_r" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[39]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[38]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[37]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[36]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[35]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[34]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[33]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[32]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[31]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[30]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[29]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[28]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[27]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[26]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[25]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[24]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[23]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[22]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[21]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[20]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[19]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[18]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[17]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[16]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[15]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[14]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[13]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[12]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[11]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[10]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[9]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[8]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[7]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[6]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[5]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[4]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[3]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[2]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[1]
+WARNING: [Synth 8-3331] design merge has unconnected port data_in[0]
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:01:00 ; elapsed = 00:01:24 . Memory (MB): peak = 753.863 ; gain = 546.543
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:01:00 ; elapsed = 00:01:24 . Memory (MB): peak = 753.863 ; gain = 546.543
+
+Report RTL Partitions: 
++------+-------------------+------------+----------+
+|      |RTL Partition      |Replication |Instances |
++------+-------------------+------------+----------+
+|1     |Datapath_Unit__GB0 |           1|     33414|
+|2     |Datapath_Unit__GB1 |           1|     14478|
+|3     |Datapath_Unit__GB2 |           1|     14858|
+|4     |Datapath_Unit__GB3 |           1|     17773|
+|5     |Datapath_Unit__GB4 |           1|     29265|
+|6     |tetris__GC0        |           1|     24195|
++------+-------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'u_Controller/up_reg_reg' (FDC) to 'u_Controller/opcode_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u_Controller/right_reg_reg' (FDC) to 'u_Controller/opcode_reg[3]'
+INFO: [Synth 8-3886] merging instance 'u_Controller/left_reg_reg' (FDC) to 'u_Controller/opcode_reg[2]'
+INFO: [Synth 8-3886] merging instance 'u_Controller/down_reg_reg' (FDC) to 'u_Controller/opcode_reg[1]'
+INFO: [Synth 8-3886] merging instance 'u_VGA/myvga/vga_rgb_reg[0]' (FDC) to 'u_VGA/myvga/vga_rgb_reg[1]'
+INFO: [Synth 8-3886] merging instance 'u_VGA/myvga/vga_rgb_reg[1]' (FDC) to 'u_VGA/myvga/vga_rgb_reg[2]'
+INFO: [Synth 8-3886] merging instance 'u_VGA/myvga/vga_rgb_reg[2]' (FDC) to 'u_VGA/myvga/vga_rgb_reg[3]'
+INFO: [Synth 8-3886] merging instance 'u_VGA/myvga/vga_rgb_reg[4]' (FDC) to 'u_VGA/myvga/vga_rgb_reg[5]'
+INFO: [Synth 8-3886] merging instance 'u_VGA/myvga/vga_rgb_reg[5]' (FDC) to 'u_VGA/myvga/vga_rgb_reg[6]'
+INFO: [Synth 8-3886] merging instance 'u_VGA/myvga/vga_rgb_reg[6]' (FDC) to 'u_VGA/myvga/vga_rgb_reg[7]'
+INFO: [Synth 8-3886] merging instance 'u_VGA/myvga/vga_rgb_reg[7]' (FDC) to 'u_VGA/myvga/vga_rgb_reg[8]'
+INFO: [Synth 8-3886] merging instance 'u_VGA/myvga/vga_rgb_reg[8]' (FDC) to 'u_VGA/myvga/vga_rgb_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u_VGA/myvga/vga_rgb_reg[9]' (FDC) to 'u_VGA/myvga/vga_rgb_reg[10]'
+INFO: [Synth 8-3886] merging instance 'u_VGA/myvga/vga_rgb_reg[10]' (FDC) to 'u_VGA/myvga/vga_rgb_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_1/u_key/clk_cnt_reg[6]' (FDC) to 'i_1/u_key/clk_cnt_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\u_key/clk_cnt_reg[7] )
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:01:47 ; elapsed = 00:02:23 . Memory (MB): peak = 753.863 ; gain = 546.543
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:01:47 ; elapsed = 00:02:23 . Memory (MB): peak = 753.863 ; gain = 546.543
+
+Report RTL Partitions: 
++------+-------------------+------------+----------+
+|      |RTL Partition      |Replication |Instances |
++------+-------------------+------------+----------+
+|1     |Datapath_Unit__GB0 |           1|      2108|
+|2     |Datapath_Unit__GB1 |           1|      1208|
+|3     |Datapath_Unit__GB2 |           1|      1271|
+|4     |Datapath_Unit__GB3 |           1|      4062|
+|5     |Datapath_Unit__GB4 |           1|      1239|
+|6     |tetris__GC0        |           1|      3498|
++------+-------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:56 ; elapsed = 00:02:32 . Memory (MB): peak = 778.109 ; gain = 570.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:55 ; elapsed = 00:03:32 . Memory (MB): peak = 955.188 ; gain = 747.867
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------+------------+----------+
+|      |RTL Partition |Replication |Instances |
++------+--------------+------------+----------+
+|1     |tetris_GT0    |           1|     12998|
++------+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:56 ; elapsed = 00:03:46 . Memory (MB): peak = 955.188 ; gain = 747.867
+---------------------------------------------------------------------------------
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:02:56 ; elapsed = 00:03:46 . Memory (MB): peak = 955.188 ; gain = 747.867
+
+Report RTL Partitions: 
++------+--------------+------------+----------+
+|      |RTL Partition |Replication |Instances |
++------+--------------+------------+----------+
+|1     |tetris_GT0    |           1|      4809|
++------+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:02:56 ; elapsed = 00:03:46 . Memory (MB): peak = 955.188 ; gain = 747.867
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:57 ; elapsed = 00:03:47 . Memory (MB): peak = 955.188 ; gain = 747.867
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:57 ; elapsed = 00:03:48 . Memory (MB): peak = 955.188 ; gain = 747.867
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:57 ; elapsed = 00:03:48 . Memory (MB): peak = 955.188 ; gain = 747.867
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:57 ; elapsed = 00:03:48 . Memory (MB): peak = 955.188 ; gain = 747.867
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:58 ; elapsed = 00:03:49 . Memory (MB): peak = 955.188 ; gain = 747.867
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:58 ; elapsed = 00:03:49 . Memory (MB): peak = 955.188 ; gain = 747.867
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+--------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                 | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+--------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|tetris      | u_key/shift_up_reg[3]    | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|tetris      | u_key/shift_down_reg[3]  | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|tetris      | u_key/shift_left_reg[3]  | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|tetris      | u_key/shift_right_reg[3] | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
++------------+--------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    10|
+|3     |LUT1   |     4|
+|4     |LUT2   |   128|
+|5     |LUT3   |   293|
+|6     |LUT4   |   348|
+|7     |LUT5   |   644|
+|8     |LUT6   |  2816|
+|9     |MUXF7  |    48|
+|10    |SRL16E |     4|
+|11    |FDCE   |   585|
+|12    |FDRE   |    14|
+|13    |IBUF   |     7|
+|14    |OBUF   |    14|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------------+------------------+------+
+|      |Instance       |Module            |Cells |
++------+---------------+------------------+------+
+|1     |top            |                  |  4916|
+|2     |  u_Controller |game_control_unit |   143|
+|3     |  u_Datapath   |Datapath_Unit     |  4249|
+|4     |  u_VGA        |top               |   260|
+|5     |    myclk      |clk_unit          |     4|
+|6     |    myvga      |VGA               |   256|
+|7     |  u_key        |key               |    37|
+|8     |  u_merge      |merge             |   205|
++------+---------------+------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:58 ; elapsed = 00:03:49 . Memory (MB): peak = 955.188 ; gain = 747.867
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 40 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:38 ; elapsed = 00:03:37 . Memory (MB): peak = 955.188 ; gain = 461.500
+INFO: Vivado Synthesis caught shared memory exception 'The system cannot find the file specified.'. Continuing without using shared memory (or continuing without parallel flow)
+Synthesis Optimization Complete : Time (s): cpu = 00:02:58 ; elapsed = 00:03:49 . Memory (MB): peak = 955.188 ; gain = 747.867
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 17 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'tetris' is not ideal for floorplanning, since the cellview 'Datapath_Unit' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+123 Infos, 86 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:59 ; elapsed = 00:03:48 . Memory (MB): peak = 955.188 ; gain = 747.867
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.070 . Memory (MB): peak = 955.188 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Oct 28 10:06:25 2016...

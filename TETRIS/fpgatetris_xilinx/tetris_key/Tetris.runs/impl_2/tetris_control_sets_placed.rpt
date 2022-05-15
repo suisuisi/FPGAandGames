@@ -1,0 +1,64 @@
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
+| Date         : Fri Oct 28 10:07:20 2016
+| Host         : sh-dig-yhlong running 64-bit Service Pack 1  (build 7601)
+| Command      : report_control_sets -verbose -file tetris_control_sets_placed.rpt
+| Design       : tetris
+| Device       : xc7a35t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    11 |
+| Unused register locations in slices containing registers |    49 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               9 |            8 |
+| No           | No                    | Yes                    |             492 |          253 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               5 |            3 |
+| Yes          | No                    | Yes                    |              93 |           60 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++----------------------+----------------------------------+------------------+------------------+----------------+
+|     Clock Signal     |           Enable Signal          | Set/Reset Signal | Slice Load Count | Bel Load Count |
++----------------------+----------------------------------+------------------+------------------+----------------+
+|  u_VGA/myclk/clk_tmp |                                  | rst_IBUF         |                1 |              1 |
+|  u_key/clk_div       |                                  | rst_IBUF         |                1 |              4 |
+|  clk_IBUF_BUFG       | u_Datapath/REMOVE_2_C            |                  |                3 |              5 |
+|  u_VGA/myclk/CLK     | u_VGA/myvga/ysync[9]_i_1_n_0     | rst_IBUF         |                5 |             10 |
+|  clk_IBUF_BUFG       |                                  |                  |               12 |             13 |
+|  u_VGA/myclk/CLK     |                                  | rst_IBUF         |                9 |             14 |
+|  clk_IBUF_BUFG       | u_Controller/BLOCK_reg[6]        | rst_IBUF         |               15 |             15 |
+|  clk_IBUF_BUFG       | u_Controller/m_reg[3]_0          | rst_IBUF         |               13 |             20 |
+|  clk_IBUF_BUFG       | u_Controller/n_reg[0]            | rst_IBUF         |               20 |             22 |
+|  clk_IBUF_BUFG       | u_Controller/time_cnt[0]_i_1_n_0 | rst_IBUF         |                7 |             26 |
+|  clk_IBUF_BUFG       |                                  | rst_IBUF         |              242 |            473 |
++----------------------+----------------------------------+------------------+------------------+----------------+
+
+

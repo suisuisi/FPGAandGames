@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Checkpoint Version="4" Minor="0">
+	<BUILD_NUMBER Name="1071353"/>
+	<FULL_BUILD Name="SW Build 1071353 on Tue Nov 18 18:24:04 MST 2014"/>
+	<Part Name="xc7z020clg484-1"/>
+	<BoardPart Name="em.avnet.com:zed:part0:1.2"/>
+	<Top Name="tetris"/>
+	<DisableAutoIOBuffers Name="0"/>
+	<OutOfContext Name="0"/>
+	<File Type="EDIF" Name="tetris.edf" ModTime="1447833775"/>
+	<File Type="VERILOG_STUB" Name="tetris_stub.v" ModTime="1447833775"/>
+	<File Type="VHDL_STUB" Name="tetris_stub.vhdl" ModTime="1447833775"/>
+	<File Type="INCR" Name="tetris.incr" ModTime="1447833775"/>
+	<File Type="PSR" Name="tetris.psr" ModTime="1447833775"/>
+	<File Type="WDF" Name="tetris.wdf" ModTime="1447833775"/>
+</Checkpoint>
+

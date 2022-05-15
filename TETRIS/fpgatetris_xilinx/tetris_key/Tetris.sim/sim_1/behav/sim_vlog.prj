@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  "../../../Tetris_Zedboard.srcs/sources_1/imports/Tetris_Zedboard/vga.v"
+verilog xil_defaultlib  "../../../Tetris_Zedboard.srcs/sources_1/imports/Tetris_Zedboard/clk_unit.v"
+verilog xil_defaultlib  "../../../Tetris_Zedboard.srcs/sources_1/imports/Tetris_Zedboard/Tetris_Datapath.v"
+verilog xil_defaultlib  "../../../Tetris_Zedboard.srcs/sources_1/imports/Tetris_Zedboard/game_control_unit.v"
+verilog xil_defaultlib  "../../../Tetris_Zedboard.srcs/sources_1/imports/Tetris_Zedboard/key.v"
+verilog xil_defaultlib  "../../../Tetris_Zedboard.srcs/sources_1/imports/Tetris_Zedboard/vag_top.v"
+verilog xil_defaultlib  "../../../Tetris_Zedboard.srcs/sources_1/imports/Tetris_Zedboard/merge.v"
+verilog xil_defaultlib  "../../../Tetris_Zedboard.srcs/sources_1/imports/Tetris_Zedboard/tetris.v"
+verilog xil_defaultlib  "../../../Tetris_Zedboard.srcs/sim_1/new/sim.v"
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
