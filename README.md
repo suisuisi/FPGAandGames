@@ -52,3 +52,12 @@ https://github.com/suisuisi/FPGAandGames/blob/main/Raiden/Raiden/Raiden.mp4
 - ![TankWorld](https://github.com/suisuisi/FPGAandGames/blob/main/TankWorld/Tank-World-on-FPGA/final_project/385_final/test.png?raw=true "TankWorld")
 
 坦克大战
+
+
+# StickmanRun
+
+2022-05-13
+
+- ![StickmanRun](https://github.com/suisuisi/FPGAandGames/blob/main/StickmanRun/BlockDiagramFinal.png?raw=true "StickmanRun")
+
+简笔人物画大战
