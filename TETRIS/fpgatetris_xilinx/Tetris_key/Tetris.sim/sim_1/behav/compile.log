@@ -1,0 +1,21 @@
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Tetris_Zedboard/Tetris_Zedboard.srcs/sources_1/imports/Tetris_Zedboard/vga.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Tetris_Zedboard/Tetris_Zedboard.srcs/sources_1/imports/Tetris_Zedboard/clk_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_unit
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Tetris_Zedboard/Tetris_Zedboard.srcs/sources_1/imports/Tetris_Zedboard/Tetris_Datapath.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Datapath_Unit
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Tetris_Zedboard/Tetris_Zedboard.srcs/sources_1/imports/Tetris_Zedboard/game_control_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module game_control_unit
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Tetris_Zedboard/Tetris_Zedboard.srcs/sources_1/imports/Tetris_Zedboard/key.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module key
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Tetris_Zedboard/Tetris_Zedboard.srcs/sources_1/imports/Tetris_Zedboard/vag_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Tetris_Zedboard/Tetris_Zedboard.srcs/sources_1/imports/Tetris_Zedboard/merge.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module merge
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Tetris_Zedboard/Tetris_Zedboard.srcs/sources_1/imports/Tetris_Zedboard/tetris.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tetris
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Tetris_Zedboard/Tetris_Zedboard.srcs/sim_1/new/sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Tetris_Zedboard/Tetris_Zedboard.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
